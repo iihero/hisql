@@ -1,0 +1,58 @@
+D:\pgsql8.3.3\bin>initdb --locale=C -EUTF-8
+The files belonging to this database system will be owned by user "xionghe".
+This user must also own the server process.
+
+The database cluster will be initialized with locale C.
+The default text search configuration will be set to "english".
+
+creating directory d:/pgsql8.3.3/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 32MB
+creating configuration files ... ok
+creating template1 database in d:/pgsql8.3.3/data/base/1 ... ok
+initializing pg_authid ... ok
+initializing dependencies ... ok
+creating system views ... ok
+loading system objects' descriptions ... ok
+creating conversions ... ok
+creating dictionaries ... ok
+setting privileges on built-in objects ... ok
+creating information schema ... ok
+vacuuming database template1 ... ok
+copying template1 to template0 ... ok
+copying template1 to postgres ... ok
+
+WARNING: enabling "trust" authentication for local connections
+You can change this by editing pg_hba.conf or using the -A option the
+next time you run initdb.
+
+Success. You can now start the database server using:
+
+    "postgres" -D "d:/pgsql8.3.3/data"
+or
+    "pg_ctl" -D "d:/pgsql8.3.3/data" -l logfile start
+
+
+D:\pgsql8.3.3\bin>net start pg
+The pg service is starting.
+The pg service was started successfully.
+
+
+D:\pgsql8.3.3\bin>createdb iihero
+
+D:\pgsql8.3.3\bin>psql iihero
+psql (8.4devel)
+Type "help" for help.
+
+iihero=# \encoding
+UTF8
+iihero=# \encoding gbk
+iihero=# create table t(id int primary key, col2 varchar(32));
+iihero=# insert into t values(1, '中国');
+iihero=# select * from t;
+ id | col2
+----+------
+  1 | 中国
+(1 row)
+

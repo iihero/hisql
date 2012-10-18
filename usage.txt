@@ -1,3 +1,23 @@
+1.  environment:
+pgenv.bat:
+set PGHOME=d:\pgsql_latest
+rem set PGHOME=E:\learn\db_research\postgreSQL\pgsql8.3.3
+set PGDATA=%PGHOME%\data
+set PGLIB=%PGHOME%\lib
+set PATH=%PGHOME%\bin;%PATH%
+
+pgstart.bat:
+setlocal
+@echo off
+set PGHOME=d:\pgsql_latest
+set PGDATA=%PGHOME%\data
+set PGLIB=%PGHOME%\lib
+set PATH=%PGHOME%\bin;%PATH%
+pg_ctl -l %PGHOME%\postgres.log start
+endlocal
+
+2. create database
+
 D:\pgsql8.3.3\bin>initdb --locale=C -EUTF-8
 The files belonging to this database system will be owned by user "xionghe".
 This user must also own the server process.
@@ -54,5 +74,18 @@ iihero=# select * from t;
  id | col2
 ----+------
   1 | ÖÐ¹ú
+(1 row)
+
+3. exploring the database
+iihero=# select pg_postmaster_start_time();
+  pg_postmaster_start_time
+----------------------------
+ 2012-10-18 09:37:31.048+08
+(1 row)
+
+iihero=# select date_trunc('second', current_timestamp - pg_postmaster_start_time()) as uptime;
+  uptime
+----------
+ 01:12:35
 (1 row)
 

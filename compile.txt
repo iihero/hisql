@@ -1,0 +1,29 @@
+mingw 编译 postgresql9.1.3 or later.
+
+2010年做了一个精简版的PostgreSQL 8.4.4，依照文档推荐的方法用VC 2005编译，但是编译出来的结果运行不够稳定，pg_dump和pg_restore都异常退出，提示内存不能为READ。
+改用MinGW和GCC 4.5编译后，问题解决。
+
+现在 PostgreSQL 9.1.3 出来了，MinGW 也出了 GCC 4.6.2 版本，发现 GCC 4.6.2 编译速度要快的多，大约10多分钟就完成，记得以前用 GCC 4.5 编译 PostgreSQL 8.4.4 花了几个小时。
+
+以下是详细步骤：
+
+1）安装MinGW
+到这里下载最新版本的mingw-get.exe，解压缩到 C:\MinGW 目录，在命令行窗口中运行
+Shell代码  收藏代码
+
+    c:  
+    cd \MinGW\bin  
+    mingw-get install mingw msys libz-dev libz-dll  
+
+
+
+2）下载PostgreSQL源代码，解压到 c:\MinGW\msys\1.0\ 目录下，运行c:\MinGW\msys\1.0\msys.bat 文件启动 msys，在msys窗口中运行：
+
+Shell代码  收藏代码
+
+    cd postgresql-9.1.3  
+    ./configure CFLAGS='-mtune=pentium4 -g0' && make && make check NO_LOCALE=1 && make install  
+
+
+
+顺利的话，编译好的PostgreSQL就安装到了 c:\MinGW\msys\1.0\local\pgsql\ 目录下

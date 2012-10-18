@@ -91,3 +91,21 @@ iihero=# select date_trunc('second', current_timestamp - pg_postmaster_start_tim
  01:12:35
 (1 row)
 
+  估算表中数据行数：
+iihero=# create table foo(id bigint);
+CREATE TABLE
+iihero=# insert into foo select * from generate_series(1, 100000);
+INSERT 0 100000
+  
+ iihero=# select (case when reltuples > 0 then
+iihero(# pg_relation_size('foo')/(8192*relpages/reltuples)
+iihero(# else 0
+iihero(# end)::bigint as estimated_row_count
+iihero-# from pg_class
+iihero-# where oid = 'foo'::regclass;
+ estimated_row_count
+---------------------
+              100000
+(1 row) 
+当vacuum执行时，pg_class会记录两类信息：relpages:记录表中数据块。reltuples:记录表中
+元组的行数. 

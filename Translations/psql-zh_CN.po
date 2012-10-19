@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: psql (PostgreSQL 9.0)\n"
 "Report-Msgid-Bugs-To: pgsql-bugs@postgresql.org\n"
 "POT-Creation-Date: 2012-10-19 09:15+0000\n"
-"PO-Revision-Date: 2012-10-19 20:54+0800\n"
+"PO-Revision-Date: 2012-10-19 22:03+0800\n"
 "Last-Translator: Xiong He <iihero@qq.com>\n"
 "Language-Team: Chinese (Simplified)\n"
 "Language: zh_CN\n"
@@ -113,18 +113,21 @@ msgid "You are currently not connected to a database.\n"
 msgstr "你目前没有与资料库连线。\n"
 
 #: command.c:312
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are connected to database \"%s\" as user \"%s\" via socket in \"%s\" at "
 "port \"%s\".\n"
-msgstr "以用户 \"%2$s\" 的身份联接到数据库 \"%1$s\"\n"
+msgstr ""
+"以用户 \"%2$s\" 的身份，通过套接字\"%3$s\"在端口\"%4$s\"连接到数据库 \"%1$s"
+"\"\n"
 
 #: command.c:315
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are connected to database \"%s\" as user \"%s\" on host \"%s\" at port "
 "\"%s\".\n"
-msgstr "以用户 \"%2$s\" 的身份联接到数据库 \"%1$s\"\n"
+msgstr ""
+"以用户 \"%2$s\" 的身份, 在主机\"%3$s\", 端口\"%4$s\"连接到数据库 \"%1$s\"\n"
 
 # command.c:370
 # command.c:760
@@ -134,15 +137,15 @@ msgid "no query buffer\n"
 msgstr "没有查询缓存区\n"
 
 #: command.c:542 command.c:2617
-#, fuzzy, c-format
+#, c-format
 msgid "invalid line number: %s\n"
-msgstr "无效端口号: \"%s\"\n"
+msgstr "无效行号: %s\n"
 
 # describe.c:117
 #: command.c:573
-#, fuzzy, c-format
+#, c-format
 msgid "The server (version %d.%d) does not support editing function source.\n"
-msgstr "服务器(版本%d.%d)不支持使用外部服务器.\n"
+msgstr "服务器(版本%d.%d)不支持编辑函数源码.\n"
 
 #: command.c:653
 msgid "No changes"
@@ -196,9 +199,9 @@ msgstr "密码加密失败.\n"
 
 # startup.c:502
 #: command.c:992 command.c:1093 command.c:1321
-#, fuzzy, c-format
+#, c-format
 msgid "\\%s: error while setting variable\n"
-msgstr "%s：无法设定变数 \"%s\"\n"
+msgstr "\\%s: 设定变量值时出错\n"
 
 # command.c:632
 #: command.c:1033
@@ -228,15 +231,15 @@ msgstr "\\%s: 环境变量不能包含 \"=\"\n"
 
 # describe.c:117
 #: command.c:1160
-#, fuzzy, c-format
+#, c-format
 msgid "The server (version %d.%d) does not support showing function source.\n"
-msgstr "服务器(版本%d.%d)不支持使用外部服务器.\n"
+msgstr "服务器(版本%d.%d)不支持显示函数源码.\n"
 
 # copy.c:122
 #: command.c:1166
-#, fuzzy, c-format
+#, c-format
 msgid "function name is required\n"
-msgstr "\\copy：需要参数\n"
+msgstr "需要函数名\n"
 
 # command.c:726
 #: command.c:1301
@@ -311,25 +314,28 @@ msgstr "\\连线：%s"
 
 # command.c:981
 #: command.c:1633
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are now connected to database \"%s\" as user \"%s\" via socket in \"%s\" "
 "at port \"%s\".\n"
-msgstr "您现在已经连线到资料库 \"%s\"。"
+msgstr ""
+"您现在已经连线到数据库 \"%s\", 用户名 \"%s\" , 套接字 \"%s\", 端口号 \"%s"
+"\".\n"
 
 # command.c:981
 #: command.c:1636
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You are now connected to database \"%s\" as user \"%s\" on host \"%s\" at "
 "port \"%s\".\n"
-msgstr "您现在已经连线到资料库 \"%s\"。"
+msgstr ""
+"您现在已经连线到数据库 \"%s\", 用户 \"%s\",主机 \"%s\",端口号 \"%s\".\n"
 
 # command.c:981
 #: command.c:1640
-#, fuzzy, c-format
+#, c-format
 msgid "You are now connected to database \"%s\" as user \"%s\".\n"
-msgstr "您现在已经连线到资料库 \"%s\"。"
+msgstr "您现在已经连线到数据库 \"%s\",用户 \"%s\".\n"
 
 #: command.c:1674
 #, c-format
@@ -347,11 +353,9 @@ msgstr ""
 
 # startup.c:652
 #: command.c:1712
-#, fuzzy, c-format
+#, c-format
 msgid "SSL connection (cipher: %s, bits: %d)\n"
-msgstr ""
-"SSL连接 (加密：%s，位元：%i)\n"
-"\n"
+msgstr "SSL连接 (加密：%s，二进制位: %d)\n"
 
 # startup.c:652
 #: command.c:1722
@@ -375,7 +379,7 @@ msgstr ""
 msgid ""
 "environment variable PSQL_EDITOR_LINENUMBER_ARG must be set to specify a "
 "line number\n"
-msgstr ""
+msgstr "必须设置环境变量 PSQL_EDITOR_LINENUMBER_ARG，用于指定行号\n"
 
 # command.c:1103
 #: command.c:1864
@@ -391,9 +395,9 @@ msgstr "无法启动 /bin/sh\n"
 
 # command.c:1148
 #: command.c:1904
-#, fuzzy, c-format
+#, c-format
 msgid "could not locate temporary directory: %s\n"
-msgstr "找不到暂存目录：%s"
+msgstr "找不到暂存目录：%s\n"
 
 # command.c:1148
 #: command.c:1931
@@ -441,9 +445,9 @@ msgstr "扩展显示已打开。\n"
 
 # command.c:1364
 #: command.c:2240
-#, fuzzy, c-format
+#, c-format
 msgid "Expanded display is used automatically.\n"
-msgstr "扩展显示已打开。\n"
+msgstr "扩展显示已自动打开。\n"
 
 # command.c:1365
 #: command.c:2242
@@ -467,9 +471,9 @@ msgstr " \"%s\" 是空值显示。\n"
 
 # command.c:1389
 #: command.c:2286 command.c:2298
-#, fuzzy, c-format
+#, c-format
 msgid "Field separator is zero byte.\n"
-msgstr "栏位分隔符号是 \"%s\"。\n"
+msgstr "栏位分隔符号是0字节\n"
 
 # command.c:1389
 #: command.c:2288
@@ -479,9 +483,9 @@ msgstr "栏位分隔符号是 \"%s\"。\n"
 
 # command.c:1405
 #: command.c:2313 command.c:2327
-#, fuzzy, c-format
+#, c-format
 msgid "Record separator is zero byte.\n"
-msgstr "记录分隔符号是 \"%s\"。\n"
+msgstr "记录分隔符号是 0字节。\n"
 
 # command.c:1403
 #: command.c:2315
@@ -555,9 +559,9 @@ msgid "Default footer is off."
 msgstr "关闭预设步进器(Footer)。"
 
 #: command.c:2430
-#, fuzzy, c-format
+#, c-format
 msgid "Target width is %d.\n"
-msgstr "对于\"wrapped\"格式的目标长度是%d.\n"
+msgstr "目标宽度为 %d.\n"
 
 # command.c:1493
 #: command.c:2435
@@ -600,9 +604,9 @@ msgstr "完成。\n"
 
 # fe-exec.c:1371
 #: common.c:468 common.c:692 common.c:822
-#, fuzzy, c-format
+#, c-format
 msgid "unexpected PQresultStatus: %d\n"
-msgstr "意外的 asyncStatus(异步状态): %d\n"
+msgstr "意外的 PQresultStatus: %d\n"
 
 #: common.c:517 common.c:524 common.c:883
 #, c-format
@@ -658,9 +662,9 @@ msgstr "服务器(版本 %d.%d)不支持保存点(Savepoint)ON_ERROR_ROLLBACK。
 
 # large_obj.c:58
 #: common.c:1010
-#, fuzzy, c-format
+#, c-format
 msgid "unexpected transaction status (%d)\n"
-msgstr "%s：不明交易状态\n"
+msgstr "意外的事务状态值 (%d)\n"
 
 # common.c:930
 #: common.c:1037
@@ -945,9 +949,8 @@ msgstr "字元编码"
 
 # describe.c:128
 #: describe.c:657 describe.c:3081
-#, fuzzy
 msgid "Collate"
-msgstr "排序规则"
+msgstr "校对规则"
 
 # describe.c:415
 # describe.c:745
@@ -992,9 +995,8 @@ msgstr "视观表"
 # describe.c:543
 # describe.c:1477
 #: describe.c:723 describe.c:2619
-#, fuzzy
 msgid "foreign table"
-msgstr "所引用的表"
+msgstr "所引用的外表"
 
 # sql_help.h:325
 #: describe.c:735
@@ -1035,15 +1037,13 @@ msgid "constraint"
 msgstr "约束"
 
 #: describe.c:909
-#, fuzzy
 msgid "operator class"
-msgstr "操作符 %s"
+msgstr "操作符类"
 
 # sql_help.h:269
 #: describe.c:938
-#, fuzzy
 msgid "operator family"
-msgstr "移除一个运算子家族"
+msgstr "操作符家族"
 
 # describe.c:559
 #: describe.c:960
@@ -1069,9 +1069,9 @@ msgstr "没有找到任何OID为 %s 的关联。\n"
 
 # describe.c:933
 #: describe.c:1330
-#, fuzzy, c-format
+#, c-format
 msgid "Unlogged table \"%s.%s\""
-msgstr "给资料表 \"%s.%s\""
+msgstr "不记录日志的表 \"%s.%s\""
 
 # describe.c:859
 #: describe.c:1333
@@ -1093,9 +1093,9 @@ msgstr "序列数 \"%s.%s\""
 
 # describe.c:871
 #: describe.c:1346
-#, fuzzy, c-format
+#, c-format
 msgid "Unlogged index \"%s.%s\""
-msgstr "索引 \"%s.%s\""
+msgstr "不记录日志的索引 \"%s.%s\""
 
 # describe.c:871
 #: describe.c:1349
@@ -1123,9 +1123,9 @@ msgstr "合成型别 \"%s.%s\""
 
 # describe.c:933
 #: describe.c:1366
-#, fuzzy, c-format
+#, c-format
 msgid "Foreign table \"%s.%s\""
-msgstr "给资料表 \"%s.%s\""
+msgstr "引用的外部表 \"%s.%s\""
 
 # describe.c:744
 #: describe.c:1377
@@ -1151,9 +1151,8 @@ msgstr "定义"
 
 #: describe.c:1396 describe.c:3795 describe.c:3876 describe.c:3944
 #: describe.c:4005
-#, fuzzy
 msgid "FDW Options"
-msgstr "选项"
+msgstr "FDW选项"
 
 # describe.c:1635
 #: describe.c:1400
@@ -1162,12 +1161,12 @@ msgstr "存储"
 
 #: describe.c:1402
 msgid "Stats target"
-msgstr ""
+msgstr "统计目标"
 
 #: describe.c:1451
-#, fuzzy, c-format
+#, c-format
 msgid "collate %s"
-msgstr "排序规则"
+msgstr "校对%s"
 
 #: describe.c:1459
 msgid "not null"
@@ -1233,7 +1232,7 @@ msgstr "规则："
 #: describe.c:1672
 #, c-format
 msgid "Owned by: %s"
-msgstr ""
+msgstr "属于: %s"
 
 # describe.c:1138
 #: describe.c:1727
@@ -1378,9 +1377,8 @@ msgstr "无法登录"
 
 # describe.c:1636
 #: describe.c:2454
-#, fuzzy
 msgid "Replication"
-msgstr "目的地"
+msgstr "复制"
 
 # help.c:123
 #: describe.c:2463
@@ -1395,9 +1393,8 @@ msgid_plural "%d connections"
 msgstr[0] "%d个连接"
 
 #: describe.c:2475
-#, fuzzy
 msgid "Password valid until "
-msgstr "Passwords didn't match.\n"
+msgstr "密码有效直至"
 
 #: describe.c:2540
 #, c-format
@@ -1455,18 +1452,15 @@ msgid "List of relations"
 msgstr "关联列表"
 
 #: describe.c:2743
-#, fuzzy
 msgid "Trusted"
-msgstr "是否信任?"
+msgstr "信任"
 
 # describe.c:257
 #: describe.c:2751
-#, fuzzy
 msgid "Internal Language"
-msgstr "内部名称"
+msgstr "内部语言"
 
 #: describe.c:2752
-#, fuzzy
 msgid "Call Handler"
 msgstr "调用函数"
 
@@ -1475,15 +1469,13 @@ msgid "Validator"
 msgstr "验证"
 
 #: describe.c:2756
-#, fuzzy
 msgid "Inline Handler"
-msgstr "匿名代码块"
+msgstr "内联函数"
 
 # describe.c:1431
 #: describe.c:2784
-#, fuzzy
 msgid "List of languages"
-msgstr "角色列表"
+msgstr "语言列表"
 
 # describe.c:1588
 #: describe.c:2828
@@ -1551,15 +1543,14 @@ msgstr "型别转换列表"
 
 # describe.c:117
 #: describe.c:3067
-#, fuzzy, c-format
+#, c-format
 msgid "The server (version %d.%d) does not support collations.\n"
-msgstr "服务器(版本%d.%d)不支持使用用户映射。\n"
+msgstr "服务器(版本%d.%d)不支持排序校对。\n"
 
 # describe.c:1549
 #: describe.c:3117
-#, fuzzy
 msgid "List of collations"
-msgstr "关联列表"
+msgstr "校对列表"
 
 # describe.c:1753
 #: describe.c:3175
@@ -1716,9 +1707,8 @@ msgid "The server (version %d.%d) does not support foreign-data wrappers.\n"
 msgstr "服务器(版本%d.%d)不支持使用外部数据封装器。\n"
 
 #: describe.c:3779
-#, fuzzy
 msgid "Handler"
-msgstr "调用函数"
+msgstr "处理函数"
 
 # describe.c:289
 #: describe.c:3822
@@ -1766,50 +1756,47 @@ msgstr "列出用户映射"
 
 # describe.c:117
 #: describe.c:3982
-#, fuzzy, c-format
+#, c-format
 msgid "The server (version %d.%d) does not support foreign tables.\n"
-msgstr "服务器(版本%d.%d)不支持使用外部服务器.\n"
+msgstr "服务器(版本%d.%d)不支持使用引用表.\n"
 
 # describe.c:1653
 #: describe.c:4033
-#, fuzzy
 msgid "List of foreign tables"
-msgstr "外部服务器列表"
+msgstr "引用表列表"
 
 # describe.c:117
 #: describe.c:4056 describe.c:4110
-#, fuzzy, c-format
+#, c-format
 msgid "The server (version %d.%d) does not support extensions.\n"
-msgstr "服务器(版本%d.%d) 不支持使用表空间.\n"
+msgstr "服务器(版本%d.%d) 不支持使用扩展.\n"
 
 # describe.c:1653
 #: describe.c:4087
-#, fuzzy
 msgid "List of installed extensions"
-msgstr "字元编码转换列表"
+msgstr "已安装扩展列表"
 
 # describe.c:641
 #: describe.c:4137
-#, fuzzy, c-format
+#, c-format
 msgid "Did not find any extension named \"%s\".\n"
-msgstr "没有找到任何名称为 \"%s\" 的关联。\n"
+msgstr "没有找到任何名称为 \"%s\" 的扩展。\n"
 
 # describe.c:641
 #: describe.c:4140
-#, fuzzy, c-format
+#, c-format
 msgid "Did not find any extensions.\n"
-msgstr "没有找到任何名称为 \"%s\" 的关联。\n"
+msgstr "没有找到任何扩展.\n"
 
 # describe.c:593
 #: describe.c:4184
-#, fuzzy
 msgid "Object Description"
-msgstr "物件描述"
+msgstr "对象描述"
 
 #: describe.c:4193
 #, c-format
 msgid "Objects in extension \"%s\""
-msgstr ""
+msgstr "对象用于扩展 \"%s\""
 
 # help.c:48
 #: help.c:48
@@ -1891,9 +1878,9 @@ msgstr ""
 "                           为psql变量(名称)设定值\n"
 
 #: help.c:97
-#, fuzzy, c-format
+#, c-format
 msgid "  -V, --version            output version information, then exit\n"
-msgstr "  -V, --version             输出版本信息, 然后退出\n"
+msgstr "  -V, --version            输出版本信息, 然后退出\n"
 
 # help.c:98
 #: help.c:98
@@ -1911,9 +1898,9 @@ msgstr ""
 "                          作为一个单一事务来执行命令文件\n"
 
 #: help.c:101
-#, fuzzy, c-format
+#, c-format
 msgid "  -?, --help               show this help, then exit\n"
-msgstr "  -?, --help                显示此帮助, 然后退出\n"
+msgstr "  -?, --help               显示此帮助, 然后退出\n"
 
 # help.c:102
 #: help.c:103
@@ -2057,23 +2044,23 @@ msgstr "  -x, --expanded           打开扩展表格输出\n"
 
 # help.c:119
 #: help.c:126
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -z, --field-separator-zero\n"
 "                           set field separator to zero byte\n"
 msgstr ""
-"  -F, --field-separator=字符串\n"
-"                      设字段分隔符(缺省：\"%s\")\n"
+"  -z, --field-separator-zero\n"
+"                           设置字段分隔符为字节0\n"
 
 # help.c:121
 #: help.c:128
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -0, --record-separator-zero\n"
 "                           set record separator to zero byte\n"
 msgstr ""
-"  -R, --record-separator=字符串\n"
-"                        设定记录分隔符(缺省：换行符号)\n"
+"  -0, --record-separator-zero\n"
+"                           设置记录分隔符为字节0\n"
 
 #: help.c:131
 #, c-format
@@ -2185,18 +2172,18 @@ msgstr "查询缓存区\n"
 
 # help.c:193
 #: help.c:177
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  \\e [FILE] [LINE]       edit the query buffer (or file) with external "
 "editor\n"
-msgstr "  \\e [文件]         使用外部编辑器编辑查询缓存区(或文件)\n"
+msgstr "  \\e [FILE] [LINE]        使用外部编辑器编辑查询缓存区(或文件)\n"
 
 # help.c:193
 #: help.c:178
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  \\ef [FUNCNAME [LINE]]  edit function definition with external editor\n"
-msgstr "  \\ef [函数名称]        使用外部编辑器编辑函数定义\n"
+msgstr "  \\ef [FUNCNAME [LINE]]   使用外部编辑器编辑函数定义\n"
 
 # help.c:195
 #: help.c:179
@@ -2250,11 +2237,11 @@ msgstr "  \\i 文件          从文件中执行命令\n"
 
 # help.c:206
 #: help.c:191
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  \\ir FILE               as \\i, but relative to location of current "
 "script\n"
-msgstr "  \\o [文件]        将全部查询结果写入文件或 |管道\n"
+msgstr "  \\ir FILE               与 \\i类似, 但是相对于当前脚本的位置\n"
 
 # help.c:206
 #: help.c:192
@@ -2306,22 +2293,22 @@ msgstr "  \\db[+]  [模式]     列出表空间\n"
 
 # help.c:217
 #: help.c:202
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dc[S+] [PATTERN]      list conversions\n"
-msgstr "  \\dc[S]  [模式]   列出字元编码转换\n"
+msgstr "  \\dc[S+] [PATTERN]      列表转换\n"
 
 # help.c:218
 #: help.c:203
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dC[+]  [PATTERN]      list casts\n"
-msgstr "  \\dC     [模式]    列出类型强制转换\n"
+msgstr "  \\dC[+]  [PATTERN]      列出类型强制转换\n"
 
 # help.c:219
 #: help.c:204
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  \\dd[S]  [PATTERN]      show object descriptions not displayed elsewhere\n"
-msgstr "  \\dd[S]  [模式]    显示对象的注释\n"
+msgstr "  \\dd[S]  [PATTERN]      显示没有在别处显示的对象描述\n"
 
 # help.c:218
 #: help.c:205
@@ -2331,15 +2318,15 @@ msgstr "  \\ddp     [模式]    列出缺省权限\n"
 
 # help.c:220
 #: help.c:206
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dD[S+] [PATTERN]      list domains\n"
-msgstr "  \\dD[S]  [模式]    列出共同值域\n"
+msgstr "  \\dD[S+] [PATTERN]      列出共同值域\n"
 
 # help.c:228
 #: help.c:207
-#, fuzzy, c-format
+#, c-format
 msgid "  \\det[+] [PATTERN]      list foreign tables\n"
-msgstr "  \\des[+] [模式]    列出外部服务器\n"
+msgstr "  \\det[+] [PATTERN]      列出引用表\n"
 
 # help.c:228
 #: help.c:208
@@ -2392,9 +2379,9 @@ msgstr "  \\dFt[+] [模式]   列出文本搜索模版\n"
 
 # help.c:222
 #: help.c:216
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dg[+]  [PATTERN]      list roles\n"
-msgstr "  \\dg[+]  [模式]      列出角色(或组)\n"
+msgstr "  \\dg[+]  [PATTERN]      列出角色\n"
 
 # help.c:220
 #: help.c:217
@@ -2410,15 +2397,15 @@ msgstr "  \\dl                   列出大对象， 功能与\\lo_list相同\n"
 
 # help.c:228
 #: help.c:219
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dL[S+] [PATTERN]      list procedural languages\n"
-msgstr "  \\dt[S+] [模式]     列出表\n"
+msgstr "  \\dL[S+] [PATTERN]      列出所有过程语言\n"
 
 # help.c:228
 #: help.c:220
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dn[S+] [PATTERN]      list schemas\n"
-msgstr "  \\dn[+]  [模式]    列出模式\n"
+msgstr "  \\dn[S+] [PATTERN]     列出所有模式\n"
 
 # help.c:224
 #: help.c:221
@@ -2428,9 +2415,9 @@ msgstr "  \\do[S]  [模式]   列出运算符\n"
 
 # help.c:220
 #: help.c:222
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dO[S+] [PATTERN]      list collations\n"
-msgstr "  \\dD[S]  [模式]    列出共同值域\n"
+msgstr "  \\dO[S+] [PATTERN]      列出所有校对规则\n"
 
 # help.c:226
 #: help.c:223
@@ -2464,9 +2451,9 @@ msgstr "  \\dT[S+] [模式]  列出数据类型\n"
 
 # help.c:228
 #: help.c:228
-#, fuzzy, c-format
+#, c-format
 msgid "  \\du[+]  [PATTERN]      list roles\n"
-msgstr "  \\du[+]  [模式]    列出角色(用户)\n"
+msgstr "  \\du[+]  [PATTERN]      列出角色\n"
 
 # help.c:228
 #: help.c:229
@@ -2476,15 +2463,15 @@ msgstr "  \\dv[S+] [模式]   列出视图\n"
 
 # help.c:228
 #: help.c:230
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dE[S+] [PATTERN]      list foreign tables\n"
-msgstr "  \\dt[S+] [模式]     列出表\n"
+msgstr "  \\dE[S+] [PATTERN]      列出引用表\n"
 
 # help.c:217
 #: help.c:231
-#, fuzzy, c-format
+#, c-format
 msgid "  \\dx[+]  [PATTERN]      list extensions\n"
-msgstr "  \\dc[S]  [模式]   列出字元编码转换\n"
+msgstr "  \\dx[+]  [PATTERN]      列出扩展\n"
 
 #: help.c:232
 #, c-format
@@ -2493,9 +2480,9 @@ msgstr "  \\l[+]                列出所有的数据库\n"
 
 # help.c:193
 #: help.c:233
-#, fuzzy, c-format
+#, c-format
 msgid "  \\sf[+] FUNCNAME        show a function's definition\n"
-msgstr "  \\ef [函数名称]        使用外部编辑器编辑函数定义\n"
+msgstr "  \\sf[+] FUNCNAME        显示函数定义\n"
 
 # help.c:218
 #: help.c:234
@@ -2538,7 +2525,7 @@ msgstr "  \\H                    切换HTML输出模式 (目前是 %s)\n"
 
 # help.c:239
 #: help.c:243
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  \\pset NAME [VALUE]     set table output option\n"
 "                         (NAME := {format|border|expanded|fieldsep|"
@@ -2546,9 +2533,11 @@ msgid ""
 "                         numericlocale|recordsep|recordsep_zero|tuples_only|"
 "title|tableattr|pager})\n"
 msgstr ""
-"  \\pset 名称 [值]  设定表输出选项\n"
-"                  (名称：= {format|border|expanded|fieldsep|footer|null|\n"
-"                   recordsep|tuples_only|title|tableattr|pager})\n"
+"  \\pset NAME [VALUE]     设定表输出选项\n"
+"                         (NAME := {format|border|expanded|fieldsep|"
+"fieldsep_zero|footer|null|\n"
+"                         numericlocale|recordsep|recordsep_zero|tuples_only|"
+"title|tableattr|pager})\n"
 
 # help.c:243
 #: help.c:246
@@ -2566,9 +2555,9 @@ msgstr ""
 
 # help.c:246
 #: help.c:249
-#, fuzzy, c-format
+#, c-format
 msgid "  \\x [on|off|auto]       toggle expanded output (currently %s)\n"
-msgstr "  \\x [开|关]             切换扩展输出模式(目前是 %s)\n"
+msgstr "  \\x [on|off|auto]       切换扩展输出模式(目前是 %s)\n"
 
 # help.c:123
 #: help.c:253
@@ -2601,7 +2590,7 @@ msgstr "  \\password [USERNAME]  安全地为用户改变口令\n"
 #, c-format
 msgid ""
 "  \\conninfo              display information about current connection\n"
-msgstr ""
+msgstr "  \\conninfo              显示当前连接的相关信息\n"
 
 #: help.c:262
 #, c-format
@@ -2616,9 +2605,9 @@ msgstr "  \\cd [目录]     改变目前的工作目录\n"
 
 # help.c:188
 #: help.c:264
-#, fuzzy, c-format
+#, c-format
 msgid "  \\setenv NAME [VALUE]   set or unset environment variable\n"
-msgstr "  \\unset 名称    清空(删除)内部变量\n"
+msgstr "  \\setenv NAME [VALUE]   设置或清空环境变量\n"
 
 # help.c:186
 #: help.c:265
@@ -2815,14 +2804,14 @@ msgid "invalid output format (internal error): %d"
 msgstr "无效的输出格式 (内部错误): %d"
 
 #: psqlscan.l:704
-#, fuzzy, c-format
+#, c-format
 msgid "skipping recursive expansion of variable \"%s\"\n"
-msgstr "正在查找表 \"%s\" 的默认表达式\n"
+msgstr "跳过变量 \"%s\"的递归扩展\n"
 
 #: psqlscan.l:1579
-#, fuzzy, c-format
+#, c-format
 msgid "unterminated quoted string\n"
-msgstr "未结束的引用字符串"
+msgstr "未结束的引用字符串\n"
 
 #: psqlscan.l:1679
 #, c-format
@@ -2830,9 +2819,9 @@ msgid "%s: out of memory\n"
 msgstr "%s: 内存溢出\n"
 
 #: psqlscan.l:1908
-#, fuzzy, c-format
+#, c-format
 msgid "can't escape without active connection\n"
-msgstr "没有数据库联接时无法恢复大对象\n"
+msgstr "没有数据库连接时无法escape\n"
 
 # describe.c:82
 # describe.c:128
@@ -3024,9 +3013,8 @@ msgid "constraint_name"
 msgstr "约束名称"
 
 #: sql_help.c:206 sql_help.c:729
-#, fuzzy
 msgid "new_constraint_name"
-msgstr "约束名称"
+msgstr "new_constraint_name(新约束名)"
 
 #: sql_help.c:251 sql_help.c:656
 msgid "new_version"
@@ -3034,11 +3022,11 @@ msgstr "新版本"
 
 #: sql_help.c:255 sql_help.c:257
 msgid "member_object"
-msgstr ""
+msgstr "member_object"
 
 #: sql_help.c:258
 msgid "where member_object is:"
-msgstr ""
+msgstr "member_object的位置:"
 
 #: sql_help.c:259 sql_help.c:1109 sql_help.c:2880
 msgid "agg_name"
@@ -3125,15 +3113,13 @@ msgstr "访问索引的方法"
 
 # describe.c:498
 #: sql_help.c:303 sql_help.c:1380
-#, fuzzy
 msgid "handler_function"
-msgstr "标题_函数"
+msgstr "handler_function(处理_函数)"
 
 # describe.c:498
 #: sql_help.c:304 sql_help.c:1381
-#, fuzzy
 msgid "validator_function"
-msgstr "验证函数"
+msgstr "validator_function(验证_函数)"
 
 # describe.c:128
 #: sql_help.c:339 sql_help.c:397 sql_help.c:723 sql_help.c:913 sql_help.c:1763
@@ -3160,9 +3146,8 @@ msgstr "列名称"
 
 # describe.c:1375
 #: sql_help.c:342 sql_help.c:726
-#, fuzzy
 msgid "new_column_name"
-msgstr "列名称"
+msgstr "new_column_name(新列名)"
 
 #: sql_help.c:347 sql_help.c:413 sql_help.c:734 sql_help.c:926
 msgid "where action is one of:"
@@ -3233,9 +3218,8 @@ msgid "op_type"
 msgstr "操作数类型"
 
 #: sql_help.c:533 sql_help.c:1556
-#, fuzzy
 msgid "sort_family_name"
-msgstr "操作符群的名称"
+msgstr "sort_family_name(排序家族名)"
 
 #: sql_help.c:534 sql_help.c:544 sql_help.c:1557
 msgid "support_number"
@@ -3315,9 +3299,8 @@ msgstr "表名"
 # describe.c:128
 #: sql_help.c:737 sql_help.c:742 sql_help.c:929 sql_help.c:933 sql_help.c:1349
 #: sql_help.c:1495 sql_help.c:1738 sql_help.c:1953 sql_help.c:1959
-#, fuzzy
 msgid "collation"
-msgstr "排序规则"
+msgstr "校对规则"
 
 #: sql_help.c:738 sql_help.c:1739 sql_help.c:1750
 msgid "column_constraint"
@@ -3328,9 +3311,8 @@ msgid "table_constraint"
 msgstr "表约束"
 
 #: sql_help.c:757
-#, fuzzy
 msgid "table_constraint_using_index"
-msgstr "表约束"
+msgstr "table_constraint_using_index(表约束使用索引)"
 
 # describe.c:575
 #: sql_help.c:760 sql_help.c:761 sql_help.c:762 sql_help.c:763 sql_help.c:1150
@@ -3356,9 +3338,8 @@ msgid "type_name"
 msgstr "类型名称"
 
 #: sql_help.c:777
-#, fuzzy
 msgid "and table_constraint_using_index is:"
-msgstr "表约束是:"
+msgstr "table_constraint_using_index 是:"
 
 # describe.c:1342
 #: sql_help.c:795 sql_help.c:798
@@ -3386,18 +3367,16 @@ msgid "attribute_name"
 msgstr "属性_名称"
 
 #: sql_help.c:918
-#, fuzzy
 msgid "new_attribute_name"
-msgstr "属性_名称"
+msgstr "new_attribute_name(新属性名)"
 
 #: sql_help.c:924
-#, fuzzy
 msgid "new_enum_value"
-msgstr "新的名称"
+msgstr "new_enum_value(新枚举名)"
 
 #: sql_help.c:925
 msgid "existing_enum_value"
-msgstr ""
+msgstr "existing_enum_value"
 
 #: sql_help.c:987 sql_help.c:1401 sql_help.c:1666 sql_help.c:2029
 #: sql_help.c:2367 sql_help.c:2531 sql_help.c:2801
@@ -3406,15 +3385,13 @@ msgstr "服务器名称"
 
 # help.c:88
 #: sql_help.c:1015 sql_help.c:1018 sql_help.c:2043
-#, fuzzy
 msgid "view_option_name"
-msgstr "like选项"
+msgstr "view_option_name(视图选项名)"
 
 # help.c:88
 #: sql_help.c:1016 sql_help.c:2044
-#, fuzzy
 msgid "view_option_value"
-msgstr "like选项"
+msgstr "view_option_value(视图选项值)"
 
 #: sql_help.c:1041 sql_help.c:3076 sql_help.c:3078 sql_help.c:3102
 msgid "transaction_mode"
@@ -3425,9 +3402,8 @@ msgid "where transaction_mode is one of:"
 msgstr "事务模式可以是下列选项之一:"
 
 #: sql_help.c:1114
-#, fuzzy
 msgid "relation_name"
-msgstr "语言名称"
+msgstr "relation_name(关系名)"
 
 # describe.c:1375
 #: sql_help.c:1139
@@ -3484,9 +3460,8 @@ msgstr "转义字符"
 
 # describe.c:365
 #: sql_help.c:1215
-#, fuzzy
 msgid "encoding_name"
-msgstr "字符集编码"
+msgstr "encoding_name(编码名)"
 
 # describe.c:526
 #: sql_help.c:1241
@@ -3530,9 +3505,8 @@ msgstr "基础_类型"
 
 # help.c:127
 #: sql_help.c:1293
-#, fuzzy
 msgid "locale"
-msgstr "本地接口"
+msgstr "本地化语言"
 
 #: sql_help.c:1294 sql_help.c:1328
 msgid "lc_collate"
@@ -3548,9 +3522,8 @@ msgstr "字符分类"
 
 # describe.c:1636
 #: sql_help.c:1297
-#, fuzzy
 msgid "existing_collation"
-msgstr "目的地"
+msgstr "existing_collation(当前的本地化语言)"
 
 # describe.c:187
 #: sql_help.c:1307
@@ -3578,19 +3551,16 @@ msgstr "约束是:"
 
 # describe.c:498
 #: sql_help.c:1365
-#, fuzzy
 msgid "extension_name"
-msgstr "函数名称"
+msgstr "extension_name(扩展名)"
 
 #: sql_help.c:1367
-#, fuzzy
 msgid "version"
-msgstr "版本"
+msgstr "version(版本)"
 
 #: sql_help.c:1368
-#, fuzzy
 msgid "old_version"
-msgstr "新版本"
+msgstr "老版本"
 
 # describe.c:1639
 #: sql_help.c:1430 sql_help.c:1758
@@ -3715,9 +3685,8 @@ msgstr "外部数据封装器的名称"
 
 # describe.c:1688
 #: sql_help.c:1741
-#, fuzzy
 msgid "source_table"
-msgstr "类型指派中的源数据类型"
+msgstr "源表"
 
 # help.c:88
 #: sql_help.c:1742
@@ -3828,9 +3797,8 @@ msgid "arguments"
 msgstr "参数"
 
 #: sql_help.c:1906
-#, fuzzy
 msgid "where event can be one of:"
-msgstr "选项可以是下列内容之一:"
+msgstr "事件可以下述之一:"
 
 # describe.c:415
 # describe.c:543
@@ -3844,27 +3812,23 @@ msgstr "标签"
 # describe.c:1478
 # describe.c:1587
 #: sql_help.c:1957
-#, fuzzy
 msgid "subtype"
-msgstr "类型"
+msgstr "子类型"
 
 # describe.c:512
 #: sql_help.c:1958
-#, fuzzy
 msgid "subtype_operator_class"
-msgstr "排序_操作符"
+msgstr "subtype_operator_class(子类型_操作符_类)"
 
 # describe.c:498
 #: sql_help.c:1960
-#, fuzzy
 msgid "canonical_function"
-msgstr "分析_函数"
+msgstr "标准_函数"
 
 # describe.c:498
 #: sql_help.c:1961
-#, fuzzy
 msgid "subtype_diff_function"
-msgstr "发送_函数"
+msgstr "subtype_diff_function(子类型_区分_函数)"
 
 # describe.c:498
 #: sql_help.c:1963
@@ -3939,9 +3903,8 @@ msgid "delimiter"
 msgstr "分隔符"
 
 #: sql_help.c:1979
-#, fuzzy
 msgid "collatable"
-msgstr "排序规则"
+msgstr "要校对的"
 
 #: sql_help.c:2075 sql_help.c:2561 sql_help.c:2933 sql_help.c:3003
 #: sql_help.c:3139 sql_help.c:3218 sql_help.c:3296
@@ -4010,9 +3973,8 @@ msgstr "序列名称"
 
 # describe.c:1375
 #: sql_help.c:2527 sql_help.c:2797
-#, fuzzy
 msgid "domain_name"
-msgstr "列名称"
+msgstr "域_名称"
 
 #: sql_help.c:2535 sql_help.c:2805
 msgid "arg_name"
@@ -4058,7 +4020,7 @@ msgstr "保存点名称"
 
 #: sql_help.c:2876
 msgid "provider"
-msgstr ""
+msgstr "provider(提供者)"
 
 #: sql_help.c:2937 sql_help.c:2968 sql_help.c:2970 sql_help.c:3008
 #: sql_help.c:3143 sql_help.c:3174 sql_help.c:3176 sql_help.c:3300
@@ -4127,21 +4089,20 @@ msgstr "with查询语句是："
 # describe.c:543
 # describe.c:1477
 #: sql_help.c:2977 sql_help.c:3183 sql_help.c:3340
-#, fuzzy
 msgid "values"
 msgstr "值"
 
 #: sql_help.c:2978 sql_help.c:3184 sql_help.c:3341
 msgid "insert"
-msgstr ""
+msgstr "insert"
 
 #: sql_help.c:2979 sql_help.c:3185 sql_help.c:3342
 msgid "update"
-msgstr ""
+msgstr "update"
 
 #: sql_help.c:2980 sql_help.c:3186 sql_help.c:3343
 msgid "delete"
-msgstr ""
+msgstr "delete"
 
 # describe.c:415
 # describe.c:543
@@ -4156,7 +4117,7 @@ msgstr "时间区域"
 
 #: sql_help.c:3077
 msgid "snapshot_id"
-msgstr ""
+msgstr "snapshot_id"
 
 #: sql_help.c:3225
 msgid "from_list"
@@ -4179,9 +4140,8 @@ msgstr "更改聚集函数的定义"
 
 # sql_help.h:45
 #: sql_help.h:192
-#, fuzzy
 msgid "change the definition of a collation"
-msgstr "更改函数的定义"
+msgstr "更改校对规则的定义"
 
 # sql_help.h:33
 #: sql_help.h:197
@@ -4205,9 +4165,8 @@ msgstr "更改共同值域的定义"
 
 # sql_help.h:33
 #: sql_help.h:217
-#, fuzzy
 msgid "change the definition of an extension"
-msgstr "更改一个字元编码转换的定义"
+msgstr "更改扩展的定义"
 
 # sql_help.h:85
 #: sql_help.h:222
@@ -4216,9 +4175,8 @@ msgstr "更改外部数据封装器的定义"
 
 # sql_help.h:85
 #: sql_help.h:227
-#, fuzzy
 msgid "change the definition of a foreign table"
-msgstr "更改外部服务器的定义"
+msgstr "更改外部表的定义"
 
 # sql_help.h:45
 #: sql_help.h:232
@@ -4387,9 +4345,8 @@ msgstr "建立新的型别转换"
 
 # sql_help.h:153
 #: sql_help.h:402
-#, fuzzy
 msgid "define a new collation"
-msgstr "建立新的函数"
+msgstr "建立新的校对规则"
 
 # sql_help.h:141
 #: sql_help.h:407
@@ -4408,7 +4365,7 @@ msgstr "建立新的共同值域"
 
 #: sql_help.h:422
 msgid "install an extension"
-msgstr ""
+msgstr "安装一个扩展"
 
 # sql_help.h:205
 #: sql_help.h:427
@@ -4417,9 +4374,8 @@ msgstr "定义一个新的外部数据封装器"
 
 # sql_help.h:201
 #: sql_help.h:432
-#, fuzzy
 msgid "define a new foreign table"
-msgstr "建立新的触发器"
+msgstr "建立新的外部表"
 
 # sql_help.h:153
 #: sql_help.h:437
@@ -4566,9 +4522,8 @@ msgstr "移除一个型别转换"
 
 # sql_help.h:249
 #: sql_help.h:592
-#, fuzzy
 msgid "remove a collation"
-msgstr "移除函数"
+msgstr "移除一个校对规则"
 
 # sql_help.h:237
 #: sql_help.h:597
@@ -4587,9 +4542,8 @@ msgstr "移除一个共同值域"
 
 # sql_help.h:237
 #: sql_help.h:612
-#, fuzzy
 msgid "remove an extension"
-msgstr "移除一个字元编码转换"
+msgstr "移除一个扩展"
 
 # sql_help.h:297
 #: sql_help.h:617
@@ -4598,9 +4552,8 @@ msgstr "删除一个外部数据封装器"
 
 # sql_help.h:285
 #: sql_help.h:622
-#, fuzzy
 msgid "remove a foreign table"
-msgstr "移除资料表"
+msgstr "移除外部引用表"
 
 # sql_help.h:249
 #: sql_help.h:627
@@ -4811,9 +4764,8 @@ msgstr "在目前的事物交易中建立新的储存点(Savepoint)"
 
 # sql_help.h:117
 #: sql_help.h:857
-#, fuzzy
 msgid "define or change a security label applied to an object"
-msgstr "定义或更改一个物件的注解"
+msgstr "定义或更改一个对象的安全标签"
 
 # sql_help.h:385
 #: sql_help.h:862 sql_help.h:907 sql_help.h:937
@@ -4929,8 +4881,11 @@ msgid ""
 "Query was:\n"
 "%s\n"
 msgstr ""
+"tab完成查询失败: %s\n"
+"查询是:\n"
+"%s\n"
 
 #: variables.c:115
-#, fuzzy, c-format
+#, c-format
 msgid "unrecognized Boolean value; assuming \"on\"\n"
-msgstr "函数 \"%s\" 的意外正向易失值\n"
+msgstr "不能识别的布尔型值; 假定值为 \"on\"\n"

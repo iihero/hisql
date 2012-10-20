@@ -4,6 +4,11 @@ http://babel.postgresql.org
 
 mingw 编译 postgresql9.1.3 or later.
 
+
+make postgis via msys/mingw:
+http://trac.osgeo.org/postgis/wiki/DevWikiWinMingWSys_20_MSVC
+
+
 2010年做了一个精简版的PostgreSQL 8.4.4，依照文档推荐的方法用VC 2005编译，但是编译出来的结果运行不够稳定，pg_dump和pg_restore都异常退出，提示内存不能为READ。
 改用MinGW和GCC 4.5编译后，问题解决。
 

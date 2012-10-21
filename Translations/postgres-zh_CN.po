@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: postgres (PostgreSQL 9.0)\n"
 "Report-Msgid-Bugs-To: pgsql-bugs@postgresql.org\n"
 "POT-Creation-Date: 2012-10-19 09:15+0000\n"
-"PO-Revision-Date: 2012-10-20 08:43+0800\n"
+"PO-Revision-Date: 2012-10-21 20:30+0800\n"
 "Last-Translator: Xiong He <iihero@qq.com>\n"
 "Language-Team: Chinese (Simplified)\n"
 "Language: zh_CN\n"
@@ -42,14 +42,14 @@ msgid "could not set junction for \"%s\": %s\n"
 msgstr "无法为\"%s\"设置连接点: %s\n"
 
 #: ../port/dirmod.c:366
-#, fuzzy, c-format
+#, c-format
 msgid "could not get junction for \"%s\": %s"
-msgstr "无法为\"%s\"设置连接点: %s"
+msgstr "无法得到联接 \"%s\": %s"
 
 #: ../port/dirmod.c:369
-#, fuzzy, c-format
+#, c-format
 msgid "could not get junction for \"%s\": %s\n"
-msgstr "无法为\"%s\"设置连接点: %s\n"
+msgstr "无法得到联接 \"%s\": %s\n"
 
 #: ../port/dirmod.c:451
 #, c-format
@@ -280,9 +280,9 @@ msgid "index row size %lu exceeds maximum %lu for index \"%s\""
 msgstr "索引行的大小 %1$lu 超过了索引\"%3$s\"所允许的最大值%2$lu"
 
 #: access/gin/ginscan.c:400
-#, fuzzy, c-format
+#, c-format
 msgid "old GIN indexes do not support whole-index scans nor searches for nulls"
-msgstr "GIN索引不支持完整索引 (whole-index) 扫描"
+msgstr "老的GIN索引不支持完整索引 (whole-index) 扫描，也不支持null值搜索"
 
 #: access/gin/ginscan.c:401
 #, c-format
@@ -290,14 +290,14 @@ msgid "To fix this, do REINDEX INDEX \"%s\"."
 msgstr "要解决此问题, 可执行REINDEX INDEX \"%s\"."
 
 #: access/gist/gist.c:76 access/gist/gistbuild.c:169
-#, fuzzy, c-format
+#, c-format
 msgid "unlogged GiST indexes are not supported"
-msgstr "不支持多维数组"
+msgstr "不支持不带事务日志的GiST索引"
 
 #: access/gist/gist.c:600 access/gist/gistvacuum.c:267
-#, fuzzy, c-format
+#, c-format
 msgid "index \"%s\" contains an inner tuple marked as invalid"
-msgstr "索引\"%s\"在块%u上包含已损坏的页"
+msgstr "索引\"%s\"包含无效的内部元组"
 
 #: access/gist/gist.c:602 access/gist/gistvacuum.c:269
 #, c-format
@@ -316,14 +316,14 @@ msgid "Please REINDEX it."
 msgstr "请重建索引 (REINDEX)."
 
 #: access/gist/gistbuild.c:265
-#, fuzzy, c-format
+#, c-format
 msgid "invalid value for \"buffering\" option"
-msgstr "布尔选项\"%s\"的值无效:%s"
+msgstr "\"buffering\"选项值无效"
 
 #: access/gist/gistbuild.c:266
-#, fuzzy, c-format
+#, c-format
 msgid "Valid values are \"on\", \"off\", and \"auto\"."
-msgstr "有效值在 \"%f\"和 \"%f\"之间"
+msgstr "有效值为\"on\", \"off\", 或 \"auto\"之一."
 
 #: access/gist/gistbuildbuffers.c:780 utils/sort/logtape.c:213
 #, c-format
@@ -460,9 +460,9 @@ msgid "version mismatch in index \"%s\": file version %d, code version %d"
 msgstr "在索引 \"%s\" 中版本不匹配: 文件版本 %d, 代码版本 %d"
 
 #: access/spgist/spgutils.c:664
-#, fuzzy, c-format
+#, c-format
 msgid "SP-GiST inner tuple size %lu exceeds maximum %lu"
-msgstr "索引列大小 %lu 超过散列最大值 %lu"
+msgstr "SP-GiST内部元组大小%lu超出最大值%lu"
 
 #: access/transam/slru.c:607
 #, c-format
@@ -737,9 +737,9 @@ msgid "cannot PREPARE a transaction that has operated on temporary tables"
 msgstr "无法在一个已经在临时表上操作的事务上执行PREPARE操作"
 
 #: access/transam/xact.c:2107
-#, fuzzy, c-format
+#, c-format
 msgid "cannot PREPARE a transaction that has exported snapshots"
-msgstr "无法在一个已经在临时表上操作的事务上执行PREPARE操作"
+msgstr "无法在一个已经导出快照的事务上执行PREPARE操作"
 
 #. translator: %s represents an SQL statement name
 #: access/transam/xact.c:2916
@@ -1131,14 +1131,14 @@ msgid "Timeline IDs must be less than child timeline's ID."
 msgstr "Timeline ID 必须小于子 timeline 的 ID."
 
 #: access/transam/xlog.c:4474
-#, fuzzy, c-format
+#, c-format
 msgid "new timeline %u is not a child of database system timeline %u"
-msgstr "所要求的时间线%u不附属数据库系统时间线%u"
+msgstr "新的时间线%u不附属于数据库系统时间线%u"
 
 #: access/transam/xlog.c:4492
-#, fuzzy, c-format
+#, c-format
 msgid "new target timeline is %u"
-msgstr "recovery_target_timeline = %u"
+msgstr "新的目标时间线为%u"
 
 #: access/transam/xlog.c:4717
 #, c-format
@@ -1474,14 +1474,14 @@ msgid "recovery stopping before abort of transaction %u, time %s"
 msgstr "恢复停止在事物 %u 中断之前, 时间 %s"
 
 #: access/transam/xlog.c:5863
-#, fuzzy, c-format
+#, c-format
 msgid "recovery stopping at restore point \"%s\", time %s"
-msgstr "恢复停止在事物 %u 中断之后, 时间 %s"
+msgstr "恢复停止在恢复点 \"%s\", 时间 %s"
 
 #: access/transam/xlog.c:5891
-#, fuzzy, c-format
+#, c-format
 msgid "recovery has paused"
-msgstr "恢复操作正在进行中"
+msgstr "恢复操作已暂停"
 
 #: access/transam/xlog.c:5892
 #, c-format
@@ -1598,9 +1598,9 @@ msgid "starting point-in-time recovery to %s"
 msgstr "开始执行到%s的基于时间点恢复"
 
 #: access/transam/xlog.c:6213
-#, fuzzy, c-format
+#, c-format
 msgid "starting point-in-time recovery to \"%s\""
-msgstr "开始执行到%s的基于时间点恢复"
+msgstr "开始执行到基于时间点恢复的时间点\"%s\""
 
 #: access/transam/xlog.c:6217
 #, c-format
@@ -1613,9 +1613,9 @@ msgid "checkpoint record is at %X/%X"
 msgstr "checkpoint 记录位置在 %X/%X"
 
 #: access/transam/xlog.c:6254
-#, fuzzy, c-format
+#, c-format
 msgid "could not find redo location referenced by checkpoint record"
-msgstr "无法找到需要的 checkpoint 记录"
+msgstr "无法找到checkpoint 记录对应的重做日志位置"
 
 #: access/transam/xlog.c:6255 access/transam/xlog.c:6262
 #, c-format
@@ -1686,11 +1686,11 @@ msgid "backup_label contains data inconsistent with control file"
 msgstr "backup_label 包含了与控制文件不一致的数据"
 
 #: access/transam/xlog.c:6428
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "This means that the backup is corrupted and you will have to use another "
 "backup for recovery."
-msgstr "这意味着一些数据被毁坏, 你将不得不使用最新的备份恢复."
+msgstr "这意味着一些数据备份已毁坏, 你将不得不使用别的备份进行恢复."
 
 #: access/transam/xlog.c:6492
 #, c-format
@@ -1723,9 +1723,9 @@ msgid "requested recovery stop point is before consistent recovery point"
 msgstr "所要求的恢复停止点在一致性恢复点之前"
 
 #: access/transam/xlog.c:6846 access/transam/xlog.c:6850
-#, fuzzy, c-format
+#, c-format
 msgid "WAL ends before end of online backup"
-msgstr "WAL的级别不能满足在线备份的要求"
+msgstr "联机备份终止之前，WAL已经终止"
 
 #: access/transam/xlog.c:6847
 #, c-format
@@ -1865,14 +1865,14 @@ msgid "recovery restart point at %X/%X"
 msgstr "恢复得重新启动点是在%X/%X开始"
 
 #: access/transam/xlog.c:8518
-#, fuzzy, c-format
+#, c-format
 msgid "restore point \"%s\" created at %X/%X"
-msgstr "恢复得重新启动点是在%X/%X开始"
+msgstr "恢复点\"%s\"，创建于%X/%X"
 
 #: access/transam/xlog.c:8689
-#, fuzzy, c-format
+#, c-format
 msgid "online backup was canceled, recovery cannot continue"
-msgstr "由于取消了在线备份操作，恢复操作无法继续"
+msgstr "在线备份操作已取消，恢复操作无法继续"
 
 #: access/transam/xlog.c:8752
 #, c-format
@@ -1900,9 +1900,9 @@ msgid "could not fdatasync log file %u, segment %u: %m"
 msgstr "无法同步 (fdatasync) 日志文件 %u, 段 %u: %m"
 
 #: access/transam/xlog.c:9195 access/transam/xlog.c:9525
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser or replication role to run a backup"
-msgstr "运行备份必须为超级用户"
+msgstr "运行备份必须为超级用户或者是复制角色用户"
 
 #: access/transam/xlog.c:9203 access/transam/xlog.c:9533
 #: access/transam/xlogfuncs.c:107 access/transam/xlogfuncs.c:139
@@ -1932,9 +1932,9 @@ msgid ""
 msgstr "在服务器启动的时候wal_level必须被设置为\"archive\"或\"hot_standby\"."
 
 #: access/transam/xlog.c:9219
-#, fuzzy, c-format
+#, c-format
 msgid "backup label too long (max %d bytes)"
-msgstr "词太长了(%ld字节, 最大 %ld 字节)"
+msgstr "备份标签名超长(最大为%d字节)"
 
 #: access/transam/xlog.c:9250 access/transam/xlog.c:9426
 #, c-format
@@ -2017,14 +2017,14 @@ msgid ""
 msgstr "pg_stop_backup在等待所有需要的WAL段归档(已过去%d秒)"
 
 #: access/transam/xlog.c:9813
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Check that your archive_command is executing properly.  pg_stop_backup can "
 "be canceled safely, but the database backup will not be usable without all "
 "the WAL segments."
 msgstr ""
-"请检查您的归档命令是否正确执行。pg_stop_backup命令可以安全退出，但是没有所有"
-"需要的WAL段的话，数据库备份将无法使用。"
+"请检查您的归档命令是否正确执行。pg_stop_backup命令可以安全退出，但是如果没有"
+"所有需要的WAL段，数据库备份将无法使用."
 
 #: access/transam/xlog.c:9820
 #, c-format
@@ -2045,9 +2045,9 @@ msgid "xlog redo %s"
 msgstr "xlog重做 %s"
 
 #: access/transam/xlog.c:10083
-#, fuzzy, c-format
+#, c-format
 msgid "online backup mode canceled"
-msgstr "取消在线备份模式"
+msgstr "在线备份模式已取消"
 
 #: access/transam/xlog.c:10084
 #, c-format
@@ -2055,9 +2055,9 @@ msgid "\"%s\" was renamed to \"%s\"."
 msgstr "\"%s\" 被重新命名为\"%s\"."
 
 #: access/transam/xlog.c:10091
-#, fuzzy, c-format
+#, c-format
 msgid "online backup mode was not canceled"
-msgstr "没有取消在线备份模式"
+msgstr "在线备份模式没有取消"
 
 #: access/transam/xlog.c:10092
 #, c-format
@@ -2070,9 +2070,9 @@ msgid "could not read from log file %u, segment %u, offset %u: %m"
 msgstr "无法从日志文件 %u 读取, 段 %u, 偏移量 %u: %m"
 
 #: access/transam/xlog.c:10550
-#, fuzzy, c-format
+#, c-format
 msgid "received promote request"
-msgstr "接到到智能 (smart) 停止请求"
+msgstr "接收到提或请求"
 
 #: access/transam/xlog.c:10563
 #, c-format
@@ -2085,19 +2085,19 @@ msgid "must be superuser to switch transaction log files"
 msgstr "必须为超级用户才能切换事务日志文件"
 
 #: access/transam/xlogfuncs.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser to create a restore point"
-msgstr "只有超级用户能创建基类型"
+msgstr "只有超级用户能创建恢复点"
 
 #: access/transam/xlogfuncs.c:145
-#, fuzzy, c-format
+#, c-format
 msgid "WAL level not sufficient for creating a restore point"
-msgstr "WAL的级别不能满足在线备份的要求"
+msgstr "WAL的级别不能满足创建恢复点的要求"
 
 #: access/transam/xlogfuncs.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "value too long for restore point (maximum %d characters)"
-msgstr "对于字符类型来说这个值太长了(%d)"
+msgstr "恢复点值超长(最大%d个字符)"
 
 #: access/transam/xlogfuncs.c:289
 #, c-format
@@ -2117,31 +2117,31 @@ msgstr "在恢复过程中无法执行pg_xlogfile_name() "
 
 #: access/transam/xlogfuncs.c:396 access/transam/xlogfuncs.c:418
 #: access/transam/xlogfuncs.c:440
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser to control recovery"
-msgstr "只有超级用户能设置授权者"
+msgstr "只有超级用户才能控制恢复"
 
 #: access/transam/xlogfuncs.c:401 access/transam/xlogfuncs.c:423
 #: access/transam/xlogfuncs.c:445
-#, fuzzy, c-format
+#, c-format
 msgid "recovery is not in progress"
-msgstr "恢复操作正在进行中"
+msgstr "恢复操作没在进行中"
 
 #: access/transam/xlogfuncs.c:402 access/transam/xlogfuncs.c:424
 #: access/transam/xlogfuncs.c:446
-#, fuzzy, c-format
+#, c-format
 msgid "Recovery control functions can only be executed during recovery."
-msgstr "在恢复期间无法执行WAL控制函数"
+msgstr "在恢复期间无法执行恢复控制函数"
 
 #: access/transam/xlogfuncs.c:495 access/transam/xlogfuncs.c:501
-#, fuzzy, c-format
+#, c-format
 msgid "invalid input syntax for transaction log location: \"%s\""
-msgstr "无法解析事务日志位置\"%s\""
+msgstr "事务日志位置\"%s\"出现无效的输入语法"
 
 #: access/transam/xlogfuncs.c:542 access/transam/xlogfuncs.c:546
-#, fuzzy, c-format
+#, c-format
 msgid "xrecoff \"%X\" is out of valid range, 0..%X"
-msgstr "索引 %d 超出有效范围, 0..%d"
+msgstr "xrecoff  \"%X\"超出有效范围, 0..%X"
 
 #: bootstrap/bootstrap.c:279 postmaster/postmaster.c:701 tcop/postgres.c:3435
 #, c-format
@@ -2226,9 +2226,9 @@ msgid "invalid privilege type %s for database"
 msgstr "无效的数据库权限类型 %s"
 
 #: catalog/aclchk.c:460
-#, fuzzy, c-format
+#, c-format
 msgid "invalid privilege type %s for domain"
-msgstr "列的权限类型%s无效"
+msgstr "域的权限类型%s无效"
 
 #: catalog/aclchk.c:464 catalog/aclchk.c:933
 #, c-format
@@ -2256,9 +2256,9 @@ msgid "invalid privilege type %s for tablespace"
 msgstr "无效的表空间权限类型 %s"
 
 #: catalog/aclchk.c:484 catalog/aclchk.c:937
-#, fuzzy, c-format
+#, c-format
 msgid "invalid privilege type %s for type"
-msgstr "无效的表空间权限类型 %s"
+msgstr "类型的权限类型 %s无效"
 
 #: catalog/aclchk.c:488
 #, c-format
@@ -2371,9 +2371,9 @@ msgid "Only superusers can use untrusted languages."
 msgstr "只有超级用户可以使用非信任语言."
 
 #: catalog/aclchk.c:3075
-#, fuzzy, c-format
+#, c-format
 msgid "cannot set privileges of array types"
-msgstr "不能更改数组类型%s"
+msgstr "不能设置数组类型的权限"
 
 #: catalog/aclchk.c:3076
 #, c-format
@@ -2452,9 +2452,9 @@ msgid "permission denied for operator family %s"
 msgstr "对于操作符表%s的权限不够"
 
 #: catalog/aclchk.c:3276
-#, fuzzy, c-format
+#, c-format
 msgid "permission denied for collation %s"
-msgstr "对关系 %s 权限不够"
+msgstr "对排序规则 %s 权限不够"
 
 #: catalog/aclchk.c:3278
 #, c-format
@@ -2487,9 +2487,9 @@ msgid "permission denied for foreign server %s"
 msgstr "访问外部服务器%s的权限不足"
 
 #: catalog/aclchk.c:3290
-#, fuzzy, c-format
+#, c-format
 msgid "permission denied for extension %s"
-msgstr "对关系 %s 权限不够"
+msgstr "对扩展 %s 权限不够"
 
 #: catalog/aclchk.c:3296 catalog/aclchk.c:3298
 #, c-format
@@ -2547,9 +2547,9 @@ msgid "must be owner of operator family %s"
 msgstr "必须是操作符集合 %s 的属主"
 
 #: catalog/aclchk.c:3320
-#, fuzzy, c-format
+#, c-format
 msgid "must be owner of collation %s"
-msgstr "必须是关系 %s 的属主"
+msgstr "必须是排序规则 %s 的属主"
 
 #: catalog/aclchk.c:3322
 #, c-format
@@ -2584,9 +2584,9 @@ msgid "must be owner of foreign server %s"
 msgstr "必须是外部服务器 %s 的属主"
 
 #: catalog/aclchk.c:3334
-#, fuzzy, c-format
+#, c-format
 msgid "must be owner of extension %s"
-msgstr "必须是关系 %s 的属主"
+msgstr "必须是扩展 %s 的属主"
 
 #: catalog/aclchk.c:3376
 #, c-format
@@ -2674,9 +2674,9 @@ msgid "text search configuration with OID %u does not exist"
 msgstr "带有OID为%u的文本搜索配置不存在"
 
 #: catalog/aclchk.c:4921
-#, fuzzy, c-format
+#, c-format
 msgid "collation with OID %u does not exist"
-msgstr "OID 为 %u 的关系不存在"
+msgstr "OID 为 %u 的排序规则不存在"
 
 #: catalog/aclchk.c:4947
 #, c-format
@@ -2684,9 +2684,9 @@ msgid "conversion with OID %u does not exist"
 msgstr "OID 为 %u 的编码转换不存在"
 
 #: catalog/aclchk.c:4988
-#, fuzzy, c-format
+#, c-format
 msgid "extension with OID %u does not exist"
-msgstr "OID 为 %u 的关系不存在"
+msgstr "OID 为 %u 的扩展不存在"
 
 #: catalog/catalog.c:77
 #, c-format
@@ -2794,9 +2794,9 @@ msgid "cast from %s to %s"
 msgstr "%s 转换为 %s"
 
 #: catalog/dependency.c:2368
-#, fuzzy, c-format
+#, c-format
 msgid "collation %s"
-msgstr "关系 %s"
+msgstr "排序规则 %s"
 
 #: catalog/dependency.c:2392
 #, c-format
@@ -2843,18 +2843,18 @@ msgstr "处理方法 %s 的操作符类 %s"
 #. description of the operator family, and the last %s is the
 #. textual form of the operator with arguments.
 #: catalog/dependency.c:2562
-#, fuzzy, c-format
+#, c-format
 msgid "operator %d (%s, %s) of %s: %s"
-msgstr "%3$s的操作符%1$d %2$s"
+msgstr "%5$s: %4$s中的操作符%1$d (%2$s,%3$s)"
 
 #. translator: %d is the function number, the first two %s's
 #. are data type names, the third %s is the description of the
 #. operator family, and the last %s is the textual form of the
 #. function with arguments.
 #: catalog/dependency.c:2612
-#, fuzzy, c-format
+#, c-format
 msgid "function %d (%s, %s) of %s: %s"
-msgstr "%3$s 的函数%1$d %2$s "
+msgstr "%4$s: %5$s 的函数%1$d (%2$s, %3$s)"
 
 #: catalog/dependency.c:2652
 #, c-format
@@ -2950,9 +2950,9 @@ msgid " in schema %s"
 msgstr "在模式%s中"
 
 #: catalog/dependency.c:2913
-#, fuzzy, c-format
+#, c-format
 msgid "extension %s"
-msgstr "关系 %s"
+msgstr "扩展 %s"
 
 #: catalog/dependency.c:2971
 #, c-format
@@ -2990,9 +2990,9 @@ msgid "composite type %s"
 msgstr "复合类型 %s"
 
 #: catalog/dependency.c:2999
-#, fuzzy, c-format
+#, c-format
 msgid "foreign table %s"
-msgstr "toast 表 %s"
+msgstr "外部表 %s"
 
 #: catalog/dependency.c:3004
 #, c-format
@@ -3046,9 +3046,9 @@ msgid "column \"%s\" has pseudo-type %s"
 msgstr "字段 \"%s\" 有伪类型 %s"
 
 #: catalog/heap.c:525
-#, fuzzy, c-format
+#, c-format
 msgid "composite type %s cannot be made a member of itself"
-msgstr "混合类型必需至少有一个属性"
+msgstr "混合类型 %s 的成员不能为自身"
 
 #: catalog/heap.c:567 commands/createas.c:291
 #, c-format
@@ -3096,10 +3096,10 @@ msgid "constraint \"%s\" for relation \"%s\" already exists"
 msgstr "关系 \"%2$s\" 的约束 \"%1$s\" 已经存在"
 
 #: catalog/heap.c:2334
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "constraint \"%s\" conflicts with non-inherited constraint on relation \"%s\""
-msgstr "不能删除关系\"%2$s\"的继承约束\"%1$s\""
+msgstr "关系\"%2$s\"上的约束\"%1$s\"与非继承约束相冲突"
 
 #: catalog/heap.c:2348
 #, c-format
@@ -3216,9 +3216,9 @@ msgid "shared indexes cannot be created after initdb"
 msgstr "在 initdb 之后, 不能创建共享索引"
 
 #: catalog/index.c:1960
-#, fuzzy, c-format
+#, c-format
 msgid "building index \"%s\" on table \"%s\""
-msgstr "为表 \"%s\" 读取索引\n"
+msgstr "为表 \"%2$s\" 建立索引\"%1$s\""
 
 #: catalog/index.c:3037
 #, c-format
@@ -3237,9 +3237,9 @@ msgid "temporary tables cannot specify a schema name"
 msgstr "临时表不能指定模式名称"
 
 #: catalog/namespace.c:372
-#, fuzzy, c-format
+#, c-format
 msgid "could not obtain lock on relation \"%s.%s\""
-msgstr "无法在关系 \"%s\" 上获得锁"
+msgstr "无法在关系 \"%s.%s\" 上获得锁"
 
 #: catalog/namespace.c:377 commands/lockcmds.c:144
 #, c-format
@@ -3263,19 +3263,19 @@ msgid "no schema has been selected to create in"
 msgstr "创建中没有选择模式"
 
 #: catalog/namespace.c:626 catalog/namespace.c:639
-#, fuzzy, c-format
+#, c-format
 msgid "cannot create relations in temporary schemas of other sessions"
-msgstr "不能在其他会话的临时表上创建索引"
+msgstr "不能在其他会话的临时方案上创建关系"
 
 #: catalog/namespace.c:630
-#, fuzzy, c-format
+#, c-format
 msgid "cannot create temporary relation in non-temporary schema"
-msgstr "不能在恢复过程中创建临时表"
+msgstr "不能在非临时方案上创建临时关系"
 
 #: catalog/namespace.c:645
-#, fuzzy, c-format
+#, c-format
 msgid "only temporary relations may be created in temporary schemas"
-msgstr "在pg_global表空间中只能放置共享关系"
+msgstr "临时方案里只能创建临时关系"
 
 #: catalog/namespace.c:2122
 #, c-format
@@ -3310,9 +3310,9 @@ msgid "improper qualified name (too many dotted names): %s"
 msgstr "不合适的条件名称 (名字中太多的点符号): %s"
 
 #: catalog/namespace.c:2739
-#, fuzzy, c-format
+#, c-format
 msgid "%s is already in schema \"%s\""
-msgstr "在模式\"%2$s\"中已经有类型 %1$s了"
+msgstr "在模式\"%2$s\"中已存在 %1$s了"
 
 #: catalog/namespace.c:2747
 #, c-format
@@ -3336,9 +3336,9 @@ msgid "improper relation name (too many dotted names): %s"
 msgstr "不合适的关系名称 (名字中太多的点符号): %s"
 
 #: catalog/namespace.c:3274
-#, fuzzy, c-format
+#, c-format
 msgid "collation \"%s\" for encoding \"%s\" does not exist"
-msgstr "表 \"%2$s\" 的 \"%1$s\" 约束不存在"
+msgstr "编码 \"%2$s\" 中的排序规则 \"%1$s\" 不存在"
 
 #: catalog/namespace.c:3326
 #, c-format
@@ -3366,9 +3366,9 @@ msgid "database name cannot be qualified"
 msgstr "不能限定数据库名称"
 
 #: catalog/objectaddress.c:529 commands/extension.c:2208
-#, fuzzy, c-format
+#, c-format
 msgid "extension name cannot be qualified"
-msgstr "不能限定角色名称"
+msgstr "扩展名不合格"
 
 #: catalog/objectaddress.c:532
 msgid "tablespace name cannot be qualified"
@@ -3387,14 +3387,12 @@ msgid "language name cannot be qualified"
 msgstr "不能限定language名称"
 
 #: catalog/objectaddress.c:544
-#, fuzzy
 msgid "foreign-data wrapper name cannot be qualified"
-msgstr "不能限定数据库名称"
+msgstr "foreign-data包装器名无法限定"
 
 #: catalog/objectaddress.c:547
-#, fuzzy
 msgid "server name cannot be qualified"
-msgstr "不能限定角色名称"
+msgstr "无法限定服务器名"
 
 #: catalog/objectaddress.c:655 catalog/toasting.c:92 commands/indexcmds.c:371
 #: commands/lockcmds.c:92 commands/tablecmds.c:204 commands/tablecmds.c:1230
@@ -3412,14 +3410,14 @@ msgstr "\"%s\" 不是一个视图"
 
 #: catalog/objectaddress.c:669 commands/tablecmds.c:234
 #: commands/tablecmds.c:3980 commands/tablecmds.c:10278
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a foreign table"
-msgstr "\"%s\" 不是一个表"
+msgstr "\"%s\" 不是一个外部表"
 
 #: catalog/objectaddress.c:800
-#, fuzzy, c-format
+#, c-format
 msgid "column name must be qualified"
-msgstr "不能限定角色名称"
+msgstr "不能限定列名称"
 
 #: catalog/objectaddress.c:853 commands/functioncmds.c:130
 #: commands/tablecmds.c:226 commands/typecmds.c:3192 parser/parse_func.c:1583
@@ -3440,14 +3438,14 @@ msgid "must be owner of type %s or type %s"
 msgstr "只能是类型 %s 或 %s 的所由者"
 
 #: catalog/objectaddress.c:1049 catalog/objectaddress.c:1065
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser"
-msgstr "只有超级用户能对文件进行读操作"
+msgstr "必须是超级用户"
 
 #: catalog/objectaddress.c:1056
-#, fuzzy, c-format
+#, c-format
 msgid "must have CREATEROLE privilege"
-msgstr "用户没有CONNECT权限."
+msgstr "必须拥有CREATEROLE权限."
 
 #: catalog/pg_aggregate.c:101
 #, c-format
@@ -3522,19 +3520,19 @@ msgid "function %s requires run-time type coercion"
 msgstr "函数 %s 需要运行时类型强制"
 
 #: catalog/pg_collation.c:76
-#, fuzzy, c-format
+#, c-format
 msgid "collation \"%s\" for encoding \"%s\" already exists"
-msgstr "域 \"%2$s\" 的约束 \"%1$s\" 已经存在"
+msgstr "编码 \"%2$s\" 的排序规则 \"%1$s\" 已经存在"
 
 #: catalog/pg_collation.c:90
-#, fuzzy, c-format
+#, c-format
 msgid "collation \"%s\" already exists"
-msgstr "关系 \"%s\" 已经存在"
+msgstr "排序规则 \"%s\" 已经存在"
 
 #: catalog/pg_constraint.c:657
-#, fuzzy, c-format
+#, c-format
 msgid "constraint \"%s\" for domain %s already exists"
-msgstr "域 \"%2$s\" 的约束 \"%1$s\" 已经存在"
+msgstr "域 %2$s 的约束 \"%1$s\" 已经存在"
 
 #: catalog/pg_constraint.c:776
 #, c-format
@@ -3547,14 +3545,14 @@ msgid "constraint \"%s\" for table \"%s\" does not exist"
 msgstr "表 \"%2$s\" 的 \"%1$s\" 约束不存在"
 
 #: catalog/pg_constraint.c:834
-#, fuzzy, c-format
+#, c-format
 msgid "domain \"%s\" has multiple constraints named \"%s\""
-msgstr "表 \"%s\" 有多个名为 \"%s\" 的约束"
+msgstr "域 \"%s\" 有多个名为 \"%s\" 的约束"
 
 #: catalog/pg_constraint.c:846
-#, fuzzy, c-format
+#, c-format
 msgid "constraint \"%s\" for domain \"%s\" does not exist"
-msgstr "表 \"%2$s\" 的 \"%1$s\" 约束不存在"
+msgstr "域 \"%2$s\" 的 \"%1$s\" 约束不存在"
 
 #: catalog/pg_conversion.c:65
 #, c-format
@@ -3567,9 +3565,9 @@ msgid "default conversion for %s to %s already exists"
 msgstr "默认的 %s 到 %s 的转换已经存在"
 
 #: catalog/pg_depend.c:164 commands/extension.c:2699
-#, fuzzy, c-format
+#, c-format
 msgid "%s is already a member of extension \"%s\""
-msgstr "角色\"%s\" 已经是角色\"%s\"的成员"
+msgstr "\"%s\" 已经是扩展\"%s\"的成员"
 
 #: catalog/pg_depend.c:323
 #, c-format
@@ -3587,9 +3585,9 @@ msgid "Labels must be %d characters or less."
 msgstr "标签必需为 %d 个字符或更少"
 
 #: catalog/pg_enum.c:263
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not an existing enum label"
-msgstr "\"%s\" 不是一个数字"
+msgstr "枚举标签\"%s\" 不存在"
 
 #: catalog/pg_enum.c:324
 #, c-format
@@ -3675,9 +3673,9 @@ msgid ""
 msgstr "返回一个多态类型的函数必须至少有一个多态参数"
 
 #: catalog/pg_proc.c:248
-#, fuzzy, c-format
+#, c-format
 msgid "A function returning ANYRANGE must have at least one ANYRANGE argument."
-msgstr "返回\"internal\"类型结果的函数必须至少有一个\"internal\" 类型的参数"
+msgstr "返回ARYRANGE类型结果的函数必须至少有一个ANYRANGE 类型的参数."
 
 #: catalog/pg_proc.c:266
 #, c-format
@@ -3812,11 +3810,11 @@ msgid ""
 msgstr "无法删除由%s所拥有的对象, 因为数据库系统需要这些对象"
 
 #: catalog/pg_shdepend.c:1295
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "cannot reassign ownership of objects owned by %s because they are required "
 "by the database system"
-msgstr "无法删除由%s所拥有的对象, 因为数据库系统需要这些对象"
+msgstr "无法再分配由%s所拥有的对象, 因为数据库系统需要这些对象"
 
 #: catalog/pg_type.c:243
 #, c-format
@@ -3890,14 +3888,14 @@ msgid "function %s already exists in schema \"%s\""
 msgstr "在模式 \"%2$s\" 中函数 %1$s 已经存在"
 
 #: commands/alter.c:394
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser to set schema of %s"
-msgstr "只有超级用户能设置授权者"
+msgstr "只有超级用户能设置%s的模式"
 
 #: commands/alter.c:422
-#, fuzzy, c-format
+#, c-format
 msgid "%s already exists in schema \"%s\""
-msgstr "在于模式\"%2$s\"中已存在类型\"%1$s\""
+msgstr "在于模式\"%2$s\"中已存在类型%1$s"
 
 #: commands/analyze.c:154
 #, c-format
@@ -3920,14 +3918,14 @@ msgid "skipping \"%s\" --- only table or database owner can analyze it"
 msgstr "忽略 \"%s\" --- 只有表或数据库的属主能够分析它"
 
 #: commands/analyze.c:238
-#, fuzzy, c-format
+#, c-format
 msgid "skipping \"%s\" --- cannot analyze this foreign table"
-msgstr "忽略 \"%s\" --- 无法分析索引, 视图或特殊的系统表"
+msgstr "忽略 \"%s\" --- 无法分析该外部表"
 
 #: commands/analyze.c:249
-#, fuzzy, c-format
+#, c-format
 msgid "skipping \"%s\" --- cannot analyze non-tables or special system tables"
-msgstr "忽略 \"%s\" --- 无法分析索引, 视图或特殊的系统表"
+msgstr "忽略 \"%s\" --- 无法分析非表或特殊的系统表"
 
 #: commands/analyze.c:326
 #, c-format
@@ -3973,10 +3971,10 @@ msgid "payload string too long"
 msgstr "流量负载字符串太长"
 
 #: commands/async.c:742
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "cannot PREPARE a transaction that has executed LISTEN, UNLISTEN, or NOTIFY"
-msgstr "无法在一个已经执行了LISTEN或UNLISTEN操作的事务上执行PREPARE"
+msgstr "无法在一个已经执行了LISTEN或UNLISTEN、NOTIFY操作的事务上执行PREPARE"
 
 #: commands/async.c:847
 #, c-format
@@ -4080,29 +4078,29 @@ msgstr ""
 "%s."
 
 #: commands/collationcmds.c:81
-#, fuzzy, c-format
+#, c-format
 msgid "collation attribute \"%s\" not recognized"
-msgstr "操作符属性 \"%s\" 不被认可"
+msgstr "无法识别排序规则属性 \"%s\""
 
 #: commands/collationcmds.c:126
-#, fuzzy, c-format
+#, c-format
 msgid "parameter \"lc_collate\" must be specified"
-msgstr "聚集 stype 必须指定"
+msgstr "参数\"lc_collate\" 必须指定"
 
 #: commands/collationcmds.c:131
-#, fuzzy, c-format
+#, c-format
 msgid "parameter \"lc_ctype\" must be specified"
-msgstr "聚集 stype 必须指定"
+msgstr "参数\"lc_ctype\"必须指定"
 
 #: commands/collationcmds.c:176 commands/collationcmds.c:355
-#, fuzzy, c-format
+#, c-format
 msgid "collation \"%s\" for encoding \"%s\" already exists in schema \"%s\""
-msgstr "在模式\"%2$s\"中已经存在关系\"%1$s\""
+msgstr "在模式\"%3$s\"中已经存在对应于编码\"%2$s\"的排序规则\"%1$s\""
 
 #: commands/collationcmds.c:188 commands/collationcmds.c:367
-#, fuzzy, c-format
+#, c-format
 msgid "collation \"%s\" already exists in schema \"%s\""
-msgstr "在模式\"%2$s\"中已经存在关系\"%1$s\""
+msgstr "在模式\"%2$s\"中已经存在排序规则\"%1$s\""
 
 #: commands/comment.c:61 commands/dbcommands.c:764 commands/dbcommands.c:920
 #: commands/dbcommands.c:1019 commands/dbcommands.c:1192
@@ -4114,9 +4112,9 @@ msgid "database \"%s\" does not exist"
 msgstr "数据库 \"%s\" 不存在"
 
 #: commands/comment.c:98 commands/seclabel.c:112 parser/parse_utilcmd.c:652
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a table, view, composite type, or foreign table"
-msgstr "\"%s\" 不是一个表,视图,组合类型或者索引"
+msgstr "\"%s\" 不是一个表,视图,组合类型或者外部表"
 
 #: commands/constraint.c:60 utils/adt/ri_triggers.c:3080
 #, c-format
@@ -4176,9 +4174,9 @@ msgstr "无法从COPY命令中文件进行读操作: %m"
 
 #: commands/copy.c:550 commands/copy.c:569 commands/copy.c:573
 #: tcop/fastpath.c:291 tcop/postgres.c:349 tcop/postgres.c:385
-#, fuzzy, c-format
+#, c-format
 msgid "unexpected EOF on client connection with an open transaction"
-msgstr "在客户端联接上的意外 EOF"
+msgstr "在客户端连接上的已打开事务中出现意外 EOF"
 
 #: commands/copy.c:585
 #, c-format
@@ -4215,9 +4213,9 @@ msgid "argument to option \"%s\" must be a list of column names"
 msgstr "选项 \"%s\"的参数必须是一个包含列名的列表"
 
 #: commands/copy.c:974
-#, fuzzy, c-format
+#, c-format
 msgid "argument to option \"%s\" must be a valid encoding name"
-msgstr "选项 \"%s\"的参数必须是一个包含列名的列表"
+msgstr "选项 \"%s\"的参数必须是一个有效的编码名"
 
 #: commands/copy.c:980
 #, c-format
@@ -4350,9 +4348,9 @@ msgid "Try the COPY (SELECT ...) TO variant."
 msgstr "尝试不同形式的COPY (SELECT ...) TO命令"
 
 #: commands/copy.c:1374
-#, fuzzy, c-format
+#, c-format
 msgid "cannot copy from foreign table \"%s\""
-msgstr "不可以从视图 \"%s\" 拷贝"
+msgstr "不可以从外部表 \"%s\" 拷贝"
 
 #: commands/copy.c:1380
 #, c-format
@@ -4410,9 +4408,9 @@ msgid "cannot copy to view \"%s\""
 msgstr "不可以拷贝到视图 \"%s\""
 
 #: commands/copy.c:1881
-#, fuzzy, c-format
+#, c-format
 msgid "cannot copy to foreign table \"%s\""
-msgstr "不可以拷贝到视图 \"%s\""
+msgstr "不可以拷贝到外部表 \"%s\""
 
 #: commands/copy.c:1886
 #, c-format
@@ -4625,9 +4623,9 @@ msgid "invalid server encoding %d"
 msgstr "无效服务器编码 %d"
 
 #: commands/dbcommands.c:326 commands/dbcommands.c:331
-#, fuzzy, c-format
+#, c-format
 msgid "invalid locale name: \"%s\""
-msgstr "无效的语言环境名称 %s"
+msgstr "无效的语言环境名称: \"%s\""
 
 #: commands/dbcommands.c:351
 #, c-format
@@ -4699,19 +4697,19 @@ msgid "source database \"%s\" is being accessed by other users"
 msgstr "其他用户正在使用源数据库 \"%s\""
 
 #: commands/dbcommands.c:695 commands/dbcommands.c:710
-#, fuzzy, c-format
+#, c-format
 msgid "encoding \"%s\" does not match locale \"%s\""
-msgstr "编码 \"%s\"与语言环境%s不匹配"
+msgstr "编码 \"%s\"与本地化环境\"%s\"不匹配"
 
 #: commands/dbcommands.c:698
-#, fuzzy, c-format
+#, c-format
 msgid "The chosen LC_CTYPE setting requires encoding \"%s\"."
-msgstr "所选择的LC_CTYPE设置需要编码%s"
+msgstr "所选择的LC_CTYPE设置需要编码\"%s\"."
 
 #: commands/dbcommands.c:713
-#, fuzzy, c-format
+#, c-format
 msgid "The chosen LC_COLLATE setting requires encoding \"%s\"."
-msgstr "所选择的 LC_COLLATE设置需要编码%s"
+msgstr "所选择的 LC_COLLATE设置需要编码\"%s\"."
 
 #: commands/dbcommands.c:771
 #, c-format
@@ -4781,16 +4779,16 @@ msgid ""
 msgstr "这里有%d个其它的会话和%d个已准备好的事务正在使用数据库."
 
 #: commands/dbcommands.c:1813
-#, fuzzy, c-format
+#, c-format
 msgid "There is %d other session using the database."
 msgid_plural "There are %d other sessions using the database."
-msgstr[0] "这里有%d个其它会话正在使用数据库."
+msgstr[0] "那里有%d个其它会话正在使用数据库."
 
 #: commands/dbcommands.c:1818
-#, fuzzy, c-format
+#, c-format
 msgid "There is %d prepared transaction using the database."
 msgid_plural "There are %d prepared transactions using the database."
-msgstr[0] "这里有%d个已准备好的事务正在使用数据库."
+msgstr[0] "那里有%d个已准备好的事务正在使用数据库."
 
 #: commands/define.c:54 commands/define.c:209 commands/define.c:241
 #: commands/define.c:269
@@ -4847,9 +4845,9 @@ msgid "type \"%s\" does not exist, skipping"
 msgstr "类型 \"%s\" 不存在"
 
 #: commands/dropcmds.c:147
-#, fuzzy, c-format
+#, c-format
 msgid "collation \"%s\" does not exist, skipping"
-msgstr "编码转换 \"%s\" 不存在，跳过"
+msgstr "排序规则 \"%s\" 不存在，跳过"
 
 #: commands/dropcmds.c:151
 #, c-format
@@ -4882,9 +4880,9 @@ msgid "text search configuration \"%s\" does not exist, skipping"
 msgstr "文本搜寻配置 \"%s\"不存在,跳过"
 
 #: commands/dropcmds.c:175
-#, fuzzy, c-format
+#, c-format
 msgid "extension \"%s\" does not exist, skipping"
-msgstr "编码转换 \"%s\" 不存在，跳过"
+msgstr "扩展 \"%s\" 不存在，跳过"
 
 #: commands/dropcmds.c:179
 #, c-format
@@ -4932,15 +4930,15 @@ msgid "server \"%s\" does not exist, skipping"
 msgstr "服务器 \"%s\"不存在，跳过 "
 
 #: commands/dropcmds.c:224
-#, fuzzy, c-format
+#, c-format
 msgid "operator class \"%s\" does not exist for access method \"%s\", skipping"
-msgstr "处理方法 \"%s\" 的操作符类 \"%s\" 不存在"
+msgstr "处理方法 \"%2$s\" 的操作符类 \"%1$s\" 不存在, 跳过"
 
 #: commands/dropcmds.c:229
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "operator family \"%s\" does not exist for access method \"%s\", skipping"
-msgstr "访问方法\"%2$s\"的操作符表 \"%1$s\" 不存在"
+msgstr "访问方法\"%2$s\"的操作符表 \"%1$s\" 不存在, 跳过"
 
 #: commands/explain.c:158
 #, c-format
@@ -4958,30 +4956,30 @@ msgid "EXPLAIN option BUFFERS requires ANALYZE"
 msgstr "在EXPLAIN命令中BUFFERS和ANALYZE选项需要一起使用"
 
 #: commands/explain.c:180
-#, fuzzy, c-format
+#, c-format
 msgid "EXPLAIN option TIMING requires ANALYZE"
-msgstr "在EXPLAIN命令中BUFFERS和ANALYZE选项需要一起使用"
+msgstr "在EXPLAIN命令中的TIMING选项需要ANALYZE"
 
 #: commands/extension.c:146 commands/extension.c:2405
-#, fuzzy, c-format
+#, c-format
 msgid "extension \"%s\" does not exist"
-msgstr "关系 \"%s\" 不存在"
+msgstr "扩展 \"%s\" 不存在"
 
 #: commands/extension.c:245 commands/extension.c:254 commands/extension.c:266
 #: commands/extension.c:276
-#, fuzzy, c-format
+#, c-format
 msgid "invalid extension name: \"%s\""
-msgstr "无效时区名字: \"%s\""
+msgstr "无效扩展名: \"%s\""
 
 #: commands/extension.c:246
-#, fuzzy, c-format
+#, c-format
 msgid "Extension names must not be empty."
-msgstr "无效的游标名称: 不能为空"
+msgstr "扩展名不能为空."
 
 #: commands/extension.c:255
-#, fuzzy, c-format
+#, c-format
 msgid "Extension names must not contain \"--\"."
-msgstr "typmod不能包含空值"
+msgstr "扩展名不能包含\"--\"."
 
 #: commands/extension.c:267
 #, c-format
@@ -4995,19 +4993,19 @@ msgstr "扩展名不能包含目录分隔符."
 
 #: commands/extension.c:292 commands/extension.c:301 commands/extension.c:310
 #: commands/extension.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "invalid extension version name: \"%s\""
-msgstr "无效的目标编码名称 \"%s\""
+msgstr "无效的扩展版本名: \"%s\""
 
 #: commands/extension.c:293
-#, fuzzy, c-format
+#, c-format
 msgid "Version names must not be empty."
-msgstr "无效的游标名称: 不能为空"
+msgstr "版本名不能为空."
 
 #: commands/extension.c:302
-#, fuzzy, c-format
+#, c-format
 msgid "Version names must not contain \"--\"."
-msgstr "XML处理命令不能包含\"?>\"."
+msgstr "版本名不能包含\"--\"."
 
 #: commands/extension.c:311
 #, c-format
@@ -5020,106 +5018,106 @@ msgid "Version names must not contain directory separator characters."
 msgstr "版本名不能包含目录分隔符."
 
 #: commands/extension.c:471
-#, fuzzy, c-format
+#, c-format
 msgid "could not open extension control file \"%s\": %m"
-msgstr "无法打开控制文件 \"%s\": %m"
+msgstr "无法打开扩展控制文件 \"%s\": %m"
 
 #: commands/extension.c:493 commands/extension.c:503
-#, fuzzy, c-format
+#, c-format
 msgid "parameter \"%s\" cannot be set in a secondary extension control file"
-msgstr "联接启动后, 参数 \"%s\" 不能设置"
+msgstr "第二扩展控制文件中, 无法设置参数 \"%s\""
 
 #: commands/extension.c:542
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a valid encoding name"
-msgstr "%s 是一个无效编码名字"
+msgstr "\"%s\" 是一个无效编码名"
 
 #: commands/extension.c:556
-#, fuzzy, c-format
+#, c-format
 msgid "parameter \"%s\" must be a list of extension names"
-msgstr "选项 \"%s\"的参数必须是一个包含列名的列表"
+msgstr "参数 \"%s\"必须是一个包含扩展名的列表"
 
 #: commands/extension.c:563
-#, fuzzy, c-format
+#, c-format
 msgid "unrecognized parameter \"%s\" in file \"%s\""
-msgstr "未识别的参数 \"%s\""
+msgstr "文件\"%2$s\"中出现未识别的参数 \"%1$s\""
 
 #: commands/extension.c:572
-#, fuzzy, c-format
+#, c-format
 msgid "parameter \"schema\" cannot be specified when \"relocatable\" is true"
-msgstr "联接启动后, 参数 \"%s\" 不能设置"
+msgstr "当\"relocatable\"为真时，参数\"schema\"不允许被指定"
 
 #: commands/extension.c:724
 #, c-format
 msgid ""
 "transaction control statements are not allowed within an extension script"
-msgstr ""
+msgstr "扩展脚本中不允许出现事务控制语句"
 
 #: commands/extension.c:792
-#, fuzzy, c-format
+#, c-format
 msgid "permission denied to create extension \"%s\""
-msgstr "创建表空间 \"%s\" 权限不够"
+msgstr "创建扩展 \"%s\" 权限不够"
 
 #: commands/extension.c:794
-#, fuzzy, c-format
+#, c-format
 msgid "Must be superuser to create this extension."
-msgstr "只有超级用户能创建表空间"
+msgstr "只有超级用户能创建扩展."
 
 #: commands/extension.c:798
-#, fuzzy, c-format
+#, c-format
 msgid "permission denied to update extension \"%s\""
-msgstr "创建表空间 \"%s\" 权限不够"
+msgstr "更新扩展 \"%s\" 权限不够"
 
 #: commands/extension.c:800
-#, fuzzy, c-format
+#, c-format
 msgid "Must be superuser to update this extension."
-msgstr "只有超级用户能创建表空间"
+msgstr "只有超级用户能更新扩展."
 
 #: commands/extension.c:1082
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "extension \"%s\" has no update path from version \"%s\" to version \"%s\""
-msgstr "关系 \"%s\" 不是关系\"%s\"的父表"
+msgstr "扩展 \"%s\" 没有从版本\"%s\"到版本\"%s\"的更新路径"
 
 #: commands/extension.c:1209
-#, fuzzy, c-format
+#, c-format
 msgid "extension \"%s\" already exists, skipping"
-msgstr "关系 \"%s\" 已经存在"
+msgstr "扩展 \"%s\" 已经存在,跳过"
 
 #: commands/extension.c:1216
-#, fuzzy, c-format
+#, c-format
 msgid "extension \"%s\" already exists"
-msgstr "关系 \"%s\" 已经存在"
+msgstr "扩展 \"%s\" 已经存在"
 
 #: commands/extension.c:1227
-#, fuzzy, c-format
+#, c-format
 msgid "nested CREATE EXTENSION is not supported"
-msgstr "不再支持 LOCATION"
+msgstr "不支持嵌套的CREATE EXTENSION"
 
 #: commands/extension.c:1282 commands/extension.c:2465
-#, fuzzy, c-format
+#, c-format
 msgid "version to install must be specified"
-msgstr "必须指定主机名\n"
+msgstr "必须指定安装版本"
 
 #: commands/extension.c:1299
 #, c-format
 msgid "FROM version must be different from installation target version \"%s\""
-msgstr ""
+msgstr "FROM 版本与安装的目标版本 \"%s\" 必须不同"
 
 #: commands/extension.c:1354
-#, fuzzy, c-format
+#, c-format
 msgid "extension \"%s\" must be installed in schema \"%s\""
-msgstr "关系\"%s\"已经在模式\"%s\"中了"
+msgstr "扩展\"%s\"已经安装到模式\"%s\"中了"
 
 #: commands/extension.c:1433 commands/extension.c:2606
-#, fuzzy, c-format
+#, c-format
 msgid "required extension \"%s\" is not installed"
-msgstr "关联的关系 \"%s\" 不是一个表"
+msgstr "所需要的扩展\"%s\"没被安装"
 
 #: commands/extension.c:1594
-#, fuzzy, c-format
+#, c-format
 msgid "cannot drop extension \"%s\" because it is being modified"
-msgstr "无法删除在%s上的依赖关系，因为它是一个系统对象"
+msgstr "无法删除扩展\"%s\"，因为它正被修改中"
 
 #: commands/extension.c:1642 commands/extension.c:1751
 #: commands/extension.c:1944 commands/prepare.c:716 executor/execQual.c:1716
@@ -5142,57 +5140,56 @@ msgstr "要求使用物化模式，但是在这种环境下不允许使用."
 msgid ""
 "pg_extension_config_dump() can only be called from an SQL script executed by "
 "CREATE EXTENSION"
-msgstr ""
+msgstr "pg_extension_config_dump() 只能在执行 CREATE EXTENSION的SQL脚本里调用"
 
 #: commands/extension.c:2076
-#, fuzzy, c-format
+#, c-format
 msgid "OID %u does not refer to a table"
-msgstr "表 \"%s\" 不需要一个 TOAST 表"
+msgstr "OID %u没有引用任何表"
 
 #: commands/extension.c:2081
-#, fuzzy, c-format
+#, c-format
 msgid "table \"%s\" is not a member of the extension being created"
-msgstr "角色 \"%s\"不是角色 \"%s\"的成员"
+msgstr "表\"%s\"不是被创建的任何一个扩展的成员"
 
 #: commands/extension.c:2235
 #, c-format
 msgid ""
 "cannot move extension \"%s\" into schema \"%s\" because the extension "
 "contains the schema"
-msgstr ""
+msgstr "不能将扩展 \"%s\" 转移到模式 \"%s\" 里，因为该扩展已经拥有该模式"
 
 #: commands/extension.c:2275 commands/extension.c:2334
-#, fuzzy, c-format
+#, c-format
 msgid "extension \"%s\" does not support SET SCHEMA"
-msgstr "访问方法 \"%s\" 不支持ASC/DESC选项"
+msgstr "扩展 \"%s\" 不支持SET SCHEMA操作"
 
 #: commands/extension.c:2336
-#, fuzzy, c-format
+#, c-format
 msgid "%s is not in the extension's schema \"%s\""
-msgstr "在模式 \"%2$s\" 中函数 %1$s 已经存在"
+msgstr "扩展模式\"%2$s\"中不存在%1$s"
 
 #: commands/extension.c:2385
-#, fuzzy, c-format
+#, c-format
 msgid "nested ALTER EXTENSION is not supported"
-msgstr "不支持使用COPY (SELECT INTO)命令."
+msgstr "不支持使用嵌套的ALTER  EXTENSION"
 
 #: commands/extension.c:2476
-#, fuzzy, c-format
+#, c-format
 msgid "version \"%s\" of extension \"%s\" is already installed"
-msgstr "关系 \"%s\" 的属性 \"%s\" 已经存在"
+msgstr "扩展\"%2$s\"的版本\"%1$s\"已经安装"
 
 #: commands/extension.c:2711
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "cannot add schema \"%s\" to extension \"%s\" because the schema contains the "
 "extension"
-msgstr ""
-"无法给字段 \"%2$s\" 的数据域 \"%1$s\" 赋值, 因为在数据类型 %3$s 中没有此列"
+msgstr "无法为扩展\"%2$s\"添加模式\"%1$s\"，因为该模式已经包含此扩展"
 
 #: commands/extension.c:2729
-#, fuzzy, c-format
+#, c-format
 msgid "%s is not a member of extension \"%s\""
-msgstr "角色 \"%s\"不是角色 \"%s\"的成员"
+msgstr "%s不是扩展\"%s\"的成员\v"
 
 #: commands/foreigncmds.c:134 commands/foreigncmds.c:143
 #, c-format
@@ -5243,9 +5240,9 @@ msgid "The owner of a foreign-data wrapper must be a superuser."
 msgstr "外部数据封装器的属主必须是超级用户."
 
 #: commands/foreigncmds.c:493
-#, fuzzy, c-format
+#, c-format
 msgid "function %s must return type \"fdw_handler\""
-msgstr "函数 %s 必须返回 \"language_handler\" 类型"
+msgstr "函数 %s 必须返回 \"fdw_handler\" 类型"
 
 #: commands/foreigncmds.c:588
 #, c-format
@@ -5268,11 +5265,11 @@ msgid "Must be superuser to alter a foreign-data wrapper."
 msgstr "只有超级用户才能修改一个外部数据封装器."
 
 #: commands/foreigncmds.c:734
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "changing the foreign-data wrapper handler can change behavior of existing "
 "foreign tables"
-msgstr "改变外部数据封装器的验证能够使所它依赖对象的选项变为无效"
+msgstr "改变外部数据封装器可能会改变现存的外部表的行为"
 
 #: commands/foreigncmds.c:748
 #, c-format
@@ -5435,7 +5432,7 @@ msgstr "使用CREATE LANGUAGE向数据库加载语言."
 #: commands/functioncmds.c:898 commands/functioncmds.c:1321
 #, c-format
 msgid "only superuser can define a leakproof function"
-msgstr ""
+msgstr "只有超级用户才能定义一个密封函数"
 
 #: commands/functioncmds.c:920
 #, c-format
@@ -5475,12 +5472,12 @@ msgstr "目标数据类型 %s 是一个伪类型"
 #: commands/functioncmds.c:1521
 #, c-format
 msgid "cast will be ignored because the source data type is a domain"
-msgstr ""
+msgstr "转换将被忽略，因为源数据类型是一个域"
 
 #: commands/functioncmds.c:1526
 #, c-format
 msgid "cast will be ignored because the target data type is a domain"
-msgstr ""
+msgstr "转换将被忽略，因为目标数据类型是一个域"
 
 #: commands/functioncmds.c:1553
 #, c-format
@@ -5557,9 +5554,9 @@ msgid "array data types are not binary-compatible"
 msgstr "数组数据类型不是二进制兼容的"
 
 #: commands/functioncmds.c:1678
-#, fuzzy, c-format
+#, c-format
 msgid "domain data types must not be marked binary-compatible"
-msgstr "组合数据类型不是二进制兼容"
+msgstr "域数据类型不能标为二进制兼容"
 
 #: commands/functioncmds.c:1688
 #, c-format
@@ -5609,9 +5606,9 @@ msgid "cannot use more than %d columns in an index"
 msgstr "在一个索引中不能使用超过 %d 个字段"
 
 #: commands/indexcmds.c:366
-#, fuzzy, c-format
+#, c-format
 msgid "cannot create index on foreign table \"%s\""
-msgstr "对于表 \"%2$s\" \"%1$s\" 不是一个索引"
+msgstr "外部表\"%s\"上无法创建索引"
 
 #: commands/indexcmds.c:381
 #, c-format
@@ -5684,15 +5681,15 @@ msgid "functions in index expression must be marked IMMUTABLE"
 msgstr "索引表达式中函数必需标记为 IMMUTABLE"
 
 #: commands/indexcmds.c:1122
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for index expression"
-msgstr "无法确定函数返回记录的行描述"
+msgstr "索引表达式上无法确定使用哪个排序规则"
 
 #: commands/indexcmds.c:1130 commands/typecmds.c:776 parser/parse_expr.c:2156
 #: parser/parse_type.c:498 parser/parse_utilcmd.c:2627 utils/adt/misc.c:518
-#, fuzzy, c-format
+#, c-format
 msgid "collations are not supported by type %s"
-msgstr "FROM 中的函数 \"%s\" 不支持返回类型 %s"
+msgstr "类型%s不能使用排序规则"
 
 #: commands/indexcmds.c:1168
 #, c-format
@@ -5855,34 +5852,34 @@ msgid "index operators must be binary"
 msgstr "索引操作符必须为二进制"
 
 #: commands/opclasscmds.c:1109
-#, fuzzy, c-format
+#, c-format
 msgid "access method \"%s\" does not support ordering operators"
-msgstr "访问方法 \"%s\" 不支持排他约束"
+msgstr "访问方法 \"%s\" 不支持排序操作符"
 
 #: commands/opclasscmds.c:1122
-#, fuzzy, c-format
+#, c-format
 msgid "index search operators must return boolean"
-msgstr "索引操作符必须返回布尔值"
+msgstr "索引搜索操作符必须返回布尔值"
 
 #: commands/opclasscmds.c:1164
-#, fuzzy, c-format
+#, c-format
 msgid "btree comparison procedures must have two arguments"
-msgstr "btree 过程必须有两个参数"
+msgstr "B树比较过程必须有两个参数"
 
 #: commands/opclasscmds.c:1168
-#, fuzzy, c-format
+#, c-format
 msgid "btree comparison procedures must return integer"
-msgstr "btree 过程必须返回整数"
+msgstr "B树比较过程必须返回整数"
 
 #: commands/opclasscmds.c:1185
-#, fuzzy, c-format
+#, c-format
 msgid "btree sort support procedures must accept type \"internal\""
-msgstr "btree 过程必须返回整数"
+msgstr "B树排序支持过程必须接受\"internal\"类型"
 
 #: commands/opclasscmds.c:1189
-#, fuzzy, c-format
+#, c-format
 msgid "btree sort support procedures must return void"
-msgstr "btree 过程必须返回整数"
+msgstr "B树排序支持过程必须返回void"
 
 #: commands/opclasscmds.c:1201
 #, c-format
@@ -6120,29 +6117,29 @@ msgstr "前缀 \"pg_\" 是保留给系统模式的."
 #: commands/seclabel.c:57
 #, c-format
 msgid "no security label providers have been loaded"
-msgstr ""
+msgstr "没有安全标签提供者被加载"
 
 #: commands/seclabel.c:61
 #, c-format
 msgid ""
 "must specify provider when multiple security label providers have been loaded"
-msgstr ""
+msgstr "当多个安全提供者已经加载时，必须指定提供者"
 
 #: commands/seclabel.c:79
-#, fuzzy, c-format
+#, c-format
 msgid "security label provider \"%s\" is not loaded"
-msgstr "没有声明变量\"%s\""
+msgstr "安装标签提供者\"%s\"没有加载"
 
 #: commands/sequence.c:124
-#, fuzzy, c-format
+#, c-format
 msgid "unlogged sequences are not supported"
-msgstr "不支持变长 rtree 键"
+msgstr "非事务日志型序列不被支持"
 
 #: commands/sequence.c:419 commands/tablecmds.c:2265 commands/tablecmds.c:2437
 #: commands/tablecmds.c:9746 parser/parse_utilcmd.c:2327 tcop/utility.c:756
-#, fuzzy, c-format
+#, c-format
 msgid "relation \"%s\" does not exist, skipping"
-msgstr "角色 \"%s\" 不存在"
+msgstr "关系 \"%s\" 不存在，忽略"
 
 #: commands/sequence.c:634
 #, c-format
@@ -6318,19 +6315,18 @@ msgstr "请使用 DROP TYPE 删除一个类型."
 
 #: commands/tablecmds.c:232 commands/tablecmds.c:7728
 #: commands/tablecmds.c:9681
-#, fuzzy, c-format
+#, c-format
 msgid "foreign table \"%s\" does not exist"
-msgstr "表 \"%s\" 不存在"
+msgstr "外部表 \"%s\" 不存在"
 
 #: commands/tablecmds.c:233
-#, fuzzy, c-format
+#, c-format
 msgid "foreign table \"%s\" does not exist, skipping"
-msgstr "表 \"%s\" 不存在"
+msgstr "外部表 \"%s\" 不存在, 跳过"
 
 #: commands/tablecmds.c:235
-#, fuzzy
 msgid "Use DROP FOREIGN TABLE to remove a foreign table."
-msgstr "请使用 DROP TABLE 删除一个表."
+msgstr "请使用 DROP FOREIGN TABLE 删除一个外部表."
 
 #: commands/tablecmds.c:451
 #, c-format
@@ -6338,9 +6334,9 @@ msgid "ON COMMIT can only be used on temporary tables"
 msgstr "ON COMMIT 只能被用于临时表"
 
 #: commands/tablecmds.c:455
-#, fuzzy, c-format
+#, c-format
 msgid "constraints on foreign tables are not supported"
-msgstr "表 \"%2$s\" 的 \"%1$s\" 约束不存在"
+msgstr "不支持在外部表上使用约束"
 
 #: commands/tablecmds.c:475
 #, c-format
@@ -6348,19 +6344,19 @@ msgid "cannot create temporary table within security-restricted operation"
 msgstr "不能在安全限制的操作中创建临时表"
 
 #: commands/tablecmds.c:581 commands/tablecmds.c:4485
-#, fuzzy, c-format
+#, c-format
 msgid "default values on foreign tables are not supported"
-msgstr "不支持为记录或记录类型变量设置缺省值"
+msgstr "外部表中不支持使用缺省值"
 
 #: commands/tablecmds.c:750
 #, c-format
 msgid "DROP INDEX CONCURRENTLY does not support dropping multiple objects"
-msgstr ""
+msgstr "DROP INDEX CONCURRENTLY不支持同时删除多个对象"
 
 #: commands/tablecmds.c:754
 #, c-format
 msgid "DROP INDEX CONCURRENTLY does not support CASCADE"
-msgstr ""
+msgstr "DROP INDEX CONCURRENTLY 不支持级联操作"
 
 #: commands/tablecmds.c:908 commands/tablecmds.c:1243
 #: commands/tablecmds.c:2082 commands/tablecmds.c:3944
@@ -6416,15 +6412,15 @@ msgid "%s versus %s"
 msgstr "%s 对 %s"
 
 #: commands/tablecmds.c:1547
-#, fuzzy, c-format
+#, c-format
 msgid "inherited column \"%s\" has a collation conflict"
-msgstr "继承属性 \"%s\" 类型冲突"
+msgstr "继承列 \"%s\" 出现排序规则冲突"
 
 #: commands/tablecmds.c:1549 commands/tablecmds.c:1758
 #: commands/tablecmds.c:4358
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" versus \"%s\""
-msgstr "%s 对 %s"
+msgstr "\"%s\" 对 \"%s\""
 
 #: commands/tablecmds.c:1559
 #, c-format
@@ -6433,14 +6429,14 @@ msgstr "继承列 \"%s\" 有一个存储参数冲突"
 
 #: commands/tablecmds.c:1671 parser/parse_utilcmd.c:818
 #: parser/parse_utilcmd.c:1159 parser/parse_utilcmd.c:1235
-#, fuzzy, c-format
+#, c-format
 msgid "cannot convert whole-row table reference"
-msgstr "无法转换空的多边形到圆形"
+msgstr "无法转换整行表引用"
 
 #: commands/tablecmds.c:1672 parser/parse_utilcmd.c:819
-#, fuzzy, c-format
+#, c-format
 msgid "Constraint \"%s\" contains a whole-row reference to table \"%s\"."
-msgstr "游标\"%s\"没有引用表\"%s\"的FOR UPDATE/SHARE语句"
+msgstr "约束\"%s\"包含到表\"%s\"的整行引用."
 
 #: commands/tablecmds.c:1738
 #, c-format
@@ -6453,9 +6449,9 @@ msgid "column \"%s\" has a type conflict"
 msgstr "属性 \"%s\" 类型冲突"
 
 #: commands/tablecmds.c:1756
-#, fuzzy, c-format
+#, c-format
 msgid "column \"%s\" has a collation conflict"
-msgstr "属性 \"%s\" 类型冲突"
+msgstr "列 \"%s\" 出现排序规则冲突"
 
 #: commands/tablecmds.c:1768
 #, c-format
@@ -6485,9 +6481,9 @@ msgid "cannot rename column of typed table"
 msgstr "无法重新命名已确定类型表(typed table)的列"
 
 #: commands/tablecmds.c:2070
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a table, view, composite type, index, or foreign table"
-msgstr "\"%s\" 不是一个表,视图,组合类型或者索引"
+msgstr "\"%s\" 不是一个表,视图,组合类型,索引或者外部表"
 
 #: commands/tablecmds.c:2162
 #, c-format
@@ -6505,14 +6501,14 @@ msgid "cannot rename inherited column \"%s\""
 msgstr "不能对继承字段 \"%s\" 重命名"
 
 #: commands/tablecmds.c:2351
-#, fuzzy, c-format
+#, c-format
 msgid "inherited constraint \"%s\" must be renamed in child tables too"
-msgstr "在子表中继承属性 \"%s\" 也必需重命名"
+msgstr "继承约束 \"%s\" 在子表中也必须重命名"
 
 #: commands/tablecmds.c:2358
-#, fuzzy, c-format
+#, c-format
 msgid "cannot rename inherited constraint \"%s\""
-msgstr "不能对继承字段 \"%s\" 重命名"
+msgstr "无法重命名约束\"%s\""
 
 #. translator: first %s is a SQL command, eg ALTER TABLE
 #: commands/tablecmds.c:2560
@@ -6538,14 +6534,14 @@ msgid "cannot rewrite temporary tables of other sessions"
 msgstr "不能改写其他会话的临时表"
 
 #: commands/tablecmds.c:3699
-#, fuzzy, c-format
+#, c-format
 msgid "rewriting table \"%s\""
-msgstr "删除文件 \"%s\""
+msgstr "重写表 \"%s\""
 
 #: commands/tablecmds.c:3703
-#, fuzzy, c-format
+#, c-format
 msgid "verifying table \"%s\""
-msgstr "为表 \"%s\" 恢复数据\n"
+msgstr "校验表\"%s\""
 
 #: commands/tablecmds.c:3810
 #, c-format
@@ -6569,45 +6565,45 @@ msgid "\"%s\" is not a table or view"
 msgstr "\"%s\" 不是一个视图或视图"
 
 #: commands/tablecmds.c:3971
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a table or foreign table"
-msgstr "\"%s\" 不是一个表或索引"
+msgstr "\"%s\" 不是表或外部表"
 
 #: commands/tablecmds.c:3974
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a table, composite type, or foreign table"
-msgstr "\"%s\" 不是一个表,视图,组合类型或者索引"
+msgstr "\"%s\" 不是一个表,组合类型或者外部表"
 
 #: commands/tablecmds.c:3984
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is of the wrong type"
-msgstr "\"%s\" 不是一个类型"
+msgstr "\"%s\" 是一个错误类型"
 
 #: commands/tablecmds.c:4133 commands/tablecmds.c:4140
-#, fuzzy, c-format
+#, c-format
 msgid "cannot alter type \"%s\" because column \"%s.%s\" uses it"
-msgstr "不能修改类型 \"%s\", 因为列 \"%s\".\"%s\"正在使用它"
+msgstr "不能修改类型 \"%s\", 因为列 \"%s.%s\"正在使用它"
 
 #: commands/tablecmds.c:4147
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "cannot alter foreign table \"%s\" because column \"%s.%s\" uses its row type"
-msgstr "无法修改表\"%s\" ，因为列\"%s\".\"%s\"使用它的记录类型"
+msgstr "无法修改外部表\"%s\" ，因为列\"%s.%s\"使用它的行类型"
 
 #: commands/tablecmds.c:4154
-#, fuzzy, c-format
+#, c-format
 msgid "cannot alter table \"%s\" because column \"%s.%s\" uses its row type"
-msgstr "无法修改表\"%s\" ，因为列\"%s\".\"%s\"使用它的记录类型"
+msgstr "无法修改表\"%s\" ，因为列\"%s.%s\"使用它的行类型"
 
 #: commands/tablecmds.c:4216
-#, fuzzy, c-format
+#, c-format
 msgid "cannot alter type \"%s\" because it is the type of a typed table"
-msgstr "无法修改已确定类型表(typed table)中列的类型"
+msgstr "无法修改已确定类型表(typed table)中列的类型\"%s\""
 
 #: commands/tablecmds.c:4218
-#, fuzzy, c-format
+#, c-format
 msgid "Use ALTER ... CASCADE to alter the typed tables too."
-msgstr "使用 DROP .. CASCADE 把倚赖对象一并删除."
+msgstr "使用ALTER .. CASCADE 把类型表一并修改."
 
 #: commands/tablecmds.c:4262
 #, c-format
@@ -6625,9 +6621,9 @@ msgid "child table \"%s\" has different type for column \"%s\""
 msgstr "子表 \"%s\" 的字段 \"%s\" 有不同的类型"
 
 #: commands/tablecmds.c:4356 commands/tablecmds.c:9084
-#, fuzzy, c-format
+#, c-format
 msgid "child table \"%s\" has different collation for column \"%s\""
-msgstr "子表 \"%s\" 的字段 \"%s\" 有不同的类型"
+msgstr "子表 \"%s\" 的字段 \"%s\" 有不同的排序规则"
 
 #: commands/tablecmds.c:4366
 #, c-format
@@ -6663,9 +6659,9 @@ msgid "column \"%s\" is in a primary key"
 msgstr "字段 \"%s\" 是一个主键"
 
 #: commands/tablecmds.c:4958
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a table, index, or foreign table"
-msgstr "\"%s\"不是表，索引或TOAST表"
+msgstr "\"%s\"不是表，索引或外部表"
 
 #: commands/tablecmds.c:4985
 #, c-format
@@ -6712,6 +6708,7 @@ msgstr "不能删除继承字段 \"%s\""
 msgid ""
 "ALTER TABLE / ADD CONSTRAINT USING INDEX will rename index \"%s\" to \"%s\""
 msgstr ""
+"ALTER TABLE / ADD CONSTRAINT USING INDEX 会把索引 \"%s\" 重命名为 \"%s\""
 
 #: commands/tablecmds.c:5656
 #, c-format
@@ -6721,19 +6718,19 @@ msgstr "必须也要对子表加上约束"
 #: commands/tablecmds.c:5746
 #, c-format
 msgid "constraints on permanent tables may reference only permanent tables"
-msgstr ""
+msgstr "永久表上的约束只能引用永久表"
 
 #: commands/tablecmds.c:5753
 #, c-format
 msgid ""
 "constraints on unlogged tables may reference only permanent or unlogged "
 "tables"
-msgstr ""
+msgstr "无事务日志的表上的约束只能引用持久表或者无事务日志的表"
 
 #: commands/tablecmds.c:5759
-#, fuzzy, c-format
+#, c-format
 msgid "constraints on temporary tables may reference only temporary tables"
-msgstr "不能在其他会话的临时表上创建索引"
+msgstr "临时表上的约束只能引用临时表"
 
 #: commands/tablecmds.c:5820
 #, c-format
@@ -6757,15 +6754,15 @@ msgid "constraint \"%s\" of relation \"%s\" does not exist"
 msgstr "关系 \"%2$s\" 的 约束\"%1$s\" 不存在"
 
 #: commands/tablecmds.c:6129
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "constraint \"%s\" of relation \"%s\" is not a foreign key or check constraint"
-msgstr "关系 \"%2$s\" 的 约束\"%1$s\" 不存在"
+msgstr "关系 \"%2$s\" 的 约束\"%1$s\"不是外键，也不是check约束"
 
 #: commands/tablecmds.c:6198
-#, fuzzy, c-format
+#, c-format
 msgid "constraint must be validated on child tables too"
-msgstr "必须也要对子表加上约束"
+msgstr "子表上的约束也必须进行验证"
 
 #: commands/tablecmds.c:6256
 #, c-format
@@ -6799,9 +6796,9 @@ msgid ""
 msgstr "没有唯一约束与关联表 \"%s\" 给定的键值匹配"
 
 #: commands/tablecmds.c:6652
-#, fuzzy, c-format
+#, c-format
 msgid "validating foreign key constraint \"%s\""
-msgstr "为表 \"%s\" 读取外键约束\n"
+msgstr "正验证外键约束 \"%s\""
 
 #: commands/tablecmds.c:6946
 #, c-format
@@ -6844,14 +6841,14 @@ msgid "cannot use window function in transform expression"
 msgstr "在转换表达式中不能使用窗口函数"
 
 #: commands/tablecmds.c:7231
-#, fuzzy, c-format
+#, c-format
 msgid "column \"%s\" cannot be cast automatically to type %s"
-msgstr "字段 \"%s\" 不能转换成类型 \"%s\""
+msgstr "字段 \"%s\" 不能自动转换成类型 %s"
 
 #: commands/tablecmds.c:7233
 #, c-format
 msgid "Specify a USING expression to perform the conversion."
-msgstr ""
+msgstr "指定一个USING表达式来执行转换"
 
 #: commands/tablecmds.c:7282
 #, c-format
@@ -6864,9 +6861,9 @@ msgid "cannot alter type of column \"%s\" twice"
 msgstr "不能更改字段 \"%s\" 的类型两遍"
 
 #: commands/tablecmds.c:7399
-#, fuzzy, c-format
+#, c-format
 msgid "default for column \"%s\" cannot be cast automatically to type %s"
-msgstr "字段 \"%s\" 的默认值不能转换成类型 \"%s\""
+msgstr "字段 \"%s\" 的默认值不能转换成类型 %s"
 
 #: commands/tablecmds.c:7525
 #, c-format
@@ -6879,9 +6876,9 @@ msgid "%s depends on column \"%s\""
 msgstr "%s 倚赖于字段 \"%s\""
 
 #: commands/tablecmds.c:7544
-#, fuzzy, c-format
+#, c-format
 msgid "cannot alter type of a column used in a trigger definition"
-msgstr "不能使用视图或规则改变一个字段的类型"
+msgstr "无法更改触发器定义中的列类型"
 
 #: commands/tablecmds.c:8082
 #, c-format
@@ -6909,9 +6906,9 @@ msgid "Use ALTER TYPE instead."
 msgstr "请使用ALTER TYPE"
 
 #: commands/tablecmds.c:8123 commands/tablecmds.c:10316
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a table, view, sequence, or foreign table"
-msgstr "\"%s\" 不是一个表,视图,或者序列"
+msgstr "\"%s\" 不是表,视图,序列或者外部表"
 
 #: commands/tablecmds.c:8451
 #, c-format
@@ -6973,7 +6970,7 @@ msgstr "子表 \"%s\" 对于检查约束\"%s\"有不同的定义"
 msgid ""
 "constraint \"%s\" conflicts with non-inherited constraint on child table \"%s"
 "\""
-msgstr ""
+msgstr "约束 \"%s\" 与子表中的非继承约束 \"%s\"相冲突"
 
 #: commands/tablecmds.c:9226
 #, c-format
@@ -6986,34 +6983,34 @@ msgid "relation \"%s\" is not a parent of relation \"%s\""
 msgstr "关系 \"%s\" 不是关系\"%s\"的父表"
 
 #: commands/tablecmds.c:9523
-#, fuzzy, c-format
+#, c-format
 msgid "typed tables cannot inherit"
-msgstr "类型 %s 不存在"
+msgstr "类型表不能继承"
 
 #: commands/tablecmds.c:9554
-#, fuzzy, c-format
+#, c-format
 msgid "table is missing column \"%s\""
-msgstr "在子表中没有列\"%s\""
+msgstr "表中没有列\"%s\""
 
 #: commands/tablecmds.c:9564
-#, fuzzy, c-format
+#, c-format
 msgid "table has column \"%s\" where type requires \"%s\""
-msgstr "表 \"%1$s\" 没有通过约束 \"%3$s\" 的字段 \"%2$s\" 关联"
+msgstr "表中含有列\"%s\"，需要类型\"%s\""
 
 #: commands/tablecmds.c:9573
-#, fuzzy, c-format
+#, c-format
 msgid "table \"%s\" has different type for column \"%s\""
-msgstr "子表 \"%s\" 的字段 \"%s\" 有不同的类型"
+msgstr "表\"%s\"中的列\"%s\"带有不同的类型"
 
 #: commands/tablecmds.c:9586
-#, fuzzy, c-format
+#, c-format
 msgid "table has extra column \"%s\""
-msgstr "在子表中没有列\"%s\""
+msgstr "表含有多余的列\"%s\""
 
 #: commands/tablecmds.c:9633
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a typed table"
-msgstr "\"%s\" 不是一个表"
+msgstr "\"%s\" 不是一个类型表"
 
 #: commands/tablecmds.c:9764
 #, c-format
@@ -7026,19 +7023,19 @@ msgid "relation \"%s\" already exists in schema \"%s\""
 msgstr "在模式\"%2$s\"中已经存在关系\"%1$s\""
 
 #: commands/tablecmds.c:10283
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a composite type"
-msgstr "\"%s\" 为混和类型"
+msgstr "\"%s\" 不是组合类型"
 
 #: commands/tablecmds.c:10304
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is a foreign table"
-msgstr "\"%s\" 不是一个表"
+msgstr "\"%s\" 是一个外部表"
 
 #: commands/tablecmds.c:10305
-#, fuzzy, c-format
+#, c-format
 msgid "Use ALTER FOREIGN TABLE instead."
-msgstr "请使用 ALTER TABLE命令代替."
+msgstr "请使用 ALTER FOREIGN TABLE 命令代替."
 
 #: commands/tablespace.c:154 commands/tablespace.c:171
 #: commands/tablespace.c:182 commands/tablespace.c:190
@@ -7128,9 +7125,9 @@ msgid "directory \"%s\" does not exist"
 msgstr "目录 \"%s\" 不存在"
 
 #: commands/tablespace.c:566
-#, fuzzy, c-format
+#, c-format
 msgid "Create this directory for the tablespace before restarting the server."
-msgstr "在重新启动服务器前为这个表空间创建目录\"%s\"."
+msgstr "在重新启动服务器前为这个表空间创建该目录."
 
 #: commands/tablespace.c:571
 #, c-format
@@ -7167,44 +7164,44 @@ msgid "could not remove directory \"%s\": %m"
 msgstr "无法删除目录 \"%s\": %m"
 
 #: commands/tablespace.c:1085
-#, fuzzy, c-format
+#, c-format
 msgid "Tablespace \"%s\" does not exist."
-msgstr "表空间 \"%s\" 不存在"
+msgstr "表空间 \"%s\" 不存在."
 
 #: commands/tablespace.c:1517
 #, c-format
 msgid "directories for tablespace %u could not be removed"
-msgstr ""
+msgstr "表空间 %u 的目录不能被移除"
 
 #: commands/tablespace.c:1519
 #, c-format
 msgid "You can remove the directories manually if necessary."
-msgstr ""
+msgstr "如有必要您可以手动移除这些目录."
 
 #: commands/trigger.c:161
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is a table"
-msgstr "\"%s\" 不是一个表"
+msgstr "\"%s\" 是一个表"
 
 #: commands/trigger.c:163
 #, c-format
 msgid "Tables cannot have INSTEAD OF triggers."
-msgstr ""
+msgstr "表不能使用INSTEAD OF触发器."
 
 #: commands/trigger.c:174 commands/trigger.c:181
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is a view"
-msgstr "\"%s\" 不是一个视图"
+msgstr "\"%s\" 是一个视图"
 
 #: commands/trigger.c:176
 #, c-format
 msgid "Views cannot have row-level BEFORE or AFTER triggers."
-msgstr ""
+msgstr "视图不能使用行级 BEFORE 或 AFTER 触发器."
 
 #: commands/trigger.c:183
 #, c-format
 msgid "Views cannot have TRUNCATE triggers."
-msgstr ""
+msgstr "视图不能使用 TRUNCATE 触发器."
 
 #: commands/trigger.c:239
 #, c-format
@@ -7214,17 +7211,17 @@ msgstr "不支持使用TRUNCATE FOR EACH ROW触发器"
 #: commands/trigger.c:247
 #, c-format
 msgid "INSTEAD OF triggers must be FOR EACH ROW"
-msgstr ""
+msgstr "INSTEAD OF 触发器必须使用 FOR EACH ROW"
 
 #: commands/trigger.c:251
 #, c-format
 msgid "INSTEAD OF triggers cannot have WHEN conditions"
-msgstr ""
+msgstr "INSTEAD OF 触发器不能使用 WHEN 条件子句"
 
 #: commands/trigger.c:255
-#, fuzzy, c-format
+#, c-format
 msgid "INSTEAD OF triggers cannot have column lists"
-msgstr "触发器函数不能有已声明的参数"
+msgstr "INSTEAD OF 触发器不能带有字段列表"
 
 #: commands/trigger.c:299
 #, c-format
@@ -7493,14 +7490,14 @@ msgid "storage \"%s\" not recognized"
 msgstr "存储 \"%s\" 不被认可"
 
 #: commands/typecmds.c:419
-#, fuzzy, c-format
+#, c-format
 msgid "type input function must be specified"
-msgstr "类型输入函数 %s 必需指定"
+msgstr "类型输入函数必需指定"
 
 #: commands/typecmds.c:423
-#, fuzzy, c-format
+#, c-format
 msgid "type output function must be specified"
-msgstr "类型输出函数 %s 必需指定"
+msgstr "类型输出函数必需指定"
 
 #: commands/typecmds.c:428
 #, c-format
@@ -7555,9 +7552,9 @@ msgid "conflicting NULL/NOT NULL constraints"
 msgstr "NULL/NOT NULL 约束冲突"
 
 #: commands/typecmds.c:931
-#, fuzzy, c-format
+#, c-format
 msgid "CHECK constraints for domains cannot be marked NO INHERIT"
-msgstr "CHECK约束不能延迟"
+msgstr "域的CHECK约束不能标为NO INHERIT(不可继承)"
 
 #: commands/typecmds.c:940 commands/typecmds.c:2397
 #, c-format
@@ -7585,24 +7582,24 @@ msgid "specifying constraint deferrability not supported for domains"
 msgstr "所指定的约束延迟对域不支持"
 
 #: commands/typecmds.c:1211 utils/cache/typcache.c:1064
-#, fuzzy, c-format
+#, c-format
 msgid "%s is not an enum"
-msgstr "\"%s\" 不是一个数字"
+msgstr "%s 不是枚举"
 
 #: commands/typecmds.c:1347
-#, fuzzy, c-format
+#, c-format
 msgid "type attribute \"subtype\" is required"
-msgstr "类型属性 \"%s\" 不被认可"
+msgstr "类型属性 \"subtype\" 不是必需的"
 
 #: commands/typecmds.c:1352
-#, fuzzy, c-format
+#, c-format
 msgid "range subtype cannot be %s"
-msgstr "排列元素类型不能为 %s"
+msgstr "范围子类型不能为 %s"
 
 #: commands/typecmds.c:1371
 #, c-format
 msgid "range collation specified but subtype does not support collation"
-msgstr ""
+msgstr "已指定了范围排序规则但是子类型并不支持排序"
 
 #: commands/typecmds.c:1605
 #, c-format
@@ -7630,31 +7627,31 @@ msgid "type analyze function %s must return type \"boolean\""
 msgstr "类型 analyze 函数 %s 必需返回类型 \"boolean\""
 
 #: commands/typecmds.c:1855
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You must specify an operator class for the range type or define a default "
 "operator class for the subtype."
-msgstr "你必须指定一个操作符表给索引或定义一个默认的操作符表给数据类型."
+msgstr "你必须为范围类型指定一个操作符类或者为子类型定义一个默认的操作符类."
 
 #: commands/typecmds.c:1886
-#, fuzzy, c-format
+#, c-format
 msgid "range canonical function %s must return range type"
-msgstr "类型接收函数 %s 必需返回类型 %s"
+msgstr "范围的标准函数%s必须返回范围类型"
 
 #: commands/typecmds.c:1892
-#, fuzzy, c-format
+#, c-format
 msgid "range canonical function %s must be immutable"
-msgstr "类型 analyze 函数 %s 必需返回类型 \"boolean\""
+msgstr "范围的标准函数%s必须是不可变的"
 
 #: commands/typecmds.c:1928
-#, fuzzy, c-format
+#, c-format
 msgid "range subtype diff function %s must return type double precision"
-msgstr "类型输入函数 %s 必需返回类型 %s"
+msgstr "范围子类型的diff函数%s必须返回double precision(双精浮点)类型"
 
 #: commands/typecmds.c:1934
-#, fuzzy, c-format
+#, c-format
 msgid "range subtype diff function %s must be immutable"
-msgstr "类型输入函数 %s 必需返回类型 %s"
+msgstr "范围的子类型diff函数%s必须是不可变的"
 
 #: commands/typecmds.c:2240
 #, c-format
@@ -7662,19 +7659,19 @@ msgid "column \"%s\" of table \"%s\" contains null values"
 msgstr "表 \"%2$s\" 的字段 \"%1$s\" 包含空值"
 
 #: commands/typecmds.c:2342 commands/typecmds.c:2516
-#, fuzzy, c-format
+#, c-format
 msgid "constraint \"%s\" of domain \"%s\" does not exist"
-msgstr "关系 \"%2$s\" 的 约束\"%1$s\" 不存在"
+msgstr "域 \"%2$s\" 的 约束\"%1$s\" 不存在"
 
 #: commands/typecmds.c:2346
-#, fuzzy, c-format
+#, c-format
 msgid "constraint \"%s\" of domain \"%s\" does not exist, skipping"
-msgstr "关系 \"%2$s\" 的 约束\"%1$s\" 不存在"
+msgstr "域 \"%2$s\" 的 约束\"%1$s\" 不存在, 跳过"
 
 #: commands/typecmds.c:2522
-#, fuzzy, c-format
+#, c-format
 msgid "constraint \"%s\" of domain \"%s\" is not a check constraint"
-msgstr "关系 \"%2$s\" 的 约束\"%1$s\" 不存在"
+msgstr "域 \"%2$s\" 的 约束\"%1$s\" 不是一个check约束"
 
 #: commands/typecmds.c:2609
 #, c-format
@@ -7683,9 +7680,9 @@ msgid ""
 msgstr "表 \"%2$s\" 的字段 \"%1$s\" 包含的值违反了新约束"
 
 #: commands/typecmds.c:2811 commands/typecmds.c:3206 commands/typecmds.c:3355
-#, fuzzy, c-format
+#, c-format
 msgid "%s is not a domain"
-msgstr "\"%s\" 不是一个域"
+msgstr "%s 不是一个域"
 
 #: commands/typecmds.c:2844
 #, c-format
@@ -7733,9 +7730,9 @@ msgid "must be superuser to create superusers"
 msgstr "只有超级用户能创建另一个超级用户"
 
 #: commands/user.c:283
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser to create replication users"
-msgstr "只有超级用户能创建另一个超级用户"
+msgstr "只有超级用户能创建复制用户"
 
 #: commands/user.c:290
 #, c-format
@@ -7766,9 +7763,9 @@ msgid "must be superuser to alter superusers"
 msgstr "只有超级用户能修改超级用户"
 
 #: commands/user.c:636
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser to alter replication users"
-msgstr "只有超级用户能修改超级用户"
+msgstr "只有超级用户能修改复制用户"
 
 #: commands/user.c:652 commands/user.c:843
 #, c-format
@@ -7893,7 +7890,7 @@ msgstr "您可能已经遇到了由于事务重叠而造成的数据丢失."
 #: commands/vacuum.c:937
 #, c-format
 msgid "skipping vacuum of \"%s\" --- lock not available"
-msgstr ""
+msgstr "跳过对 \"%s\" 的压缩处理 --- 无法获取相应锁"
 
 #: commands/vacuum.c:963
 #, c-format
@@ -7911,12 +7908,12 @@ msgid "skipping \"%s\" --- only table or database owner can vacuum it"
 msgstr "忽略 \"%s\" --- 只有表或数据库属主能够清理 (vacuum)"
 
 #: commands/vacuum.c:988
-#, fuzzy, c-format
+#, c-format
 msgid "skipping \"%s\" --- cannot vacuum non-tables or special system tables"
-msgstr "忽略 \"%s\" --- 无法清理 (vacuum) 索引, 视图或特殊的系统表"
+msgstr "忽略 \"%s\" --- 无法清理 (vacuum) 非表或者特殊的系统表"
 
 #: commands/vacuumlazy.c:286
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "automatic vacuum of table \"%s.%s.%s\": index scans: %d\n"
 "pages: %d removed, %d remain\n"
@@ -7928,6 +7925,8 @@ msgstr ""
 "自动清理表\"%s.%s.%s\": 索引扫描: %d\n"
 "页:已删除%d页, %d页保留\n"
 "元组: 已删除%.0f,%.0f保留\n"
+"缓冲使用:命中%d, %d丢失, %d脏页\n"
+"平均读效率:%.3f MiB/s, 平均写效率: %.3f MiB/s\n"
 "系统使用情况: %s "
 
 #: commands/vacuumlazy.c:617
@@ -7999,24 +7998,24 @@ msgid "\"%s\": truncated %u to %u pages"
 msgstr "\"%s\": 将%u截断到%u pages"
 
 #: commands/variable.c:161 utils/misc/guc.c:8327
-#, fuzzy, c-format
+#, c-format
 msgid "Unrecognized key word: \"%s\"."
-msgstr "未知的键值: \"%s\""
+msgstr "未知的关键字: \"%s\"."
 
 #: commands/variable.c:173
-#, fuzzy, c-format
+#, c-format
 msgid "Conflicting \"datestyle\" specifications."
-msgstr "\"datestyle\" 规范冲突"
+msgstr "\"datestyle\" 规范冲突."
 
 #: commands/variable.c:312
 #, c-format
 msgid "Cannot specify months in time zone interval."
-msgstr ""
+msgstr "在 time zone interval中无法指定月."
 
 #: commands/variable.c:318
 #, c-format
 msgid "Cannot specify days in time zone interval."
-msgstr ""
+msgstr "在 time zone interval中无法指定天."
 
 #: commands/variable.c:362 commands/variable.c:485
 #, c-format
@@ -8034,9 +8033,9 @@ msgid "cannot set transaction read-write mode inside a read-only transaction"
 msgstr "不能在一个只读事物里面设置读写模式"
 
 #: commands/variable.c:558
-#, fuzzy, c-format
+#, c-format
 msgid "transaction read-write mode must be set before any query"
-msgstr "在恢复操作期间不能设置事务的读写模式"
+msgstr "执行任意查询前必须设置事务的读写模式"
 
 #: commands/variable.c:565
 #, c-format
@@ -8054,35 +8053,35 @@ msgid "SET TRANSACTION ISOLATION LEVEL must not be called in a subtransaction"
 msgstr "SET TRANSACTION ISOLATION LEVEL 不能在子事物中调用"
 
 #: commands/variable.c:628 storage/lmgr/predicate.c:1582
-#, fuzzy, c-format
+#, c-format
 msgid "cannot use serializable mode in a hot standby"
-msgstr "正在为热备进行初始化"
+msgstr "热备过程中无法使用可串行化模式"
 
 #: commands/variable.c:629
-#, fuzzy, c-format
+#, c-format
 msgid "You can use REPEATABLE READ instead."
-msgstr "您可以使用EXECUTE ... INTO语句来替代"
+msgstr "您必须使用REPEATABLE READ来代替"
 
 #: commands/variable.c:677
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "SET TRANSACTION [NOT] DEFERRABLE cannot be called within a subtransaction"
-msgstr "SET TRANSACTION ISOLATION LEVEL 不能在子事物中调用"
+msgstr "SET TRANSACTION [NOT] DEFERRABLE 不能在子事物中调用"
 
 #: commands/variable.c:683
-#, fuzzy, c-format
+#, c-format
 msgid "SET TRANSACTION [NOT] DEFERRABLE must be called before any query"
-msgstr "SET TRANSACTION ISOLATION LEVEL 必须在任何查询之前调用"
+msgstr "SET TRANSACTION [NOT] DEFERRABLE 必须在任何查询之前调用"
 
 #: commands/variable.c:765
-#, fuzzy, c-format
+#, c-format
 msgid "Conversion between %s and %s is not supported."
-msgstr "不支持 %s 和 %s 之间的编码转换"
+msgstr "不支持 %s 和 %s 之间的编码转换."
 
 #: commands/variable.c:772
 #, c-format
 msgid "Cannot change \"client_encoding\" now."
-msgstr ""
+msgstr "现在无法改变 \"client_encoding\" 值."
 
 #: commands/variable.c:942
 #, c-format
@@ -8090,9 +8089,9 @@ msgid "permission denied to set role \"%s\""
 msgstr "设置角色\"%s\"的权限不足"
 
 #: commands/view.c:145
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for view column \"%s\""
-msgstr "无法确定多态函数\"%s\"的实际返回类型"
+msgstr "视图中的列\"%s\"无法确定使用哪种排序规则"
 
 #: commands/view.c:160
 #, c-format
@@ -8115,14 +8114,14 @@ msgid "cannot change data type of view column \"%s\" from %s to %s"
 msgstr "不可以将视图字段 \"%s\" 的数据类型从%s改为%s"
 
 #: commands/view.c:450
-#, fuzzy, c-format
+#, c-format
 msgid "views must not contain SELECT INTO"
-msgstr "FROM中的子查询不能有SELECT INTO"
+msgstr "视力中不能包含SELECT INTO"
 
 #: commands/view.c:463
 #, c-format
 msgid "views must not contain data-modifying statements in WITH"
-msgstr ""
+msgstr "视图不能包含修改数据的WITH子句"
 
 #: commands/view.c:491
 #, c-format
@@ -8132,7 +8131,7 @@ msgstr "CREATE VIEW 指定的字段名比实际字段多"
 #: commands/view.c:499
 #, c-format
 msgid "views cannot be unlogged because they do not have storage"
-msgstr ""
+msgstr "视图无法取消事务日志，因为它们没有相应存储"
 
 #: commands/view.c:513
 #, c-format
@@ -8192,45 +8191,48 @@ msgid "cannot change TOAST relation \"%s\""
 msgstr "不可以改变 TOAST 关系 \"%s\""
 
 #: executor/execMain.c:961
-#, fuzzy, c-format
+#, c-format
 msgid "cannot insert into view \"%s\""
-msgstr "无法插入到一个视图"
+msgstr "无法插入到视图\"%s\""
 
 #: executor/execMain.c:963
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need an unconditional ON INSERT DO INSTEAD rule or an INSTEAD OF INSERT "
 "trigger."
-msgstr "你需要一个无条件的 ON INSERT DO INSTEAD 规则."
+msgstr ""
+"你需要一个无条件的 ON INSERT DO INSTEAD 规则或者INSTEAD OF INSERT触发器."
 
 #: executor/execMain.c:969
-#, fuzzy, c-format
+#, c-format
 msgid "cannot update view \"%s\""
-msgstr "无法更新一个视图"
+msgstr "无法更新视图\"%s\""
 
 #: executor/execMain.c:971
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need an unconditional ON UPDATE DO INSTEAD rule or an INSTEAD OF UPDATE "
 "trigger."
-msgstr "你需要一个无条件的 ON UPDATE DO INSTEAD 规则."
+msgstr ""
+"你需要一个无条件的 ON UPDATE DO INSTEAD 规则或者INSTEAD OF UPDATE触发器."
 
 #: executor/execMain.c:977
-#, fuzzy, c-format
+#, c-format
 msgid "cannot delete from view \"%s\""
-msgstr "无法从一个视图中删除"
+msgstr "无法删除视图\"%s\""
 
 #: executor/execMain.c:979
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need an unconditional ON DELETE DO INSTEAD rule or an INSTEAD OF DELETE "
 "trigger."
-msgstr "你需要一个无条件的 ON DELETE DO INSTEAD 规则."
+msgstr ""
+"你需要一个无条件的 ON DELETE DO INSTEAD 规则或者INSTEAD OF DELETE触发器."
 
 #: executor/execMain.c:989
-#, fuzzy, c-format
+#, c-format
 msgid "cannot change foreign table \"%s\""
-msgstr "无法改变关系 \"%s\""
+msgstr "无法改变外部表 \"%s\""
 
 #: executor/execMain.c:995
 #, c-format
@@ -8238,29 +8240,29 @@ msgid "cannot change relation \"%s\""
 msgstr "无法改变关系 \"%s\""
 
 #: executor/execMain.c:1019
-#, fuzzy, c-format
+#, c-format
 msgid "cannot lock rows in sequence \"%s\""
-msgstr "不可以从序列 \"%s\" 拷贝"
+msgstr "无法锁定序列\"%s\"中的行"
 
 #: executor/execMain.c:1026
-#, fuzzy, c-format
+#, c-format
 msgid "cannot lock rows in TOAST relation \"%s\""
-msgstr "不可以改变 TOAST 关系 \"%s\""
+msgstr "无法锁定TOAST 关系 \"%s\"中的行"
 
 #: executor/execMain.c:1033
-#, fuzzy, c-format
+#, c-format
 msgid "cannot lock rows in view \"%s\""
-msgstr "不可以从视图 \"%s\" 拷贝"
+msgstr "无法锁定 \"%s\" 中的行"
 
 #: executor/execMain.c:1040
-#, fuzzy, c-format
+#, c-format
 msgid "cannot lock rows in foreign table \"%s\""
-msgstr "不能删除处于活动状态的portal \"%s\""
+msgstr "无法锁定外部表 \"%s\"中的行"
 
 #: executor/execMain.c:1046
-#, fuzzy, c-format
+#, c-format
 msgid "cannot lock rows in relation \"%s\""
-msgstr "无法在关系 \"%s\"中的记录上获得锁"
+msgstr "无法锁定关系 \"%s\"中的行"
 
 #: executor/execMain.c:1522
 #, c-format
@@ -8268,9 +8270,9 @@ msgid "null value in column \"%s\" violates not-null constraint"
 msgstr "在字段 \"%s\" 中空值违反了非空约束"
 
 #: executor/execMain.c:1524 executor/execMain.c:1538
-#, fuzzy, c-format
+#, c-format
 msgid "Failing row contains %s."
-msgstr "失败, 系统命令是: %s"
+msgstr "失败, 行包含%s."
 
 #: executor/execMain.c:1536
 #, c-format
@@ -8675,9 +8677,9 @@ msgid "user mapping not found for \"%s\""
 msgstr "没有找到对于\"%s\"的用户映射"
 
 #: foreign/foreign.c:344
-#, fuzzy, c-format
+#, c-format
 msgid "foreign-data wrapper \"%s\" has no handler"
-msgstr "外部数据封装器 \"%s\" 不存在"
+msgstr "外部数据封装器 \"%s\"没有处理函数"
 
 #: foreign/foreign.c:521
 #, c-format
@@ -8690,9 +8692,9 @@ msgid "Valid options in this context are: %s"
 msgstr "这个环境中有效选项是:%s"
 
 #: gram.y:914
-#, fuzzy, c-format
+#, c-format
 msgid "unrecognized role option \"%s\""
-msgstr "无法识别的EXPLAIN选项\"%s\""
+msgstr "无法识别的角色选项\"%s\""
 
 #: gram.y:1304
 #, c-format
@@ -8712,7 +8714,7 @@ msgstr "两次指定间隔精度"
 #: gram.y:2525 gram.y:2532 gram.y:8958 gram.y:8966
 #, c-format
 msgid "GLOBAL is deprecated in temporary table creation"
-msgstr ""
+msgstr "GLOBAL在临时表中的创建中已经被废弃使用"
 
 #: gram.y:2969 utils/adt/ri_triggers.c:375 utils/adt/ri_triggers.c:435
 #: utils/adt/ri_triggers.c:598 utils/adt/ri_triggers.c:838
@@ -8736,9 +8738,9 @@ msgid "constraint declared INITIALLY DEFERRED must be DEFERRABLE"
 msgstr "约束声明 INITIALLY DEFERRED 必须为 DEFERRABLE"
 
 #: gram.y:4244
-#, fuzzy, c-format
+#, c-format
 msgid "conflicting constraint properties"
-msgstr "选项冲突或过多"
+msgstr "约束属性冲突"
 
 #: gram.y:4308
 #, c-format
@@ -8912,32 +8914,32 @@ msgid "OUT and INOUT arguments aren't allowed in TABLE functions"
 msgstr "在TABLE函数中不允许使用OUT或INOUT模式的参数"
 
 #: gram.y:13259
-#, fuzzy, c-format
+#, c-format
 msgid "multiple COLLATE clauses not allowed"
-msgstr "不允许多个 LIMIT 子句"
+msgstr "不允许多个 COLLATE 子句"
 
 #. translator: %s is CHECK, UNIQUE, or similar
 #: gram.y:13297 gram.y:13310
-#, fuzzy, c-format
+#, c-format
 msgid "%s constraints cannot be marked DEFERRABLE"
-msgstr "CHECK约束不能延迟"
+msgstr "%s约束不能标为DEFERRABLE"
 
 #. translator: %s is CHECK, UNIQUE, or similar
 #: gram.y:13323
-#, fuzzy, c-format
+#, c-format
 msgid "%s constraints cannot be marked NOT VALID"
-msgstr "CHECK约束不能延迟"
+msgstr "%s约束不能标为NOT VALID"
 
 #. translator: %s is CHECK, UNIQUE, or similar
 #: gram.y:13336
-#, fuzzy, c-format
+#, c-format
 msgid "%s constraints cannot be marked NO INHERIT"
-msgstr "CHECK约束不能延迟"
+msgstr "%s约束不能标为NO INHERIT"
 
 #: guc-file.l:192
-#, fuzzy, c-format
+#, c-format
 msgid "unrecognized configuration parameter \"%s\" in file \"%s\" line %u"
-msgstr "未认可的配置参数 \"%s\""
+msgstr "未认可的配置参数 \"%s\", 文件\"%s\", 行%u"
 
 #: guc-file.l:227 utils/misc/guc.c:5196 utils/misc/guc.c:5372
 #: utils/misc/guc.c:5476 utils/misc/guc.c:5577 utils/misc/guc.c:5698
@@ -8957,20 +8959,20 @@ msgid "parameter \"%s\" changed to \"%s\""
 msgstr "参数 \"%s\"被改为\"%s\""
 
 #: guc-file.l:351
-#, fuzzy, c-format
+#, c-format
 msgid "configuration file \"%s\" contains errors"
-msgstr "配置字段 \"%s\" 不存在"
+msgstr "配置文件 \"%s\" 有错"
 
 #: guc-file.l:356
 #, c-format
 msgid ""
 "configuration file \"%s\" contains errors; unaffected changes were applied"
-msgstr ""
+msgstr "配置文件 \"%s\" 有错; 使用了不受影响的内容变动"
 
 #: guc-file.l:361
 #, c-format
 msgid "configuration file \"%s\" contains errors; no changes were applied"
-msgstr ""
+msgstr "配置文件 \"%s\" 有错; 没有内容变动"
 
 #: guc-file.l:393
 #, c-format
@@ -8984,9 +8986,9 @@ msgid "could not open configuration file \"%s\": %m"
 msgstr "无法打开配置文件 \"%s\": %m"
 
 #: guc-file.l:436
-#, fuzzy, c-format
+#, c-format
 msgid "skipping missing configuration file \"%s\""
-msgstr "配置文件\"%2$s\"的第%1$d行"
+msgstr "忽略丢失的配置文件\"%s\""
 
 #: guc-file.l:627
 #, c-format
@@ -9001,7 +9003,7 @@ msgstr "在文件 \"%s\" 第 %u 行, 记号 \"%s\" 附近语法错误"
 #: guc-file.l:648
 #, c-format
 msgid "too many syntax errors found, abandoning file \"%s\""
-msgstr ""
+msgstr "发现太多的语法错误, 放弃文件 \"%s\""
 
 #: lib/stringinfo.c:267
 #, c-format
@@ -9029,9 +9031,9 @@ msgid "Ident authentication failed for user \"%s\""
 msgstr "用户 \"%s\" Ident 认证失败"
 
 #: libpq/auth.c:269
-#, fuzzy, c-format
+#, c-format
 msgid "Peer authentication failed for user \"%s\""
-msgstr "用户 \"%s\" 认证 PAM 失败"
+msgstr "对用户\"%s\"的对等认证失败"
 
 #: libpq/auth.c:273
 #, c-format
@@ -9114,17 +9116,17 @@ msgstr "pg_hba.conf 记录拒绝来自主机\"%s\", 用户\"%s\", 数据库\"%s\
 #: libpq/auth.c:445
 #, c-format
 msgid "Client IP address resolved to \"%s\", forward lookup matches."
-msgstr ""
+msgstr "客户端IP地址解析为 \"%s\", 与转发查找结果相匹配."
 
 #: libpq/auth.c:447
 #, c-format
 msgid "Client IP address resolved to \"%s\", forward lookup not checked."
-msgstr ""
+msgstr "客户端IP地址解析为 \"%s\", 转发查找结果没有检查."
 
 #: libpq/auth.c:449
 #, c-format
 msgid "Client IP address resolved to \"%s\", forward lookup does not match."
-msgstr ""
+msgstr "客户端IP地址解析为 \"%s\", 与转发查找结果不匹配."
 
 #: libpq/auth.c:458
 #, c-format
@@ -9269,9 +9271,9 @@ msgstr "从 Ident 服务器接收的无效格式应答: \"%s\""
 
 # fe-auth.c:640
 #: libpq/auth.c:1781
-#, fuzzy, c-format
+#, c-format
 msgid "peer authentication is not supported on this platform"
-msgstr "无效的认证方法\"%s\": 在这个平台上不支持"
+msgstr "对等认证在这个平台上不支持"
 
 #: libpq/auth.c:1785
 #, c-format
@@ -9475,24 +9477,24 @@ msgid "could not read RADIUS response: %m"
 msgstr "无法读取RADIUS回应包: %m"
 
 #: libpq/auth.c:2691 libpq/auth.c:2695
-#, fuzzy, c-format
+#, c-format
 msgid "RADIUS response was sent from incorrect port: %d"
-msgstr "RADIUS回应数据包是从不正确的端口中发出的:%i"
+msgstr "RADIUS回应数据包是从不正确的端口中发出的: %d"
 
 #: libpq/auth.c:2704
-#, fuzzy, c-format
+#, c-format
 msgid "RADIUS response too short: %d"
-msgstr "RADIUS回应包的长度太短:%i"
+msgstr "RADIUS回应包的长度太短:%d"
 
 #: libpq/auth.c:2711
-#, fuzzy, c-format
+#, c-format
 msgid "RADIUS response has corrupt length: %d (actual length %d)"
-msgstr "RADIUS回应包的长度不正确:%i(实际长度是%i)"
+msgstr "RADIUS回应包的长度不正确:%i(实际长度是%d)"
 
 #: libpq/auth.c:2719
-#, fuzzy, c-format
+#, c-format
 msgid "RADIUS response is to a different request: %d (should be %d)"
-msgstr "RADIUS回应包发送到了一个不同的请求上:%i (应该是%i)"
+msgstr "RADIUS回应包发送到了一个不同的请求上:%d (应该是%d)"
 
 #: libpq/auth.c:2744
 #, c-format
@@ -9505,9 +9507,9 @@ msgid "RADIUS response has incorrect MD5 signature"
 msgstr "RADIUS回应包带有不正确的MD5签名"
 
 #: libpq/auth.c:2770
-#, fuzzy, c-format
+#, c-format
 msgid "RADIUS response has invalid code (%d) for user \"%s\""
-msgstr "对于用户\"%2$s\"来说RADIUS回应包带有无效编码(%1$i) "
+msgstr "对于用户\"%2$s\"来说RADIUS回应包带有无效编码(%1$d) "
 
 #: libpq/be-fsstubs.c:132 libpq/be-fsstubs.c:162 libpq/be-fsstubs.c:188
 #: libpq/be-fsstubs.c:224 libpq/be-fsstubs.c:271 libpq/be-fsstubs.c:518
@@ -9636,9 +9638,9 @@ msgid "SSL library does not support certificate revocation lists."
 msgstr "SSL库不支持认证撤销列表"
 
 #: libpq/be-secure.c:839
-#, fuzzy, c-format
+#, c-format
 msgid "could not load SSL certificate revocation list file \"%s\": %s"
-msgstr "无法装载根 (root) 认证文件 \"%s\": %s"
+msgstr "无法装载根 (root)证书取消列表文件 \"%s\": %s"
 
 #: libpq/be-secure.c:884
 #, c-format
@@ -9696,9 +9698,9 @@ msgstr "无法打开次认证文件 \"@%s\" 为 \"%s\": %m"
 
 # fe-misc.c:702
 #: libpq/hba.c:595
-#, fuzzy, c-format
+#, c-format
 msgid "could not translate host name \"%s\" to address: %s"
-msgstr "无法解释主机名 \"%s\" 到地址: %s\n"
+msgstr "无法解释主机名 \"%s\" 到地址: %s"
 
 #. translator: the second %s is a list of auth methods
 #: libpq/hba.c:746
@@ -9733,41 +9735,41 @@ msgid "missing entry in file \"%s\" at end of line %d"
 msgstr "在 \"%s\" 文件的第 %d 行末尾缺少记录"
 
 #: libpq/hba.c:794
-#, fuzzy, c-format
+#, c-format
 msgid "multiple values in ident field"
-msgstr "不允许使用多个WITH子句"
+msgstr "识别字段出现多个值"
 
 #: libpq/hba.c:839
-#, fuzzy, c-format
+#, c-format
 msgid "multiple values specified for connection type"
-msgstr "对表 \"%2$s\" 的字段 \"%1$s\" 指定了多遍默认值"
+msgstr "连接类型指定了多个值"
 
 #: libpq/hba.c:840
 #, c-format
 msgid "Specify exactly one connection type per line."
-msgstr ""
+msgstr "每行精确指定一个连接类型."
 
 # input.c:213
 #: libpq/hba.c:853
-#, fuzzy, c-format
+#, c-format
 msgid "local connections are not supported by this build"
-msgstr "这个版本的安装不支持使用SSL"
+msgstr "这个版本编译不支持本地连接"
 
 #: libpq/hba.c:874
 #, c-format
 msgid "hostssl requires SSL to be turned on"
-msgstr ""
+msgstr "hostssl 要求开启 SSL开关"
 
 #: libpq/hba.c:875
 #, c-format
 msgid "Set ssl = on in postgresql.conf."
-msgstr ""
+msgstr "在postgresql.conf配置文件中设置 ssl 开关为 on."
 
 # input.c:213
 #: libpq/hba.c:883
-#, fuzzy, c-format
+#, c-format
 msgid "hostssl is not supported by this build"
-msgstr "这个版本的安装不支持使用SSL"
+msgstr "这个版本的编译安装不支持使用hostssl"
 
 #: libpq/hba.c:884
 #, c-format
@@ -9796,14 +9798,14 @@ msgid "end-of-line before IP address specification"
 msgstr "在IP地址定义前面出现行结束符"
 
 #: libpq/hba.c:969
-#, fuzzy, c-format
+#, c-format
 msgid "multiple values specified for host address"
-msgstr "对表 \"%2$s\" 的字段 \"%1$s\" 指定了多遍默认值"
+msgstr "主机地址指定了多个值"
 
 #: libpq/hba.c:970
 #, c-format
 msgid "Specify one address range per line."
-msgstr ""
+msgstr "每行指定一个地址范围."
 
 #: libpq/hba.c:1024
 #, c-format
@@ -9813,7 +9815,7 @@ msgstr "IP地址无效\"%s\": %s"
 #: libpq/hba.c:1042
 #, c-format
 msgid "specifying both host name and CIDR mask is invalid: \"%s\""
-msgstr ""
+msgstr "指定主机名，同时 CIDR 掩码: \"%s\"值无效"
 
 #: libpq/hba.c:1054
 #, c-format
@@ -9829,12 +9831,12 @@ msgstr "在网络掩码定义前的行结束符"
 #, c-format
 msgid ""
 "Specify an address range in CIDR notation, or provide a separate netmask."
-msgstr ""
+msgstr "使用CIDR 符号指定地址范围, 或者提供独立的网络掩码."
 
 #: libpq/hba.c:1082
-#, fuzzy, c-format
+#, c-format
 msgid "multiple values specified for netmask"
-msgstr "对表 \"%2$s\" 的字段 \"%1$s\" 指定了多遍默认值"
+msgstr "网络掩码指定了多个值"
 
 #: libpq/hba.c:1095
 #, c-format
@@ -9852,14 +9854,14 @@ msgid "end-of-line before authentication method"
 msgstr "在认证方法前面出现行结束符"
 
 #: libpq/hba.c:1137
-#, fuzzy, c-format
+#, c-format
 msgid "multiple values specified for authentication type"
-msgstr "对表 \"%2$s\" 的字段 \"%1$s\" 指定了多遍默认值"
+msgstr "认证类型指定了多个值"
 
 #: libpq/hba.c:1138
 #, c-format
 msgid "Specify exactly one authentication type per line."
-msgstr ""
+msgstr "每行精确指定一个认证类型."
 
 #: libpq/hba.c:1211
 #, c-format
@@ -9868,9 +9870,9 @@ msgstr "无效认证方法\"%s\""
 
 # fe-auth.c:640
 #: libpq/hba.c:1222
-#, fuzzy, c-format
+#, c-format
 msgid "invalid authentication method \"%s\": not supported by this build"
-msgstr "无效的认证方法\"%s\": 在这个平台上不支持"
+msgstr "这个版本的编译安装不支持无效的认证方法\"%s\""
 
 #: libpq/hba.c:1243
 #, c-format
@@ -9883,9 +9885,9 @@ msgid "gssapi authentication is not supported on local sockets"
 msgstr "在本地套接字上不支持gssapi认证"
 
 #: libpq/hba.c:1265
-#, fuzzy, c-format
+#, c-format
 msgid "peer authentication is only supported on local sockets"
-msgstr "在本地套接字上不支持krb5认证"
+msgstr "对等认证只支持在本地套接字的情形下使用"
 
 #: libpq/hba.c:1282
 #, c-format
@@ -9917,9 +9919,8 @@ msgstr ""
 "\""
 
 #: libpq/hba.c:1394
-#, fuzzy
 msgid "ident, peer, krb5, gssapi, sspi, and cert"
-msgstr "ident, krb5, gssapi, sspi和cert"
+msgstr "ident, peer, krb5, gssapi, sspi和cert"
 
 #: libpq/hba.c:1407
 #, c-format
@@ -9934,9 +9935,9 @@ msgid ""
 msgstr "只有在根认证有效的情况下才能检查客户端认证"
 
 #: libpq/hba.c:1419
-#, fuzzy, c-format
+#, c-format
 msgid "Make sure the configuration parameter \"ssl_ca_file\" is set."
-msgstr "未认可的配置参数 \"%s\""
+msgstr "确保配置参数\"ssl_ca_file\"已经设置."
 
 #: libpq/hba.c:1432
 #, c-format
@@ -9949,9 +9950,8 @@ msgid "invalid LDAP port number: \"%s\""
 msgstr "无效LDAP端口号: \"%s\""
 
 #: libpq/hba.c:1512 libpq/hba.c:1520
-#, fuzzy
 msgid "krb5, gssapi, and sspi"
-msgstr "krb5, gssapi和sspi"
+msgstr "krb5, gssapi, 和sspi"
 
 #: libpq/hba.c:1562
 #, c-format
@@ -9964,9 +9964,9 @@ msgid "unrecognized authentication option name: \"%s\""
 msgstr "未知认证选项名称:\"%s\""
 
 #: libpq/hba.c:1771
-#, fuzzy, c-format
+#, c-format
 msgid "configuration file \"%s\" contains no entries"
-msgstr "配置字段 \"%s\" 不存在"
+msgstr "配置文件 \"%s\" 没有配置项"
 
 #: libpq/hba.c:1878
 #, c-format
@@ -10190,102 +10190,101 @@ msgid "Options:\n"
 msgstr "选项:\n"
 
 #: main/main.c:278
-#, fuzzy, c-format
+#, c-format
 msgid "  -A 1|0             enable/disable run-time assert checking\n"
-msgstr "  -A 1|0          打开/关闭运行时断言检查\n"
+msgstr "  -A 1|0             打开/关闭运行时断言检查\n"
 
 #: main/main.c:280
-#, fuzzy, c-format
+#, c-format
 msgid "  -B NBUFFERS        number of shared buffers\n"
-msgstr "  -B NBUFFERS     共享缓冲区的数量\n"
+msgstr "  -B NBUFFERS        共享缓冲区的数量\n"
 
 #: main/main.c:281
-#, fuzzy, c-format
+#, c-format
 msgid "  -c NAME=VALUE      set run-time parameter\n"
-msgstr "  -c 名字=数值    设置运行时参数\n"
+msgstr "  -c NAME=VALUE      设置运行时参数\n"
 
 #: main/main.c:282
-#, fuzzy, c-format
+#, c-format
 msgid "  -C NAME            print value of run-time parameter, then exit\n"
-msgstr ""
-"  --help                显示此帮助信息, 然后退出\n"
-"\n"
+msgstr "  -C NAME            打印运行时参数, 然后退出\n"
 
 #: main/main.c:283
-#, fuzzy, c-format
+#, c-format
 msgid "  -d 1-5             debugging level\n"
-msgstr "  -d 1-5          调试级别\n"
+msgstr "  -d 1-5             调试级别\n"
 
 #: main/main.c:284
-#, fuzzy, c-format
+#, c-format
 msgid "  -D DATADIR         database directory\n"
-msgstr "  -D 数据目录     数据库目录\n"
+msgstr "  -D DATADIR         数据库目录\n"
 
 #: main/main.c:285
-#, fuzzy, c-format
+#, c-format
 msgid "  -e                 use European date input format (DMY)\n"
-msgstr "  -e              使用欧洲日期输入格式 (DMY)\n"
+msgstr "  -e                 使用欧洲日期输入格式 (DMY)\n"
 
 #: main/main.c:286
-#, fuzzy, c-format
+#, c-format
 msgid "  -F                 turn fsync off\n"
-msgstr "  -F              关闭 fsync\n"
+msgstr "  -F                关闭 fsync\n"
 
 #: main/main.c:287
-#, fuzzy, c-format
+#, c-format
 msgid "  -h HOSTNAME        host name or IP address to listen on\n"
-msgstr "  -h 主机名       侦听的主机名或者 IP 地址\n"
+msgstr "  -h HOSTNAME        侦听的主机名或者 IP 地址\n"
 
 #: main/main.c:288
-#, fuzzy, c-format
+#, c-format
 msgid "  -i                 enable TCP/IP connections\n"
-msgstr "  -i              打开 TCP/IP 联接\n"
+msgstr "  -i                 打开 TCP/IP 连接\n"
 
 #: main/main.c:289
-#, fuzzy, c-format
+#, c-format
 msgid "  -k DIRECTORY       Unix-domain socket location\n"
-msgstr "  -k 目录         Unix 域套接字的位置\n"
+msgstr "  -k DIRECTORY       Unix 域套接字的目录位置\n"
 
 #: main/main.c:291
-#, fuzzy, c-format
+#, c-format
 msgid "  -l                 enable SSL connections\n"
-msgstr "  -l              打开 SSL 联接\n"
+msgstr "  -l                  开启 SSL 连接\n"
 
 #: main/main.c:293
-#, fuzzy, c-format
+#, c-format
 msgid "  -N MAX-CONNECT     maximum number of allowed connections\n"
-msgstr "  -N MAX-CONNECT  允许建立的最大联接数目\n"
+msgstr "  -N MAX-CONNECT     允许建立的最大连接数目\n"
 
 #: main/main.c:294
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -o OPTIONS         pass \"OPTIONS\" to each server process (obsolete)\n"
-msgstr "  -o OPTIONS      把 \"OPTIONS\" 传递给每一个后端服务器进程(已作废)\n"
+msgstr ""
+"  -o OPTIONS          把 \"OPTIONS\" 传递给每一个后端服务器进程(已作废)\n"
 
 #: main/main.c:295
-#, fuzzy, c-format
+#, c-format
 msgid "  -p PORT            port number to listen on\n"
-msgstr "  -p PORT         监听的端口号\n"
+msgstr "  -p PORT            监听的端口号\n"
 
 #: main/main.c:296
-#, fuzzy, c-format
+#, c-format
 msgid "  -s                 show statistics after each query\n"
-msgstr "  -s              每个查询后显示统计信息\n"
+msgstr "  -s                 每个查询后显示统计信息\n"
 
 #: main/main.c:297
-#, fuzzy, c-format
+#, c-format
 msgid "  -S WORK-MEM        set amount of memory for sorts (in kB)\n"
-msgstr "  -S WORK-MEM     设置排序内存数量 (单位为 kB)\n"
+msgstr "  -S WORK-MEM        设置排序内存数量 (单位为 kB)\n"
 
 #: main/main.c:298
-#, fuzzy, c-format
+#, c-format
 msgid "  -V, --version      output version information, then exit\n"
-msgstr " --version       输出版本信息，然后退出\n"
+msgstr "  -V, --version      输出版本信息，然后退出\n"
 
 #: main/main.c:299
-#, fuzzy, c-format
+#, c-format
 msgid "  --NAME=VALUE       set run-time parameter\n"
-msgstr "  --NAME=VALUE   设置运行时参数\n"
+msgstr "  --NAME=VALUE       设置运行时参数\n"
 
 #: main/main.c:300
 #, c-format
@@ -10293,9 +10292,9 @@ msgid "  --describe-config  describe configuration parameters, then exit\n"
 msgstr "  --describe-config  描述配置参数, 然后退出\n"
 
 #: main/main.c:301
-#, fuzzy, c-format
+#, c-format
 msgid "  -?, --help         show this help, then exit\n"
-msgstr "  --help      显示帮助信息，然后退出\n"
+msgstr "  -?, --help         显示帮助信息，然后退出\n"
 
 #: main/main.c:303
 #, c-format
@@ -10307,42 +10306,42 @@ msgstr ""
 "开发人员选项:\n"
 
 #: main/main.c:304
-#, fuzzy, c-format
+#, c-format
 msgid "  -f s|i|n|m|h       forbid use of some plan types\n"
-msgstr "  -f s|i|n|m|h    禁止一些规划类型的使用\n"
+msgstr "  -f s|i|n|m|h       禁止一些计划类型的使用\n"
 
 #: main/main.c:305
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -n                 do not reinitialize shared memory after abnormal exit\n"
-msgstr "  -n              在异常退出之后不再重新初始化共享内存\n"
+msgstr "  -n                 在异常退出之后不再重新初始化共享内存\n"
 
 #: main/main.c:306
-#, fuzzy, c-format
+#, c-format
 msgid "  -O                 allow system table structure changes\n"
-msgstr "  -O              允许改变系统表结构\n"
+msgstr "  -O                  允许改变系统表结构\n"
 
 #: main/main.c:307
-#, fuzzy, c-format
+#, c-format
 msgid "  -P                 disable system indexes\n"
-msgstr "  -P              关闭系统索引\n"
+msgstr "  -P                 关闭系统索引\n"
 
 #: main/main.c:308
-#, fuzzy, c-format
+#, c-format
 msgid "  -t pa|pl|ex        show timings after each query\n"
-msgstr "  -t pa|pl|ex     每个查询后显示计时\n"
+msgstr "  -t pa|pl|ex        每个查询后显示计时\n"
 
 #: main/main.c:309
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -T                 send SIGSTOP to all backend processes if one dies\n"
 msgstr ""
-" -T              如果一个后端进程退出, 那么向所有后端进程发送 SIGSTOP\n"
+"  -T                 如果一个后端进程退出, 那么向所有后端进程发送 SIGSTOP\n"
 
 #: main/main.c:310
-#, fuzzy, c-format
+#, c-format
 msgid "  -W NUM             wait NUM seconds to allow attach from a debugger\n"
-msgstr "  -W NUM          等待 NUM 秒, 以便允许调试器加入调试\n"
+msgstr "  -W NUM            等待 NUM 秒, 以便允许调试器加入调试\n"
 
 #: main/main.c:312
 #, c-format
@@ -10355,37 +10354,37 @@ msgstr ""
 
 # help.c:109
 #: main/main.c:313
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  --single           selects single-user mode (must be first argument)\n"
-msgstr "  --single       选择单用户模式(必须是第一个参数)\n"
+msgstr "  --single           选择单用户模式(必须是第一个参数)\n"
 
 # help.c:136
 #: main/main.c:314
-#, fuzzy, c-format
+#, c-format
 msgid "  DBNAME             database name (defaults to user name)\n"
-msgstr "  DBNAME       数据库名称(对用户名缺省)\n"
+msgstr "  DBNAME             数据库名称(对用户名缺省)\n"
 
 #: main/main.c:315
-#, fuzzy, c-format
+#, c-format
 msgid "  -d 0-5             override debugging level\n"
-msgstr "  -d 1-5          覆盖调试级别\n"
+msgstr "  -d 0-5             覆盖调试级别\n"
 
 #: main/main.c:316
-#, fuzzy, c-format
+#, c-format
 msgid "  -E                 echo statement before execution\n"
-msgstr "  -E              执行前显示查询\n"
+msgstr "  -E                 执行前显示语句\n"
 
 #: main/main.c:317
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -j                 do not use newline as interactive query delimiter\n"
-msgstr "  -j              不使用新行作为交互查询的分隔符\n"
+msgstr "  -j                 不使用新行作为交互查询的分隔符\n"
 
 #: main/main.c:318 main/main.c:323
-#, fuzzy, c-format
+#, c-format
 msgid "  -r FILENAME        send stdout and stderr to given file\n"
-msgstr "  -r FILENAME    把标准输出和标准错误发送到指定的文件中\n"
+msgstr "  -r FILENAME        把标准输出和标准错误发送到指定的文件中\n"
 
 #: main/main.c:320
 #, c-format
@@ -10397,22 +10396,22 @@ msgstr ""
 "引导模式的选项:\n"
 
 #: main/main.c:321
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  --boot             selects bootstrapping mode (must be first argument)\n"
-msgstr " --boot          选择引导模式(必须是第一个参数)\n"
+msgstr "  --boot             选择引导模式(必须是第一个参数)\n"
 
 #: main/main.c:322
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  DBNAME             database name (mandatory argument in bootstrapping "
 "mode)\n"
-msgstr " DBNAME          数据库名称（在引导模式中是必选参数)\n"
+msgstr "  DBNAME             数据库名称（在引导模式中是必选参数)\n"
 
 #: main/main.c:324
-#, fuzzy, c-format
+#, c-format
 msgid "  -x NUM             internal use\n"
-msgstr "  -x NUM         内部使用\n"
+msgstr "  -x NUM             内部使用\n"
 
 #: main/main.c:326
 #, c-format
@@ -10480,11 +10479,11 @@ msgid "could not find array type for data type %s"
 msgstr "无法为数据类型 %s 找到数组类型"
 
 #: optimizer/path/joinrels.c:676
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "FULL JOIN is only supported with merge-joinable or hash-joinable join "
 "conditions"
-msgstr "只有在合并连接查询条件中才支持FULL JOIN"
+msgstr "只有在合并连接或哈希连接的查询条件中才支持FULL JOIN"
 
 #: optimizer/plan/initsplan.c:592
 #, c-format
@@ -10538,9 +10537,9 @@ msgid "Window ordering columns must be of sortable datatypes."
 msgstr "窗口的排序列必须属于可排序的数据类型"
 
 #: optimizer/plan/setrefs.c:255
-#, fuzzy, c-format
+#, c-format
 msgid "too many range table entries"
-msgstr "太多参数"
+msgstr "太多范围表"
 
 #: optimizer/prep/prepunion.c:416
 #, c-format
@@ -10564,9 +10563,9 @@ msgid "SQL function \"%s\" during inlining"
 msgstr "SQL 函数 \"%s\" 在内联 (inlining) 期间"
 
 #: optimizer/util/plancat.c:99
-#, fuzzy, c-format
+#, c-format
 msgid "cannot access temporary or unlogged relations during recovery"
-msgstr "不能在恢复过程中创建临时表"
+msgstr "无法在恢复过程中访问临时关系或非事务日志关系"
 
 #: parser/analyze.c:620 parser/analyze.c:1128
 #, c-format
@@ -10614,11 +10613,13 @@ msgid ""
 "The insertion source is a row expression containing the same number of "
 "columns expected by the INSERT. Did you accidentally use extra parentheses?"
 msgstr ""
+"插入源是一个行表达式，里边的列个数与INSERT期望值相同. 您是否偶尔使用了额外的"
+"父表达式?"
 
 #: parser/analyze.c:951 parser/analyze.c:1358
-#, fuzzy, c-format
+#, c-format
 msgid "SELECT ... INTO is not allowed here"
-msgstr "在子查询中不允许使用SELECT FOR UPDATE/SHARE"
+msgstr "这儿不允许使用SELECT ... INTO"
 
 #: parser/analyze.c:1142
 #, c-format
@@ -10697,7 +10698,7 @@ msgstr "不可同时指定 SCROLL 和 NO SCROLL"
 #: parser/analyze.c:2188
 #, c-format
 msgid "DECLARE CURSOR must not contain data-modifying statements in WITH"
-msgstr ""
+msgstr "DECLARE CURSOR不能在WITH子句中包含修改数据的操作"
 
 #: parser/analyze.c:2194
 #, c-format
@@ -10757,9 +10758,9 @@ msgid "SELECT FOR UPDATE/SHARE must specify unqualified relation names"
 msgstr "在SELECT FOR UPDATE/SHARE 语句中必须指定非限定的关系名称"
 
 #: parser/analyze.c:2401
-#, fuzzy, c-format
+#, c-format
 msgid "SELECT FOR UPDATE/SHARE cannot be used with foreign table \"%s\""
-msgstr "SELECT FOR UPDATE/SHARE 不能适用于一个联合 (join)"
+msgstr "SELECT FOR UPDATE/SHARE 不能用于外部表\"%s\""
 
 #: parser/analyze.c:2420
 #, c-format
@@ -11064,9 +11065,9 @@ msgid "arguments declared \"anyarray\" are not all alike"
 msgstr "参数声明的 \"anyarray\" 不全相同"
 
 #: parser/parse_coerce.c:1630
-#, fuzzy, c-format
+#, c-format
 msgid "arguments declared \"anyrange\" are not all alike"
-msgstr "参数声明的 \"anyarray\" 不全相同"
+msgstr "声明为 \"anyarray\" 的参数不全相同"
 
 #: parser/parse_coerce.c:1659 parser/parse_coerce.c:1870
 #: parser/parse_coerce.c:1904
@@ -11082,16 +11083,16 @@ msgid ""
 msgstr "参数声明的 \"anyarray\" 和参数声明的 \"anyelement\" 不一致"
 
 #: parser/parse_coerce.c:1696 parser/parse_coerce.c:1917
-#, fuzzy, c-format
+#, c-format
 msgid "argument declared \"anyrange\" is not a range but type %s"
-msgstr "参数声明的 \"anyarray\" 不是一个数组, 但是类型为 %s"
+msgstr "声明为 \"anyarray\" 的参数不是一个范围, 类型为 %s"
 
 #: parser/parse_coerce.c:1712
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "argument declared \"anyrange\" is not consistent with argument declared "
 "\"anyelement\""
-msgstr "参数声明的 \"anyarray\" 和参数声明的 \"anyelement\" 不一致"
+msgstr "声明为 \"anyarray\" 的参数和声明为 \"anyelement\"的参数 不一致"
 
 #: parser/parse_coerce.c:1732
 #, c-format
@@ -11109,26 +11110,26 @@ msgid "type matched to anyenum is not an enum type: %s"
 msgstr "匹配anyenum的类型不是枚举类型:%s"
 
 #: parser/parse_coerce.c:1792 parser/parse_coerce.c:1822
-#, fuzzy, c-format
+#, c-format
 msgid "could not find range type for data type %s"
-msgstr "无法为数据类型 %s 找到数组类型"
+msgstr "无法为数据类型 %s 找到范围类型"
 
 #: parser/parse_collate.c:214 parser/parse_collate.c:538
 #, c-format
 msgid "collation mismatch between implicit collations \"%s\" and \"%s\""
-msgstr ""
+msgstr "排序名：\"%s\" 和 \"%s\"之间的排序规则不匹配"
 
 #: parser/parse_collate.c:217 parser/parse_collate.c:541
 #, c-format
 msgid ""
 "You can choose the collation by applying the COLLATE clause to one or both "
 "expressions."
-msgstr ""
+msgstr "通过对一个或两个表达式应用 COLLATE 子句来选择排序规则."
 
 #: parser/parse_collate.c:763
 #, c-format
 msgid "collation mismatch between explicit collations \"%s\" and \"%s\""
-msgstr ""
+msgstr "排序名：\"%s\" 和 \"%s\"之间的排序规则不匹配"
 
 #: parser/parse_cte.c:42
 #, c-format
@@ -11167,7 +11168,7 @@ msgstr "WITH 查询名\"%s\" 被指定多次"
 #, c-format
 msgid ""
 "WITH clause containing a data-modifying statement must be at the top level"
-msgstr ""
+msgstr "包含修改数据的WITH子句只能在最上层出现"
 
 #: parser/parse_cte.c:313
 #, c-format
@@ -11182,16 +11183,17 @@ msgid "Cast the output of the non-recursive term to the correct type."
 msgstr "将非递归术语的输出指派为正确的类型"
 
 #: parser/parse_cte.c:324
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "recursive query \"%s\" column %d has collation \"%s\" in non-recursive term "
 "but collation \"%s\" overall"
-msgstr "递归查询\"%s\"的列%d在非递归术语中的类型是%s,但是全部类型都是%s"
+msgstr ""
+"递归查询\"%s\"的列%d在非递归术语中应有排序规则\"%s\",但是其排序规则都是%s"
 
 #: parser/parse_cte.c:328
 #, c-format
 msgid "Use the COLLATE clause to set the collation of the non-recursive term."
-msgstr ""
+msgstr "使用COLLATE子句设置非递归项的排序规则."
 
 #: parser/parse_cte.c:419
 #, c-format
@@ -11204,9 +11206,9 @@ msgid "mutual recursion between WITH items is not implemented"
 msgstr "没有实现在WITH成员之间的相互递归引用"
 
 #: parser/parse_cte.c:651
-#, fuzzy, c-format
+#, c-format
 msgid "recursive query \"%s\" must not contain data-modifying statements"
-msgstr "对查询 \"%s\" 的递归引用不能出现在外连接中"
+msgstr "递归查询 \"%s\" 不能包含数据修改语句"
 
 #: parser/parse_cte.c:659
 #, c-format
@@ -11652,7 +11654,7 @@ msgstr "连接最多可以有 %d 个字段"
 #: parser/parse_relation.c:1412
 #, c-format
 msgid "WITH query \"%s\" does not have a RETURNING clause"
-msgstr ""
+msgstr "WITH 查询 \"%s\" 没有RETURNING子句"
 
 #: parser/parse_relation.c:2094
 #, c-format
@@ -11769,9 +11771,9 @@ msgid "invalid type name \"%s\""
 msgstr "无效的类型名字 \"%s\""
 
 #: parser/parse_utilcmd.c:175
-#, fuzzy, c-format
+#, c-format
 msgid "relation \"%s\" already exists, skipping"
-msgstr "关系 \"%s\" 已经存在"
+msgstr "关系 \"%s\" 已经存在, 跳过"
 
 #: parser/parse_utilcmd.c:334
 #, c-format
@@ -11797,68 +11799,68 @@ msgstr "对表 \"%2$s\" 的字段 \"%1$s\" 指定了多遍默认值"
 #: parser/parse_utilcmd.c:1160 parser/parse_utilcmd.c:1236
 #, c-format
 msgid "Index \"%s\" contains a whole-row table reference."
-msgstr ""
+msgstr "索引 \"%s\" 包含一个整行表引用."
 
 #: parser/parse_utilcmd.c:1503
 #, c-format
 msgid "cannot use an existing index in CREATE TABLE"
-msgstr ""
+msgstr " CREATE TABLE语句不能使用一个已存在的索引"
 
 #: parser/parse_utilcmd.c:1523
 #, c-format
 msgid "index \"%s\" is already associated with a constraint"
-msgstr ""
+msgstr "index \"%s\"与某个约束已经关联"
 
 #: parser/parse_utilcmd.c:1531
-#, fuzzy, c-format
+#, c-format
 msgid "index \"%s\" does not belong to table \"%s\""
-msgstr "索引 \"%s\" 不存在"
+msgstr "索引 \"%s\" 不属于表\"%s\""
 
 #: parser/parse_utilcmd.c:1538
-#, fuzzy, c-format
+#, c-format
 msgid "index \"%s\" is not valid"
-msgstr "索引 \"%s\" 不是一个散列索引"
+msgstr "索引 \"%s\" 无效"
 
 #: parser/parse_utilcmd.c:1544
-#, fuzzy, c-format
+#, c-format
 msgid "index \"%s\" is not ready"
-msgstr "索引 \"%s\" 不是一个 btree"
+msgstr "索引 \"%s\" 没有准备就绪"
 
 #: parser/parse_utilcmd.c:1550
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is not a unique index"
-msgstr "\"%s\" 不是一个索引"
+msgstr "\"%s\" 不是唯一索引"
 
 #: parser/parse_utilcmd.c:1551 parser/parse_utilcmd.c:1558
 #: parser/parse_utilcmd.c:1565 parser/parse_utilcmd.c:1635
 #, c-format
 msgid "Cannot create a primary key or unique constraint using such an index."
-msgstr ""
+msgstr "无法使用该索引创建主键或唯一约束."
 
 #: parser/parse_utilcmd.c:1557
-#, fuzzy, c-format
+#, c-format
 msgid "index \"%s\" contains expressions"
-msgstr "索引 \"%s\" 有错误的散列版本"
+msgstr "索引 \"%s\" 含有表达式"
 
 #: parser/parse_utilcmd.c:1564
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is a partial index"
-msgstr "\"%s\" 是一个索引"
+msgstr "\"%s\" 是一个部分索引"
 
 #: parser/parse_utilcmd.c:1576
-#, fuzzy, c-format
+#, c-format
 msgid "\"%s\" is a deferrable index"
-msgstr "\"%s\" 不是一个表或索引"
+msgstr "\"%s\" 不是一个延迟索引"
 
 #: parser/parse_utilcmd.c:1577
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot create a non-deferrable constraint using a deferrable index."
-msgstr "无法为被引用的表\"%s\"使用可延迟的唯一性约束"
+msgstr "无法为使用可延迟索引的约束创建非可延迟约束"
 
 #: parser/parse_utilcmd.c:1634
-#, fuzzy, c-format
+#, c-format
 msgid "index \"%s\" does not have default sorting behavior"
-msgstr "索引 \"%s\" 不存在"
+msgstr "索引 \"%s\"没有缺省的排序行为"
 
 #: parser/parse_utilcmd.c:1779
 #, c-format
@@ -11932,12 +11934,12 @@ msgstr "规则ON DELETE不能使用关键词NEW"
 #: parser/parse_utilcmd.c:2222
 #, c-format
 msgid "cannot refer to OLD within WITH query"
-msgstr ""
+msgstr "WITH查询中无法引用OLD"
 
 #: parser/parse_utilcmd.c:2229
 #, c-format
 msgid "cannot refer to NEW within WITH query"
-msgstr ""
+msgstr "WITH 查询无法引用NEW"
 
 #: parser/parse_utilcmd.c:2520
 #, c-format
@@ -11981,9 +11983,9 @@ msgid "identifier \"%s\" will be truncated to \"%s\""
 msgstr "标识符\"%s\"将会被截断为\"%s\""
 
 #: port/pg_latch.c:324 port/unix_latch.c:324
-#, fuzzy, c-format
+#, c-format
 msgid "poll() failed: %m"
-msgstr "执行select()失败: %m"
+msgstr "poll()失败: %m"
 
 #: port/pg_latch.c:403 port/unix_latch.c:403
 #: replication/libpqwalreceiver/libpqwalreceiver.c:233
@@ -12002,7 +12004,7 @@ msgid "Failed system call was semget(%lu, %d, 0%o)."
 msgstr "semget(%lu, %d, 0%o) 系统调用失败."
 
 #: port/pg_sema.c:116 port/sysv_sema.c:116
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "This error does *not* mean that you have run out of disk space.  It occurs "
 "when either the system limit for the maximum number of semaphore sets "
@@ -12013,11 +12015,10 @@ msgid ""
 "The PostgreSQL documentation contains more information about configuring "
 "your system for PostgreSQL."
 msgstr ""
-"这个错误不表示磁盘空间已经用完.\n"
-"发生的原因有可能超过系统对于最大数量信号灯集合(由参数SEMMNI表示)，或者是对系"
-"统范围内最大可使用信号灯(由参数SEMMNS表示)的限制.您需要增加这两个系统核心参数"
-"的值。另外也可以通过i减小PostgreSQL参数max_connections(当前是%d)来减少它所消"
-"耗的信号灯总数.\n"
+"这个错误不表示磁盘空间已经用完. 发生的原因有可能超过系统对于最大数量信号灯集"
+"合(由参数SEMMNI表示)，或者是对系统范围内最大可使用信号灯(由参数SEMMNS表示)的"
+"限制.您需要增加这两个系统核心参数的值。另外也可以通过i减小PostgreSQL参数"
+"max_connections来减少它所消耗的信号灯总数.\n"
 "在PostgreSQL文档中包含了更多关于如何配置PostgreSQL的信息。"
 
 #: port/pg_sema.c:143 port/sysv_sema.c:143
@@ -12039,7 +12040,7 @@ msgid "Failed system call was shmget(key=%lu, size=%lu, 0%o)."
 msgstr "系统调用shmget(key=%lu, size=%lu, 0%o) 执行失败."
 
 #: port/pg_shmem.c:149 port/sysv_shmem.c:149
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "This error usually means that PostgreSQL's request for a shared memory "
 "segment exceeded your kernel's SHMMAX parameter.  You can either reduce the "
@@ -12054,14 +12055,14 @@ msgid ""
 msgstr ""
 "这个错误通常表示PostgreSQL所请求的共享内存段大小超过了操作系统内核的参数"
 "SHMMAX. 解决方法可以是减少所请求共享内存的大小或者增大SHMMAX参数的值.为了减少"
-"所请求的共享内存大小(当前是%lu字节), 需要减少PostgreSQL的参数shared_buffers"
-"(当前是%d)和参数max_connections(当前是%d).\n"
+"所请求的共享内存大小(当前是%lu字节), 需要减少PostgreSQL的参数shared_buffers和"
+"参数max_connections.\n"
 "如果所请求的共享内存已经很小了,那么可能的原因是所请求的大小小于内核参数"
 "SHMMIN,在这种情况下需要增大所请求的共享内存或者重新配置SHMMIN.\n"
 "更多关于配置共享内存的信息包含在PostgreSQL文档中."
 
 #: port/pg_shmem.c:162 port/sysv_shmem.c:162
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "This error usually means that PostgreSQL's request for a shared memory "
 "segment exceeded available memory or swap space, or exceeded your kernel's "
@@ -12075,11 +12076,11 @@ msgstr ""
 "这个错误通常表示PostgreSQL所请求的共享内存段超过了可用内存总量或者交换空间，"
 "或者超过了内核中设定的SHMALL参数值。您可以减小所请求的值或者重新将内核中的"
 "SHMALL参数配置一个较大的值 为减少所请求空间的大小(当前是%lu字节),请减少参数"
-"shared_buffers(当前是%d字节)和参数max_connections(当前是%d).\n"
+"shared_buffers和参数max_connections.\n"
 "PostgreSQL文档包含了关于如何配置共享内存的更多信息."
 
 #: port/pg_shmem.c:173 port/sysv_shmem.c:173
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "This error does *not* mean that you have run out of disk space.  It occurs "
 "either if all available shared memory IDs have been taken, in which case you "
@@ -12093,9 +12094,9 @@ msgid ""
 msgstr ""
 "这个错误不表示您系统上磁盘空间已经用尽.原因既有可能是系统上所有的有效共享内存"
 "ID不存在了，这样需要在内核中升高SHMMNI参数的值，或者是因为已到达系统最大的共"
-"享内存限制.如果无法增加共享内存的上限值，请通过减少参数shared_buffers(当前"
-"是%2$d字节)和参数max_connections(当前是%3$d)来减少PostgreSQL占有的共享内存(当"
-"前是%1$lu字节).在PostgreSQL文档中包含了关于如何配置共享内存的更多信息."
+"享内存限制.如果无法增加共享内存的上限值，请通过减少参数shared_buffers和参数"
+"max_connections来减少PostgreSQL占有的共享内存(当前是%lu字节).\n"
+"在PostgreSQL文档中包含了关于如何配置共享内存的更多信息."
 
 #: port/pg_shmem.c:436 port/sysv_shmem.c:436
 #, c-format
@@ -12105,84 +12106,84 @@ msgstr "无法取目录 \"%s\" 状态: %m"
 #: port/win32/crashdump.c:108
 #, c-format
 msgid "could not load dbghelp.dll, cannot write crash dump\n"
-msgstr ""
+msgstr "无法加载dbghelp.dll动态库, 无法生成崩溃转储文件\n"
 
 #: port/win32/crashdump.c:116
 #, c-format
 msgid ""
 "could not load required functions in dbghelp.dll, cannot write crash dump\n"
-msgstr ""
+msgstr "无法从dbghelp.dll动态库中加载所需要的函数, 无法生成崩溃转储文件\n"
 
 #: port/win32/crashdump.c:147
-#, fuzzy, c-format
+#, c-format
 msgid "could not open crash dump file \"%s\" for writing: error code %lu\n"
-msgstr "为了写入, 无法打开文件 \"%s\": %m"
+msgstr "无法打开崩溃转储文件 \"%s\"执行写操作: 错误码 %lu\n"
 
 # command.c:646
 #: port/win32/crashdump.c:154
-#, fuzzy, c-format
+#, c-format
 msgid "wrote crash dump to file \"%s\"\n"
-msgstr "书写历程到档案 \"%s/%s\".\n"
+msgstr "生成崩溃转储文件\"%s\"\n"
 
 #: port/win32/crashdump.c:156
-#, fuzzy, c-format
+#, c-format
 msgid "could not write crash dump to file \"%s\": error code %lu\n"
-msgstr "无法写入文件 \"%s\": %s\n"
+msgstr "无法写入崩溃转储文件 \"%s\": 错误码 %lu\n"
 
 #: port/win32/security.c:43
-#, fuzzy, c-format
+#, c-format
 msgid "could not open process token: error code %lu\n"
-msgstr "无法打开进程令牌 (token): 错误码 %d\n"
+msgstr "无法打开进程令牌 (token): 错误码 %lu\n"
 
 #: port/win32/security.c:63
-#, fuzzy, c-format
+#, c-format
 msgid "could not get SID for Administrators group: error code %lu\n"
-msgstr "无法获取管理员组的 SID: 错误码 %d\n"
+msgstr "无法获取管理员组的 SID: 错误码 %lu\n"
 
 #: port/win32/security.c:72
-#, fuzzy, c-format
+#, c-format
 msgid "could not get SID for PowerUsers group: error code %lu\n"
-msgstr "无法获取超级用户组的 SID: 错误码 %d\n"
+msgstr "无法获取PowerUsers组的 SID: 错误码 %lu\n"
 
 #: port/win32/signal.c:189
-#, fuzzy, c-format
+#, c-format
 msgid "could not create signal listener pipe for PID %d: error code %lu"
-msgstr "无法为进程 (pid) %d 创建信号监听管道: 错误码为 %d"
+msgstr "无法为进程PID %d 创建信号监听管道: 错误码为 %lu"
 
 #: port/win32/signal.c:269 port/win32/signal.c:301
-#, fuzzy, c-format
+#, c-format
 msgid "could not create signal listener pipe: error code %lu; retrying\n"
-msgstr "无法创建信号监听管道: 错误码 %d; 重试\n"
+msgstr "无法创建信号监听管道: 错误码 %lu; 重试\n"
 
 #: port/win32/signal.c:312
-#, fuzzy, c-format
+#, c-format
 msgid "could not create signal dispatch thread: error code %lu\n"
-msgstr "无法创建信号发送线程: 错误码 %d\n"
+msgstr "无法创建信号分发线程: 错误码 %lu\n"
 
 #: port/win32_sema.c:94
-#, fuzzy, c-format
+#, c-format
 msgid "could not create semaphore: error code %lu"
-msgstr "无法创建信号量: 错误代码 %d"
+msgstr "无法创建信号量: 错误代码 %lu"
 
 #: port/win32_sema.c:165
-#, fuzzy, c-format
+#, c-format
 msgid "could not lock semaphore: error code %lu"
-msgstr "无法锁定信号灯(semaphore): 错误代码%d"
+msgstr "无法锁定信号灯(semaphore): 错误代码%lu"
 
 #: port/win32_sema.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "could not unlock semaphore: error code %lu"
-msgstr "无法对信号灯(semaphore)解锁: 错误代码 %d"
+msgstr "无法对信号灯(semaphore)解锁: 错误代码 %lu"
 
 #: port/win32_sema.c:207
-#, fuzzy, c-format
+#, c-format
 msgid "could not try-lock semaphore: error code %lu"
-msgstr "无法进行锁定信号灯(semaphore)的尝试: 错误代码 %d"
+msgstr "无法进行锁定信号灯(semaphore)的尝试: 错误代码 %lu"
 
 #: port/win32_shmem.c:168 port/win32_shmem.c:203 port/win32_shmem.c:224
-#, fuzzy, c-format
+#, c-format
 msgid "could not create shared memory segment: error code %lu"
-msgstr "无法创建共享内存段: %lu"
+msgstr "无法创建共享内存段: 错误码%lu"
 
 #: port/win32_shmem.c:169
 #, c-format
@@ -12296,7 +12297,7 @@ msgstr "详细信息请参考服务器日志."
 #: postmaster/checkpointer.c:1287
 #, c-format
 msgid "compacted fsync request queue from %d entries to %d entries"
-msgstr ""
+msgstr "将fsync请求队列从%d压缩至%d项"
 
 #: postmaster/pgarch.c:164
 #, c-format
@@ -12509,9 +12510,9 @@ msgid "%s: superuser_reserved_connections must be less than max_connections\n"
 msgstr "%s: 超级用户保留联接数必须小于最大联接数\n"
 
 #: postmaster/postmaster.c:769
-#, fuzzy, c-format
+#, c-format
 msgid "%s: max_wal_senders must be less than max_connections\n"
-msgstr "%s: 超级用户保留联接数必须小于最大联接数\n"
+msgstr "%s: max_wal_senders必须小于最大连接数\n"
 
 #: postmaster/postmaster.c:774
 #, c-format
@@ -12568,9 +12569,9 @@ msgid "could not create I/O completion port for child queue"
 msgstr "无法为子队列创建I/O完成端口"
 
 #: postmaster/postmaster.c:1031
-#, fuzzy, c-format
+#, c-format
 msgid "%s: could not change permissions of external PID file \"%s\": %s\n"
-msgstr "%s: 无法改变目录 \"%s\" 的权限: %s\n"
+msgstr "%s: 无法改变外部PID文件 \"%s\" 的权限: %s\n"
 
 #: postmaster/postmaster.c:1035
 #, c-format
@@ -12757,7 +12758,7 @@ msgstr "由于启动进程失败, 终止启动"
 msgid ""
 "terminating all walsender processes to force cascaded standby(s) to update "
 "timeline and reconnect"
-msgstr ""
+msgstr "终止所有walsender进程，以强制所有的备用节点更新时间线并重新连接"
 
 #: postmaster/postmaster.c:2408
 #, c-format
@@ -12769,9 +12770,8 @@ msgid "background writer process"
 msgstr "后台写入进程"
 
 #: postmaster/postmaster.c:2477
-#, fuzzy
 msgid "checkpointer process"
-msgstr "归档进程"
+msgstr "检查点(checkpointer)进程"
 
 #: postmaster/postmaster.c:2493
 msgid "WAL writer process"
@@ -12817,9 +12817,9 @@ msgstr "%s (PID %d) 已退出, 退出代码 %d"
 #: postmaster/postmaster.c:2873 postmaster/postmaster.c:2884
 #: postmaster/postmaster.c:2895 postmaster/postmaster.c:2904
 #: postmaster/postmaster.c:2914
-#, fuzzy, c-format
+#, c-format
 msgid "Failed process was running: %s"
-msgstr "子进程被信号 %s 终止"
+msgstr "失败进程:%s正在运行"
 
 #. translator: %s is a noun phrase describing a child process, such as
 #. "server process"
@@ -12899,9 +12899,9 @@ msgid "could not fork background writer process: %m"
 msgstr "无法 fork 后台写入进程: %m"
 
 #: postmaster/postmaster.c:4547
-#, fuzzy, c-format
+#, c-format
 msgid "could not fork checkpointer process: %m"
-msgstr "无法派生WAL接收进程: %m"
+msgstr "无法派生检查点进程: %m"
 
 #: postmaster/postmaster.c:4551
 #, c-format
@@ -12939,19 +12939,19 @@ msgid "could not remove file \"%s\": %s\n"
 msgstr "无法删除文件 \"%s\": %s\n"
 
 #: postmaster/postmaster.c:4942
-#, fuzzy, c-format
+#, c-format
 msgid "could not map view of backend variables: error code %lu\n"
-msgstr "无法 map 后端变量视图: 错误码为 %d\n"
+msgstr "无法映射后端变量视图: 错误码为 %lu\n"
 
 #: postmaster/postmaster.c:4951
-#, fuzzy, c-format
+#, c-format
 msgid "could not unmap view of backend variables: error code %lu\n"
-msgstr "无法 unmap 后端变量视图: 错误码为 %d\n"
+msgstr "无法取消后端变量视图的映射: 错误码为 %lu\n"
 
 #: postmaster/postmaster.c:4958
-#, fuzzy, c-format
+#, c-format
 msgid "could not close handle to backend parameter variables: error code %lu\n"
-msgstr "无法关闭后端参数变量的句柄: 错误码为 %d\n"
+msgstr "无法关闭后端参数变量的句柄: 错误码为 %lu\n"
 
 #: postmaster/postmaster.c:5108
 #, c-format
@@ -12999,9 +12999,9 @@ msgid "could not write to log file: %s\n"
 msgstr "无法写入日志文件: %s\n"
 
 #: postmaster/syslogger.c:1125
-#, fuzzy, c-format
+#, c-format
 msgid "could not open log file \"%s\": %m"
-msgstr "无法打开锁文件 \"%s\": %m"
+msgstr "无法打开事务日志文件 \"%s\": %m"
 
 #: postmaster/syslogger.c:1187 postmaster/syslogger.c:1231
 #, c-format
@@ -13009,72 +13009,71 @@ msgid "disabling automatic rotation (use SIGHUP to re-enable)"
 msgstr "取消自动轮寻 (使用 SIGHUP re-enable)"
 
 #: regex/regc_pg_locale.c:261
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for regular expression"
-msgstr "无法确定函数返回记录的行描述"
+msgstr "无法确定正规表达式中使用何种排序规则"
 
 #: repl_scanner.l:76
-#, fuzzy
 msgid "invalid streaming start location"
-msgstr "无效的XML处理命令"
+msgstr "无效的流起始位置"
 
 #: repl_scanner.l:97 scan.l:630
 msgid "unterminated quoted string"
 msgstr "未结束的引用字符串"
 
 #: repl_scanner.l:107
-#, fuzzy, c-format
+#, c-format
 msgid "syntax error: unexpected character \"%s\""
-msgstr "语法错误，期望\"=\""
+msgstr "语法错误: 遇到意外字符\"%s\""
 
 #: replication/basebackup.c:125 replication/basebackup.c:679
 #: utils/adt/misc.c:358
-#, fuzzy, c-format
+#, c-format
 msgid "could not read symbolic link \"%s\": %m"
-msgstr "无法创建符号链接 \"%s\": %m"
+msgstr "无法读取符号链接 \"%s\": %m"
 
 #: replication/basebackup.c:132 replication/basebackup.c:683
 #: utils/adt/misc.c:362
-#, fuzzy, c-format
+#, c-format
 msgid "symbolic link \"%s\" target is too long"
-msgstr "表空间路径 \"%s\" 太长"
+msgstr "符号链接 \"%s\" 目标超长"
 
 #: replication/basebackup.c:193
-#, fuzzy, c-format
+#, c-format
 msgid "could not stat control file \"%s\": %m"
-msgstr "无法创建控制文件 \"%s\": %m"
+msgstr "无法统计控制文件 \"%s\": %m"
 
 #: replication/basebackup.c:270 replication/basebackup.c:814
 #, c-format
 msgid "base backup could not send data, aborting backup"
-msgstr ""
+msgstr "基础备份无法发送数据，终止备份"
 
 #: replication/basebackup.c:317 replication/basebackup.c:326
 #: replication/basebackup.c:335 replication/basebackup.c:344
 #: replication/basebackup.c:353
-#, fuzzy, c-format
+#, c-format
 msgid "duplicate option \"%s\""
-msgstr "无效选项 \"%s\""
+msgstr "重复选项 \"%s\""
 
 #: replication/basebackup.c:615
 #, c-format
 msgid "shutdown requested, aborting active base backup"
-msgstr ""
+msgstr "发送了关闭请求, 正终止正在执行的基础备份"
 
 #: replication/basebackup.c:633
-#, fuzzy, c-format
+#, c-format
 msgid "could not stat file or directory \"%s\": %m"
-msgstr "无法获取文件或目录\"%s\"的状态: %s\n"
+msgstr "无法统计文件或目录\"%s\": %m"
 
 #: replication/basebackup.c:726
-#, fuzzy, c-format
+#, c-format
 msgid "skipping special file \"%s\""
-msgstr "删除事务日志文件 \"%s\""
+msgstr "跳过特殊文件 \"%s\""
 
 #: replication/basebackup.c:804
-#, fuzzy, c-format
+#, c-format
 msgid "archive member \"%s\" too large for tar format"
-msgstr "在 tar 格式中归档成员太大\n"
+msgstr "在 tar 格式中归档成员\"%s\"太大"
 
 #: replication/libpqwalreceiver/libpqwalreceiver.c:101
 #, c-format
@@ -13094,10 +13093,10 @@ msgid "invalid response from primary server"
 msgstr "来自主用服务器的回应无效"
 
 #: replication/libpqwalreceiver/libpqwalreceiver.c:125
-#, fuzzy, c-format
+#, c-format
 msgid "Expected 1 tuple with 3 fields, got %d tuples with %d fields."
 msgstr ""
-"期望得到带有2个字段的一条记录，但是现在得到了%d条记录，每条带有%d个字段。"
+"期望得到带有3个字段的一条记录，但是现在得到了%d条记录，每条带有%d个字段."
 
 #: replication/libpqwalreceiver/libpqwalreceiver.c:140
 #, c-format
@@ -13144,38 +13143,38 @@ msgstr "复制由主用服务器终止"
 
 # fe-misc.c:702
 #: replication/libpqwalreceiver/libpqwalreceiver.c:415
-#, fuzzy, c-format
+#, c-format
 msgid "could not send data to WAL stream: %s"
-msgstr "无法向服务器发送数据: %s\n"
+msgstr "无法向WAL流:%s发送数据"
 
 #: replication/syncrep.c:207
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "canceling the wait for synchronous replication and terminating connection "
 "due to administrator command"
-msgstr "由于管理员命令中断联接"
+msgstr "取消等待同步复制，听从管理员命令终断连接"
 
 #: replication/syncrep.c:208 replication/syncrep.c:225
 #, c-format
 msgid ""
 "The transaction has already committed locally, but might not have been "
 "replicated to the standby."
-msgstr ""
+msgstr "事务已经在本地提交, 但有可能还没完成到备用节点的复制."
 
 #: replication/syncrep.c:224
-#, fuzzy, c-format
+#, c-format
 msgid "canceling wait for synchronous replication due to user request"
-msgstr "由于用户请求而正在取消查询"
+msgstr "听从用户请求，取消等待同步复制"
 
 #: replication/syncrep.c:355
 #, c-format
 msgid "standby \"%s\" now has synchronous standby priority %u"
-msgstr ""
+msgstr "备用节点 \"%s\" 现在拥有同步备用优先级: %u"
 
 #: replication/syncrep.c:461
 #, c-format
 msgid "standby \"%s\" is now the synchronous standby with priority %u"
-msgstr ""
+msgstr "备用节点 \"%s\" 现在是拥有同步备用优先级: %u的备用节点"
 
 #: replication/walreceiver.c:150
 #, c-format
@@ -13203,7 +13202,7 @@ msgstr "无效的备用握手消息类型 %d"
 msgid ""
 "terminating walsender process to force cascaded standby to update timeline "
 "and reconnect"
-msgstr ""
+msgstr "终止walsender进程，以强制级联的备用节点更新时间线并重新连接"
 
 #: replication/walsender.c:493
 #, c-format
@@ -13211,24 +13210,24 @@ msgid "invalid standby query string: %s"
 msgstr "无效的备用服务器查询字符串:%s"
 
 #: replication/walsender.c:550
-#, fuzzy, c-format
+#, c-format
 msgid "invalid standby message type \"%c\""
-msgstr "无效的备用关闭消息类型 %d"
+msgstr "无效的备用节点消息类型 \"%c\""
 
 #: replication/walsender.c:601
-#, fuzzy, c-format
+#, c-format
 msgid "unexpected message type \"%c\""
-msgstr "需要一个类型名字"
+msgstr "意外的消息类型\"%c\""
 
 #: replication/walsender.c:796
 #, c-format
 msgid "standby \"%s\" has now caught up with primary"
-msgstr ""
+msgstr "备用节点 \"%s\" 现在遇上了主节点"
 
 #: replication/walsender.c:871
-#, fuzzy, c-format
+#, c-format
 msgid "terminating walsender process due to replication timeout"
-msgstr "由于管理员命令中断walreceiver进程"
+msgstr "由于复制超时, 中断walreceiver进程"
 
 #: replication/walsender.c:938
 #, c-format
@@ -13295,7 +13294,7 @@ msgstr "在 SELECT 上的规则必须有 INSTEAD SELECT 动作"
 #: rewrite/rewriteDefine.c:337
 #, c-format
 msgid "rules on SELECT must not contain data-modifying statements in WITH"
-msgstr ""
+msgstr "SELECT上的规则: 不能在WITH子句中包含数据修改操作"
 
 #: rewrite/rewriteDefine.c:345
 #, c-format
@@ -13414,7 +13413,7 @@ msgstr "关系 \"%2$s\" 的 \"%1$s\" 规则不存在"
 msgid ""
 "WITH query name \"%s\" appears in both a rule action and the query being "
 "rewritten"
-msgstr ""
+msgstr "WITH 查询名 \"%s\" 看起来好像在某规则行为和查询重写里同时出现"
 
 #: rewrite/rewriteHandler.c:543
 #, c-format
@@ -13436,26 +13435,26 @@ msgstr "在关系 \"%s\" 的规则中发现无限循环"
 msgid ""
 "DO INSTEAD NOTHING rules are not supported for data-modifying statements in "
 "WITH"
-msgstr ""
+msgstr "DO INSTEAD NOTHING规则不支持在WITH子句中执行数据修改操作"
 
 #: rewrite/rewriteHandler.c:1898
 #, c-format
 msgid ""
 "conditional DO INSTEAD rules are not supported for data-modifying statements "
 "in WITH"
-msgstr ""
+msgstr "DO INSTEAD 条件规则不支持在WITH子句中执行数据修改操作"
 
 #: rewrite/rewriteHandler.c:1902
 #, c-format
 msgid "DO ALSO rules are not supported for data-modifying statements in WITH"
-msgstr ""
+msgstr "DO ALSO 规则不支持在WITH子句中执行数据修改操作"
 
 #: rewrite/rewriteHandler.c:1907
 #, c-format
 msgid ""
 "multi-statement DO INSTEAD rules are not supported for data-modifying "
 "statements in WITH"
-msgstr ""
+msgstr "多语句 DO INSTEAD 规则不支持在WITH子句中执行数据修改操作"
 
 #: rewrite/rewriteHandler.c:2061
 #, c-format
@@ -13495,7 +13494,7 @@ msgstr "您需要一个无条件, 且带有RETURNING子句的ON DELETE DO INSTEA
 msgid ""
 "WITH cannot be used in a query that is rewritten by rules into multiple "
 "queries"
-msgstr ""
+msgstr "WITH 不能用于按规则可重写为多个查询的查询语句中"
 
 #: rewrite/rewriteManip.c:1028
 #, c-format
@@ -13747,9 +13746,9 @@ msgid "temporary file: path \"%s\", size %lu"
 msgstr "临时文件: 路径 \"%s\", 大小%lu"
 
 #: storage/file/fd.c:1257
-#, fuzzy, c-format
+#, c-format
 msgid "temporary file size exceeds temp_file_limit (%dkB)"
-msgstr "数组的大小超过了最大允许值(%d)"
+msgstr "临时文件大小超过最大允许值temp_file_limit(%dkB)"
 
 #: storage/file/fd.c:1684
 #, c-format
@@ -13906,7 +13905,7 @@ msgstr "您可能需要增加参数max_locks_per_transaction."
 msgid ""
 "cannot PREPARE while holding both session-level and transaction-level locks "
 "on the same object"
-msgstr ""
+msgstr "在一个对象上同时拥有会话级和事务级锁时，无法执行PREPARE"
 
 #: storage/lmgr/lock.c:3023
 #, c-format
@@ -13916,50 +13915,50 @@ msgstr "没有足够的内存用于为已准备好事务分配锁"
 #: storage/lmgr/predicate.c:668
 #, c-format
 msgid "not enough elements in RWConflictPool to record a read/write conflict"
-msgstr ""
+msgstr "RWConflictPool(读写冲突池)没有足够的元素来记录读/写冲突"
 
 #: storage/lmgr/predicate.c:669 storage/lmgr/predicate.c:697
 #, c-format
 msgid ""
 "You might need to run fewer transactions at a time or increase "
 "max_connections."
-msgstr ""
+msgstr "您可能需要每次执行更少的事务，要么增大max_connections值."
 
 #: storage/lmgr/predicate.c:696
 #, c-format
 msgid ""
 "not enough elements in RWConflictPool to record a potential read/write "
 "conflict"
-msgstr ""
+msgstr "RWConflictPool(读写冲突池)没有足够的元素来记录可能的读/写冲突"
 
 #: storage/lmgr/predicate.c:901
 #, c-format
 msgid "memory for serializable conflict tracking is nearly exhausted"
-msgstr ""
+msgstr "串行化冲突跟踪所需要的内存几乎耗尽"
 
 #: storage/lmgr/predicate.c:902
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "There might be an idle transaction or a forgotten prepared transaction "
 "causing this."
-msgstr "这里有%d个其它的会话和%d个已准备好的事务正在使用数据库."
+msgstr "可能是由于空闲事务或者一个忘了准备的事务导致此问题."
 
 #: storage/lmgr/predicate.c:1184 storage/lmgr/predicate.c:1256
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "not enough shared memory for elements of data structure \"%s\" (%lu bytes "
 "requested)"
-msgstr "没有足够的共享内存提供给数据结构\"%s\" (需要%lu个字节)"
+msgstr "没有足够的共享内存供数据结构\"%s\"使用 (它需要%lu个字节)"
 
 #: storage/lmgr/predicate.c:1544
 #, c-format
 msgid "deferrable snapshot was unsafe; trying a new one"
-msgstr ""
+msgstr "可延缓的快照不安全；请尝试使用新的快照"
 
 #: storage/lmgr/predicate.c:1583
 #, c-format
 msgid "\"default_transaction_isolation\" is set to \"serializable\"."
-msgstr ""
+msgstr "\"default_transaction_isolation\"被设置为\"可串行化\"."
 
 #: storage/lmgr/predicate.c:1584
 #, c-format
@@ -13967,37 +13966,39 @@ msgid ""
 "You can use \"SET default_transaction_isolation = 'repeatable read'\" to "
 "change the default."
 msgstr ""
+"您可以使用 \"SET default_transaction_isolation = 'repeatable read'\"来改变缺"
+"省值."
 
 #: storage/lmgr/predicate.c:1623
 #, c-format
 msgid "a snapshot-importing transaction must not be READ ONLY DEFERRABLE"
-msgstr ""
+msgstr "快照导入事务不能是可延缓的只读事务"
 
 #: storage/lmgr/predicate.c:1693 utils/time/snapmgr.c:282
 #, c-format
 msgid "could not import the requested snapshot"
-msgstr ""
+msgstr "无法导入请求的快照"
 
 #: storage/lmgr/predicate.c:1694 utils/time/snapmgr.c:283
 #, c-format
 msgid "The source transaction %u is not running anymore."
-msgstr ""
+msgstr "源事务 %u 不再运行."
 
 #: storage/lmgr/predicate.c:2318 storage/lmgr/predicate.c:2333
 #: storage/lmgr/predicate.c:3729
-#, fuzzy, c-format
+#, c-format
 msgid "You might need to increase max_pred_locks_per_transaction."
-msgstr "您可能需要增加参数max_locks_per_transaction."
+msgstr "您可能需要增大参数max_pred_locks_per_transaction的值."
 
 #: storage/lmgr/predicate.c:3883 storage/lmgr/predicate.c:3972
 #: storage/lmgr/predicate.c:3980 storage/lmgr/predicate.c:4019
 #: storage/lmgr/predicate.c:4258 storage/lmgr/predicate.c:4596
 #: storage/lmgr/predicate.c:4608 storage/lmgr/predicate.c:4650
 #: storage/lmgr/predicate.c:4688
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "could not serialize access due to read/write dependencies among transactions"
-msgstr "由于同步更新而无法串行访问"
+msgstr "由于多个事务间的读/写依赖而无法串行访问"
 
 #: storage/lmgr/predicate.c:3885 storage/lmgr/predicate.c:3974
 #: storage/lmgr/predicate.c:3982 storage/lmgr/predicate.c:4021
@@ -14006,17 +14007,17 @@ msgstr "由于同步更新而无法串行访问"
 #: storage/lmgr/predicate.c:4690
 #, c-format
 msgid "The transaction might succeed if retried."
-msgstr ""
+msgstr "该事务如果重试，有可能成功."
 
 #: storage/lmgr/proc.c:1124
-#, fuzzy, c-format
+#, c-format
 msgid "Process %d waits for %s on %s."
-msgstr "进程%1$d等待在%3$s上的%2$s; 由进程%4$d阻塞."
+msgstr "进程%1$d等待在%3$s上的%2$s"
 
 #: storage/lmgr/proc.c:1134
-#, fuzzy, c-format
+#, c-format
 msgid "sending cancel to blocking autovacuum PID %d"
-msgstr "正在取消自动清理任务"
+msgstr "向阻塞的自动清理(autovacuum)进程%d发送取消(cancel)请求"
 
 #: storage/lmgr/proc.c:1146 utils/adt/misc.c:134
 #, c-format
@@ -14141,7 +14142,7 @@ msgstr "无法对文件\"%s\"进行fsync操作但是正在重新尝试: %m"
 #: storage/smgr/md.c:1358
 #, c-format
 msgid "could not forward fsync request because request queue is full"
-msgstr ""
+msgstr "请求队列已满，无法转发fsync请求"
 
 #: storage/smgr/md.c:1755
 #, c-format
@@ -14394,9 +14395,9 @@ msgstr "由于管理员命令中断联接"
 
 # common.c:298
 #: tcop/postgres.c:2877
-#, fuzzy, c-format
+#, c-format
 msgid "connection to client lost"
-msgstr "与资料库的连线遗失\n"
+msgstr "丢失了到客户端的连接"
 
 #: tcop/postgres.c:2892
 #, c-format
@@ -14424,17 +14425,18 @@ msgid "stack depth limit exceeded"
 msgstr "堆栈深度超过限制"
 
 #: tcop/postgres.c:3074 tcop/postgres.c:3096
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Increase the configuration parameter \"max_stack_depth\" (currently %dkB), "
 "after ensuring the platform's stack depth limit is adequate."
 msgstr ""
-"在确定了平台的堆栈深度限制是足够大后，增加配置参数 \"max_stack_depth\"的值."
+"在确定了平台的堆栈深度限制是足够大后，增加配置参数 \"max_stack_depth\"的值(当"
+"前值为%dkB)."
 
 #: tcop/postgres.c:3112
-#, fuzzy, c-format
+#, c-format
 msgid "\"max_stack_depth\" must not exceed %ldkB."
-msgstr "参数\"max_stack_depth\"不能超过所限制的%ldkB"
+msgstr "\"max_stack_depth\"不能超过%ldkB."
 
 #: tcop/postgres.c:3114
 #, c-format
@@ -14444,9 +14446,9 @@ msgid ""
 msgstr "通过命令\"ulimit -s\"或本地相同的命令来增加平台的堆栈深度限制."
 
 #: tcop/postgres.c:3477
-#, fuzzy, c-format
+#, c-format
 msgid "invalid command-line argument for server process: %s"
-msgstr "服务器进程的无效命令行参数"
+msgstr "服务器进程:%s的无效命令行参数"
 
 #: tcop/postgres.c:3478 tcop/postgres.c:3484
 #, c-format
@@ -14454,9 +14456,9 @@ msgid "Try \"%s --help\" for more information."
 msgstr "请用 \"%s --help\" 获取更多的信息."
 
 #: tcop/postgres.c:3482
-#, fuzzy, c-format
+#, c-format
 msgid "%s: invalid command-line argument: %s"
-msgstr "%s: 无效的命令行参数"
+msgstr "%s: 无效的命令行参数:%s"
 
 #: tcop/postgres.c:3569
 #, c-format
@@ -15039,14 +15041,14 @@ msgid "cannot compare arrays of different element types"
 msgstr "无法比较不同元素类型的数组"
 
 #: utils/adt/arrayfuncs.c:3562 utils/adt/rangetypes.c:1201
-#, fuzzy, c-format
+#, c-format
 msgid "could not identify a hash function for type %s"
-msgstr "无法为类型 %s 确认一个比对函数"
+msgstr "无法为类型 %s 确认一个哈希函数"
 
 #: utils/adt/arrayfuncs.c:4813 utils/adt/arrayfuncs.c:4853
-#, fuzzy, c-format
+#, c-format
 msgid "dimension array or low bound array cannot be null"
-msgstr "维度数组或低界数组不能为空"
+msgstr "维度数组或低界数组不能为空(null)"
 
 #: utils/adt/arrayfuncs.c:4916 utils/adt/arrayfuncs.c:4948
 #, c-format
@@ -15319,9 +15321,9 @@ msgid "could not determine actual enum type"
 msgstr "无法确定实际的枚举类型"
 
 #: utils/adt/enum.c:364 utils/adt/enum.c:393
-#, fuzzy, c-format
+#, c-format
 msgid "enum %s contains no values"
-msgstr "字段 \"%s\" 包含空值"
+msgstr "枚举 \"%s\" 没有值"
 
 #: utils/adt/float.c:55
 #, c-format
@@ -15400,7 +15402,7 @@ msgid "count must be greater than zero"
 msgstr "总数必须大于零"
 
 #: utils/adt/float.c:2753 utils/adt/numeric.c:1225
-#, fuzzy, c-format
+#, c-format
 msgid "operand, lower bound, and upper bound cannot be NaN"
 msgstr "操作数,下限和上限不能是NaN"
 
@@ -15501,19 +15503,19 @@ msgid "\"%s\" is not a number"
 msgstr "\"%s\" 不是一个数字"
 
 #: utils/adt/formatting.c:1521 utils/adt/formatting.c:1573
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for lower() function"
-msgstr "无法确定多态函数\"%s\"的实际返回类型"
+msgstr "无法确定函数lower()使用哪个排序规则"
 
 #: utils/adt/formatting.c:1646 utils/adt/formatting.c:1698
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for upper() function"
-msgstr "无法确定多态函数\"%s\"的实际返回类型"
+msgstr "无法确定函数upper()使用哪个排序规则"
 
 #: utils/adt/formatting.c:1783 utils/adt/formatting.c:1847
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for initcap() function"
-msgstr "无法确定多态函数\"%s\"的实际返回类型"
+msgstr "无法确定函数initcap()使用哪个排序规则"
 
 # fe-connect.c:2558
 #: utils/adt/formatting.c:2056
@@ -15637,7 +15639,7 @@ msgstr "不允许使用绝对路径"
 #: utils/adt/genfile.c:76
 #, c-format
 msgid "path must be in or below the current directory"
-msgstr ""
+msgstr "路径必须在当前目录或其子目录下"
 
 #: utils/adt/genfile.c:117 utils/adt/oracle_compat.c:184
 #: utils/adt/oracle_compat.c:282 utils/adt/oracle_compat.c:758
@@ -15844,84 +15846,84 @@ msgstr "OID 超出范围"
 #: utils/adt/json.c:646 utils/adt/json.c:654 utils/adt/json.c:662
 #: utils/adt/json.c:670 utils/adt/json.c:678 utils/adt/json.c:686
 #: utils/adt/json.c:717
-#, fuzzy, c-format
+#, c-format
 msgid "invalid input syntax for type json"
-msgstr "无效的 bytea 类型输入语法"
+msgstr "json类型使用了无效的输入语法"
 
 #: utils/adt/json.c:445
 #, c-format
 msgid "Character with value 0x%02x must be escaped."
-msgstr ""
+msgstr "值为 0x%02x 的字符必须进行转义处理."
 
 #: utils/adt/json.c:483
-#, fuzzy, c-format
+#, c-format
 msgid "\"\\u\" must be followed by four hexadecimal digits."
-msgstr "\"%c\" 不是一个有效的十六进制数"
+msgstr "\"\\u\" 后必须紧跟有效的十六进制数数字"
 
 #: utils/adt/json.c:495
 #, c-format
 msgid "Escape sequence \"\\%s\" is invalid."
-msgstr ""
+msgstr "转义序列 \"\\%s\" 无效."
 
 #: utils/adt/json.c:614
 #, c-format
 msgid "The input string ended unexpectedly."
-msgstr ""
+msgstr "输入字符串意外终止."
 
 #: utils/adt/json.c:628
-#, fuzzy, c-format
+#, c-format
 msgid "Expected end of input, but found \"%s\"."
-msgstr "意外的输入末尾"
+msgstr "期望输入结束，结果发现是\"%s\"."
 
 #: utils/adt/json.c:639
-#, fuzzy, c-format
+#, c-format
 msgid "Expected JSON value, but found \"%s\"."
-msgstr "期望 \"@\", 但是找到了\"%s\""
+msgstr "期望 是JSON值, 但结果发现是\"%s\"."
 
 #: utils/adt/json.c:647
-#, fuzzy, c-format
+#, c-format
 msgid "Expected array element or \"]\", but found \"%s\"."
-msgstr "期望\"@\"或\"://\"，但是只找到了\"%s\""
+msgstr "期望为数组元素或者\"]\"，但发现结果是\"%s\"."
 
 #: utils/adt/json.c:655
-#, fuzzy, c-format
+#, c-format
 msgid "Expected \",\" or \"]\", but found \"%s\"."
-msgstr "期望\"@\"或\"://\"，但是只找到了\"%s\""
+msgstr "期望是\",\" 或 \"]\"，但发现结果是\"%s\"."
 
 #: utils/adt/json.c:663
-#, fuzzy, c-format
+#, c-format
 msgid "Expected string or \"}\", but found \"%s\"."
-msgstr "期望\"@\"或\"://\"，但是只找到了\"%s\""
+msgstr "期望是字符串或\"}\"，但发现结果是\"%s\"."
 
 #: utils/adt/json.c:671
-#, fuzzy, c-format
+#, c-format
 msgid "Expected \":\", but found \"%s\"."
-msgstr "期望得到 \"://\"，但是找到了\"%s\""
+msgstr "期望得到 \":\"，但发现结果是\"%s\"."
 
 #: utils/adt/json.c:679
-#, fuzzy, c-format
+#, c-format
 msgid "Expected \",\" or \"}\", but found \"%s\"."
-msgstr "期望\"@\"或\"://\"，但是只找到了\"%s\""
+msgstr "期望是 \",\" 或 \"}\"，但发现结果是\"%s\"."
 
 #: utils/adt/json.c:687
-#, fuzzy, c-format
+#, c-format
 msgid "Expected string, but found \"%s\"."
-msgstr "期望 \"@\", 但是找到了\"%s\""
+msgstr "期望是字符串, 但发现结果是\"%s\"."
 
 #: utils/adt/json.c:718
-#, fuzzy, c-format
+#, c-format
 msgid "Token \"%s\" is invalid."
-msgstr "文件 \"%s\" 丢失."
+msgstr "令牌 \"%s\" 无效."
 
 #: utils/adt/json.c:790
-#, fuzzy, c-format
+#, c-format
 msgid "JSON data, line %d: %s%s%s"
-msgstr "COPY %s, 行 %d: \"%s\""
+msgstr "JSON数据, 行 %d: %s%s%s"
 
 #: utils/adt/like.c:211 utils/adt/selfuncs.c:5185
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for ILIKE"
-msgstr "无法确定输入数据类型"
+msgstr "无法确定ILIKE使用哪种排序规则"
 
 #: utils/adt/like_match.c:104 utils/adt/like_match.c:164
 #, c-format
@@ -15954,17 +15956,17 @@ msgid "PID %d is not a PostgreSQL server process"
 msgstr "PID %d 不是 PostgreSQL 服务器进程"
 
 #: utils/adt/misc.c:152
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "must be superuser or have the same role to cancel queries running in other "
 "server processes"
-msgstr "只有超级用户可以发送信号到其他服务器进程"
+msgstr "只有超级用户或拥有相同角色的用户可以取消其他服务器进程中的查询"
 
 #: utils/adt/misc.c:169
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "must be superuser or have the same role to terminate other server processes"
-msgstr "只有超级用户可以发送信号到其他服务器进程"
+msgstr "只有超级用户或拥有相同角色的用户可以终止其他服务器进程"
 
 #: utils/adt/misc.c:183
 #, c-format
@@ -16226,28 +16228,28 @@ msgid "null character not permitted"
 msgstr "不允许使用空字符"
 
 #: utils/adt/pg_locale.c:967
-#, fuzzy, c-format
+#, c-format
 msgid "could not create locale \"%s\": %m"
-msgstr "无法创建锁文件 \"%s\": %m"
+msgstr "无法创建本地化环境 \"%s\": %m"
 
 #: utils/adt/pg_locale.c:970
 #, c-format
 msgid ""
 "The operating system could not find any locale data for the locale name \"%s"
 "\"."
-msgstr ""
+msgstr "操作系统无法找到本地化名 \"%s\"对应的任何本地化数据."
 
 #: utils/adt/pg_locale.c:1057
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "collations with different collate and ctype values are not supported on this "
 "platform"
-msgstr "在此平台上不支持表空间"
+msgstr "在此平台上不支持带有不同collate和ctype值的排序规则"
 
 #: utils/adt/pg_locale.c:1072
-#, fuzzy, c-format
+#, c-format
 msgid "nondefault collations are not supported on this platform"
-msgstr "%s: 在这个平台上不支持使用符号链接"
+msgstr "在这个平台上不支持使用非缺省的排序规则"
 
 #: utils/adt/pg_locale.c:1243
 #, c-format
@@ -16282,9 +16284,9 @@ msgid "cannot accept a value of type anyenum"
 msgstr "无法接受一个anyenum类型值"
 
 #: utils/adt/pseudotypes.c:199
-#, fuzzy, c-format
+#, c-format
 msgid "cannot accept a value of type anyrange"
-msgstr "无法接受一个 any 类型值"
+msgstr "无法接受类型为anyrange的值"
 
 #: utils/adt/pseudotypes.c:276
 #, c-format
@@ -16307,14 +16309,14 @@ msgid "cannot display a value of type language_handler"
 msgstr "无法显示一个 language_handler 类型值"
 
 #: utils/adt/pseudotypes.c:330
-#, fuzzy, c-format
+#, c-format
 msgid "cannot accept a value of type fdw_handler"
-msgstr "无法接受一个 language_handler 类型值"
+msgstr "无法接受一个 fdw_handler 类型值"
 
 #: utils/adt/pseudotypes.c:343
-#, fuzzy, c-format
+#, c-format
 msgid "cannot display a value of type fdw_handler"
-msgstr "无法显示一个 language_handler 类型值"
+msgstr "无法显示一个 fdw_handler 类型值"
 
 #: utils/adt/pseudotypes.c:357
 #, c-format
@@ -16367,74 +16369,74 @@ msgid "cannot display a value of a shell type"
 msgstr "无法显示一个shell类型值"
 
 #: utils/adt/pseudotypes.c:498 utils/adt/pseudotypes.c:522
-#, fuzzy, c-format
+#, c-format
 msgid "cannot accept a value of type pg_node_tree"
-msgstr "无法接受一个 trigger 类型值"
+msgstr "无法接受一个 pg_node_tree类型值"
 
 #: utils/adt/rangetypes.c:396
 #, c-format
 msgid "range constructor flags argument must not be NULL"
-msgstr ""
+msgstr "范围构造器的开关参数不能为NULL"
 
 #: utils/adt/rangetypes.c:978
 #, c-format
 msgid "result of range difference would not be contiguous"
-msgstr ""
+msgstr "距离差结果不能是连续的"
 
 #: utils/adt/rangetypes.c:1039
 #, c-format
 msgid "result of range union would not be contiguous"
-msgstr ""
+msgstr "范围并的结果不能是连续的"
 
 #: utils/adt/rangetypes.c:1508
-#, fuzzy, c-format
+#, c-format
 msgid "range lower bound must be less than or equal to range upper bound"
-msgstr "下限不能等于上限"
+msgstr "范围下限必须小于或等于其上限"
 
 #: utils/adt/rangetypes.c:1891 utils/adt/rangetypes.c:1904
 #: utils/adt/rangetypes.c:1918
-#, fuzzy, c-format
+#, c-format
 msgid "invalid range bound flags"
-msgstr "无效的数组标记"
+msgstr "无效的范围边界标记"
 
 #: utils/adt/rangetypes.c:1892 utils/adt/rangetypes.c:1905
 #: utils/adt/rangetypes.c:1919
-#, fuzzy, c-format
+#, c-format
 msgid "Valid values are \"[]\", \"[)\", \"(]\", and \"()\"."
-msgstr "有效值在\"%d\"和\"%d\"之间."
+msgstr "有效值为\"[]\", \"[)\", \"(]\", 和 \"()\"."
 
 #: utils/adt/rangetypes.c:1984 utils/adt/rangetypes.c:2001
 #: utils/adt/rangetypes.c:2014 utils/adt/rangetypes.c:2032
 #: utils/adt/rangetypes.c:2043 utils/adt/rangetypes.c:2087
 #: utils/adt/rangetypes.c:2095
-#, fuzzy, c-format
+#, c-format
 msgid "malformed range literal: \"%s\""
-msgstr "有缺陷的数组常量:\"%s\""
+msgstr "有缺陷的范围字串:\"%s\""
 
 #: utils/adt/rangetypes.c:1986
 #, c-format
 msgid "Junk after \"empty\" keyword."
-msgstr ""
+msgstr "\"empty\" 关键字后有垃圾字符."
 
 #: utils/adt/rangetypes.c:2003
-#, fuzzy, c-format
+#, c-format
 msgid "Missing left parenthesis or bracket."
-msgstr "缺少一个左括弧"
+msgstr "缺少一个左大括弧或左方括弧."
 
 #: utils/adt/rangetypes.c:2016
 #, c-format
 msgid "Missing comma after lower bound."
-msgstr ""
+msgstr "下界后缺少逗号."
 
 #: utils/adt/rangetypes.c:2034
-#, fuzzy, c-format
+#, c-format
 msgid "Too many commas."
-msgstr "太多字段."
+msgstr "太多逗号."
 
 #: utils/adt/rangetypes.c:2045
-#, fuzzy, c-format
+#, c-format
 msgid "Junk after right parenthesis or bracket."
-msgstr "右括号后的内容无用."
+msgstr "右大括号或右中括弧后的内容无用."
 
 #: utils/adt/rangetypes.c:2089 utils/adt/rangetypes.c:2097
 #: utils/adt/rowtypes.c:204 utils/adt/rowtypes.c:212
@@ -16995,14 +16997,14 @@ msgid "value too long for type character varying(%d)"
 msgstr "对于可变字符类型来说，值太长了(%d)"
 
 #: utils/adt/varlena.c:1371
-#, fuzzy, c-format
+#, c-format
 msgid "could not determine which collation to use for string comparison"
-msgstr "无法确定行比较操作符%s的说明"
+msgstr "无法确定字符串比较中使用哪种排序规则"
 
 #: utils/adt/varlena.c:1417 utils/adt/varlena.c:1430
-#, fuzzy, c-format
+#, c-format
 msgid "could not convert string to UTF-16: error code %lu"
-msgstr "无法将字符串转换为UTF-16编码:错误 %lu"
+msgstr "无法将字符串转换为UTF-16编码: 错误码 %lu"
 
 #: utils/adt/varlena.c:1445
 #, c-format
@@ -17021,35 +17023,35 @@ msgid "field position must be greater than zero"
 msgstr "字段的位置必须大于0"
 
 #: utils/adt/varlena.c:3881 utils/adt/varlena.c:3942
-#, fuzzy, c-format
+#, c-format
 msgid "unterminated conversion specifier"
-msgstr "未结束的引用标识符"
+msgstr "未结束的转换标识符"
 
 # fe-exec.c:2130
 #: utils/adt/varlena.c:3905 utils/adt/varlena.c:3921
-#, fuzzy, c-format
+#, c-format
 msgid "argument number is out of range"
-msgstr "参数号%d超出了范围 0..%d"
+msgstr "参数号超出了范围"
 
 #: utils/adt/varlena.c:3948
 #, c-format
 msgid "conversion specifies argument 0, but arguments are numbered from 1"
-msgstr ""
+msgstr "转换指定了参数 0, 但参数值序号从 1开始记起"
 
 #: utils/adt/varlena.c:3955
-#, fuzzy, c-format
+#, c-format
 msgid "too few arguments for format"
-msgstr "在第%d行上的参数少于指定的数量"
+msgstr "格式化的参数太少"
 
 #: utils/adt/varlena.c:3976
-#, fuzzy, c-format
+#, c-format
 msgid "unrecognized conversion specifier \"%c\""
-msgstr "未认可的配置参数 \"%s\""
+msgstr "不能识别的转换标识符 \"%c\""
 
 #: utils/adt/varlena.c:4005
 #, c-format
 msgid "null values cannot be formatted as an SQL identifier"
-msgstr ""
+msgstr "null值不能格式化为SQL标识符"
 
 #: utils/adt/windowfuncs.c:243
 #, c-format
@@ -17124,9 +17126,9 @@ msgid ""
 msgstr "libxml2具有不兼容的字符类型: sizeof(char)=%u, sizeof(xmlChar)=%u. "
 
 #: utils/adt/xml.c:998
-#, fuzzy, c-format
+#, c-format
 msgid "could not set up XML error handler"
-msgstr "无法创建信号量: 错误代码 %d"
+msgstr "无法设置XML错误处理函数"
 
 #: utils/adt/xml.c:999
 #, c-format
@@ -17134,6 +17136,7 @@ msgid ""
 "This probably indicates that the version of libxml2 being used is not "
 "compatible with the libxml2 header files that PostgreSQL was built with."
 msgstr ""
+"这可能意味着正使用的libxml2版本与PostgreSQL编译 时使用的libxml2头文件不兼容"
 
 #: utils/adt/xml.c:1733
 msgid "Invalid character value."
@@ -17238,9 +17241,9 @@ msgid "Continuing anyway, but there's something wrong."
 msgstr "仍继续, 但肯定有些错误存在."
 
 #: utils/cache/relcache.c:4511
-#, fuzzy, c-format
+#, c-format
 msgid "could not remove cache file \"%s\": %m"
-msgstr "无法删除文件 \"%s\": %m"
+msgstr "无法删除缓存文件 \"%s\": %m"
 
 #: utils/cache/relmapper.c:453
 #, c-format
@@ -17665,9 +17668,9 @@ msgid "loaded library \"%s\""
 msgstr "已加载的库 \"%s\""
 
 #: utils/init/postinit.c:225
-#, fuzzy, c-format
+#, c-format
 msgid "replication connection authorized: user=%s"
-msgstr "复制连接已经认证: 用户=%s 主机=%s"
+msgstr "复制连接已经授权: 用户=%s"
 
 #: utils/init/postinit.c:229
 #, c-format
@@ -17754,9 +17757,9 @@ msgid "must be superuser to connect during database shutdown"
 msgstr "只有超级用户才能在数据库关闭期间连接数据库"
 
 #: utils/init/postinit.c:646
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser to connect in binary upgrade mode"
-msgstr "只有超级用户才能在数据库关闭期间连接数据库"
+msgstr "只有超级用户才能以二进制升级模式进行连接"
 
 #: utils/init/postinit.c:660
 #, c-format
@@ -17766,9 +17769,9 @@ msgid ""
 msgstr "已保留的连接位置为执行非复制请求的超级用户预留"
 
 #: utils/init/postinit.c:674
-#, fuzzy, c-format
+#, c-format
 msgid "must be superuser or replication role to start walsender"
-msgstr "只有超级用户才能启动 walsender"
+msgstr "只有超级用户或者拥有复制角色的用户才能启动 walsender"
 
 #: utils/init/postinit.c:734
 #, c-format
@@ -17844,16 +17847,16 @@ msgid "invalid byte value for encoding \"%s\": 0x%02x"
 msgstr "对于编码\"%s\"的字节值无效: 0x%02x"
 
 #: utils/mb/wchar.c:2013
-#, fuzzy, c-format
+#, c-format
 msgid "invalid byte sequence for encoding \"%s\": %s"
-msgstr "无效的 \"%s\" 编码字节顺序: 0x%s"
+msgstr "无效的 \"%s\" 编码字节顺序: %s"
 
 #: utils/mb/wchar.c:2046
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "character with byte sequence %s in encoding \"%s\" has no equivalent in "
 "encoding \"%s\""
-msgstr "编码\"%2$s\"的字符0x%1$s在\"%3$s\"没有相对应物"
+msgstr "编码\"%2$s\"的字符0x%1$s在编码\"%3$s\"没有相对应值"
 
 #: utils/misc/guc.c:529
 msgid "Ungrouped"
@@ -17884,9 +17887,8 @@ msgid "Resource Usage / Memory"
 msgstr "资源使用 / 内存"
 
 #: utils/misc/guc.c:543
-#, fuzzy
 msgid "Resource Usage / Disk"
-msgstr "资源使用"
+msgstr "资源使用/磁盘"
 
 #: utils/misc/guc.c:545
 msgid "Resource Usage / Kernel Resources"
@@ -17921,24 +17923,20 @@ msgid "Write-Ahead Log / Archiving"
 msgstr "Write-Ahead 日志 / 归档"
 
 #: utils/misc/guc.c:561
-#, fuzzy
 msgid "Replication"
-msgstr "关系 %s"
+msgstr "复制"
 
 #: utils/misc/guc.c:563
-#, fuzzy
 msgid "Replication / Sending Servers"
-msgstr "复制由主用服务器终止"
+msgstr "复制/发送服务器"
 
 #: utils/misc/guc.c:565
-#, fuzzy
 msgid "Replication / Master Server"
-msgstr "复制由主用服务器终止"
+msgstr "复制/主服务器"
 
 #: utils/misc/guc.c:567
-#, fuzzy
 msgid "Replication / Standby Servers"
-msgstr "Write-Ahead 日志 / 备用服务器"
+msgstr "复制 / 备用服务器"
 
 #: utils/misc/guc.c:569
 msgid "Query Tuning"
@@ -18026,7 +18024,7 @@ msgstr "版本和平台兼容性 / 其它平台和客户端"
 
 #: utils/misc/guc.c:611
 msgid "Error Handling"
-msgstr ""
+msgstr "错误处理"
 
 #: utils/misc/guc.c:613
 msgid "Preset Options"
@@ -18049,9 +18047,8 @@ msgid "Enables the planner's use of index-scan plans."
 msgstr "启用查询计划器的索引扫描计划."
 
 #: utils/misc/guc.c:689
-#, fuzzy
 msgid "Enables the planner's use of index-only-scan plans."
-msgstr "启用查询计划器的索引扫描计划."
+msgstr "启用查询计划器的仅索引扫描计划."
 
 #: utils/misc/guc.c:698
 msgid "Enables the planner's use of bitmap-scan plans."
@@ -18173,11 +18170,11 @@ msgstr "这是一个出错帮助."
 
 #: utils/misc/guc.c:890
 msgid "Terminate session on any error."
-msgstr ""
+msgstr "只要遇错即终止会话."
 
 #: utils/misc/guc.c:899
 msgid "Reinitialize server after backend crash."
-msgstr ""
+msgstr "后端服务器崩溃时重新初始化服务器."
 
 #: utils/misc/guc.c:909
 msgid "Logs the duration of each completed SQL statement."
@@ -18236,9 +18233,8 @@ msgid "Collects statistics on database activity."
 msgstr "在数据库上正在执行的事务上收集统计信息."
 
 #: utils/misc/guc.c:1023
-#, fuzzy
 msgid "Collects timing statistics for database I/O activity."
-msgstr "在数据库上正在执行的事务上收集统计信息."
+msgstr "为数据库I/O活动进行时间统计."
 
 #: utils/misc/guc.c:1033
 msgid "Updates the process title to show the active SQL command."
@@ -18331,15 +18327,15 @@ msgid "Sets the current transaction's read-only status."
 msgstr "设置当前事务的只读状态."
 
 #: utils/misc/guc.c:1201
-#, fuzzy
 msgid "Sets the default deferrable status of new transactions."
-msgstr "为新事物设置默认的只读状态."
+msgstr "为新事物设置默认的可延迟状态."
 
 #: utils/misc/guc.c:1210
 msgid ""
 "Whether to defer a read-only serializable transaction until it can be "
 "executed with no possible serialization failures."
 msgstr ""
+"是否要延期执行一个只读可串行化事务，直到执行时不会出现任何可串行化失败."
 
 #: utils/misc/guc.c:1220
 msgid "Check function bodies during CREATE FUNCTION."
@@ -18420,7 +18416,7 @@ msgstr "允许在恢复期间进行连接和查询."
 msgid ""
 "Allows feedback from a hot standby to the primary that will avoid query "
 "conflicts."
-msgstr ""
+msgstr "允许来自热备节点到主节点的响应，以避免查询冲突."
 
 #: utils/misc/guc.c:1409
 msgid "Allows modifications of the structure of system tables."
@@ -18450,7 +18446,7 @@ msgstr ""
 
 #: utils/misc/guc.c:1443
 msgid "When generating SQL fragments, quote all identifiers."
-msgstr ""
+msgstr "在生成SQL片段时，对所有标识符加引号括起来."
 
 #: utils/misc/guc.c:1462
 msgid ""
@@ -18540,7 +18536,7 @@ msgstr ""
 #: utils/misc/guc.c:1588
 msgid ""
 "Sets the maximum interval between WAL receiver status reports to the primary."
-msgstr ""
+msgstr "为WAL接受进程的状态报告(向主节点)设置最大时间间隔."
 
 #: utils/misc/guc.c:1599
 msgid "Sets the maximum number of concurrent connections."
@@ -18577,19 +18573,17 @@ msgstr ""
 "式应该是系统调用chmod和umask可接受的.(为了使用习惯上以0开头的八进制格式数值)"
 
 #: utils/misc/guc.c:1670
-#, fuzzy
 msgid "Sets the file permissions for log files."
-msgstr "设置日志文件的文件名字模式."
+msgstr "设置日志文件的文件访问权限."
 
 #: utils/misc/guc.c:1671
-#, fuzzy
 msgid ""
 "The parameter value is expected to be a numeric mode specification in the "
 "form accepted by the chmod and umask system calls. (To use the customary "
 "octal format the number must start with a 0 (zero).)"
 msgstr ""
-"Unix-domain 套接字使用普通的Unix文件许可集合.参数值应该是数值模式定义, 它的形"
-"式应该是系统调用chmod和umask可接受的.(为了使用习惯上以0开头的八进制格式数值)"
+"参数值期望使用数值模式来指定, 它的形式应该是系统调用chmod和umask可接受的.(为"
+"了使用习惯上以0开头的八进制格式数值)"
 
 #: utils/misc/guc.c:1684
 msgid "Sets the maximum memory to be used for query workspaces."
@@ -18615,13 +18609,12 @@ msgid "Sets the maximum stack depth, in kilobytes."
 msgstr "设置最大的堆栈深度，单位是千字节."
 
 #: utils/misc/guc.c:1724
-#, fuzzy
 msgid "Limits the total size of all temporary files used by each session."
-msgstr "设置每个会话可使用的临时缓冲区的最大数量."
+msgstr "为每个会话可使用的所有临时文件限制最大大小."
 
 #: utils/misc/guc.c:1725
 msgid "-1 means no limit."
-msgstr ""
+msgstr "-1 意指没有限制."
 
 #: utils/misc/guc.c:1735
 msgid "Vacuum cost for a page found in the buffer cache."
@@ -18696,18 +18689,16 @@ msgstr ""
 "对象需要在任何时刻被锁定的假设来指定的."
 
 #: utils/misc/guc.c:1909
-#, fuzzy
 msgid "Sets the maximum number of predicate locks per transaction."
-msgstr "设置每一个事物锁的最大个数."
+msgstr "设置每一个事物的断言锁的最大个数."
 
 #: utils/misc/guc.c:1910
-#, fuzzy
 msgid ""
 "The shared predicate lock table is sized on the assumption that at most "
 "max_pred_locks_per_transaction * max_connections distinct objects will need "
 "to be locked at any one time."
 msgstr ""
-"持有共享锁表的大小是基于最多max_locks_per_transaction * max_connections个不同"
+"共享断言锁表的大小是基于最多max_locks_per_transaction * max_connections个不同"
 "对象需要在任何时刻被锁定的假设来指定的."
 
 #: utils/misc/guc.c:1921
@@ -18758,9 +18749,8 @@ msgid "Sets the maximum number of simultaneously running WAL sender processes."
 msgstr "设置同时运行的WAL发送进程最大数量"
 
 #: utils/misc/guc.c:2022
-#, fuzzy
 msgid "Sets the maximum time to wait for WAL replication."
-msgstr "设置两次自动WAL检查点事件之间需要等待的最大时间"
+msgstr "设置最大时间，等待WAL复制."
 
 #: utils/misc/guc.c:2033
 msgid ""
@@ -18871,9 +18861,8 @@ msgid "Minimum number of tuple updates or deletes prior to vacuum."
 msgstr "设置激活清理操作所需要最小数量的更新或删除元组."
 
 #: utils/misc/guc.c:2252
-#, fuzzy
 msgid "Minimum number of tuple inserts, updates, or deletes prior to analyze."
-msgstr "设置激活分析前所插入，更新或删除元组的最小数量"
+msgstr "分析前可插入，更新或删除元组的最小数量"
 
 #: utils/misc/guc.c:2262
 msgid ""
@@ -18945,9 +18934,8 @@ msgid "Zero logs all files. The default is -1 (turning this feature off)."
 msgstr "如果设置为0，打印所有查询. 默认值为 -1 (表示关闭此功能)."
 
 #: utils/misc/guc.c:2375
-#, fuzzy
 msgid "Sets the size reserved for pg_stat_activity.query, in bytes."
-msgstr "设置为pg_stat_activity.current_query所保留的空间大小，以字节为单位."
+msgstr "设置为pg_stat_activity.query所保留的空间大小，以字节为单位."
 
 #: utils/misc/guc.c:2394
 msgid ""
@@ -19005,11 +18993,10 @@ msgid ""
 msgstr "在清理前需要插入,删除或更新元组的数量，这个数量是作为表大小的百分比"
 
 #: utils/misc/guc.c:2506
-#, fuzzy
 msgid ""
 "Number of tuple inserts, updates, or deletes prior to analyze as a fraction "
 "of reltuples."
-msgstr "在分析前插入,删除或更新元组的数量，这个数量是作为表大小的百分比"
+msgstr "在分析前插入,更新或删除元组的数量，这个数量以表大小的百分比的形式出现"
 
 #: utils/misc/guc.c:2516
 msgid ""
@@ -19165,11 +19152,10 @@ msgid "Sets the program name used to identify PostgreSQL messages in syslog."
 msgstr "设置在系统日志 (syslog) 中确认 PostgreSQL 信息的程序名."
 
 #: utils/misc/guc.c:2845
-#, fuzzy
 msgid ""
 "Sets the application name used to identify PostgreSQL messages in the event "
 "log."
-msgstr "设置在系统日志 (syslog) 中确认 PostgreSQL 信息的程序名."
+msgstr "设置在事件日志 (syslog) 中用于标识 PostgreSQL 消息的程序名."
 
 #: utils/misc/guc.c:2856
 msgid "Sets the time zone for displaying and interpreting time stamps."
@@ -19221,23 +19207,20 @@ msgid "Writes the postmaster PID to the specified file."
 msgstr "把 postmaster PID 写到指定文件."
 
 #: utils/misc/guc.c:2975
-#, fuzzy
 msgid "Location of the SSL server certificate file."
-msgstr "无法装载服务器认证文件 \"%s\": %s"
+msgstr "SSL服务器证书文件的位置"
 
 #: utils/misc/guc.c:2985
-#, fuzzy
 msgid "Location of the SSL server private key file."
-msgstr "设置 Kerberos 服务器密钥文件位置."
+msgstr "SSL服务器私钥文件的位置."
 
 #: utils/misc/guc.c:2995
 msgid "Location of the SSL certificate authority file."
-msgstr ""
+msgstr "SSL证书授权文件的位置."
 
 #: utils/misc/guc.c:3005
-#, fuzzy
 msgid "Location of the SSL certificate revocation list file."
-msgstr "忽略SSL认证撤销列表文件 \"%s\""
+msgstr "SSL证书撤销列表文件的位置."
 
 #: utils/misc/guc.c:3015
 msgid "Writes temporary statistics files to the specified directory."
@@ -19245,7 +19228,7 @@ msgstr "将临时统计信息文件写到指定的目录"
 
 #: utils/misc/guc.c:3026
 msgid "List of names of potential synchronous standbys."
-msgstr ""
+msgstr "可能的同步备用节点的名称列表."
 
 # describe.c:97
 #: utils/misc/guc.c:3037
@@ -19323,9 +19306,8 @@ msgid "Sets the session's behavior for triggers and rewrite rules."
 msgstr "为触发器和重写规则设置会话的行为"
 
 #: utils/misc/guc.c:3212
-#, fuzzy
 msgid "Sets the current transaction's synchronization level."
-msgstr "设置当前事物的隔离级别."
+msgstr "设置当前事物的同步级别."
 
 #: utils/misc/guc.c:3222
 msgid "Enables logging of recovery-related debugging information."
@@ -19477,9 +19459,9 @@ msgid "SET %s takes only one argument"
 msgstr "SET %s 只能带一个参数"
 
 #: utils/misc/guc.c:6233
-#, fuzzy, c-format
+#, c-format
 msgid "SET LOCAL TRANSACTION SNAPSHOT is not implemented"
-msgstr "CREATE ASSERTION 仍未实现"
+msgstr "SET LOCAL TRANSACTION SNAPSHOT没有实现"
 
 #: utils/misc/guc.c:6313
 #, c-format
@@ -19512,6 +19494,7 @@ msgid ""
 "\"temp_buffers\" cannot be changed after any temporary tables have been "
 "accessed in the session."
 msgstr ""
+"在当前会话中，如果有任何临时表被访问，就不能改变\"temp_buffers\"中的内容."
 
 #: utils/misc/guc.c:8401
 #, c-format
@@ -19536,18 +19519,18 @@ msgid "SSL is not supported by this build"
 msgstr "这个版本的安装不支持使用SSL"
 
 #: utils/misc/guc.c:8451
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot enable parameter when \"log_statement_stats\" is true."
 msgstr "当 \"log_statement_stats\" 为 true 时, 不能启动参数."
 
 #: utils/misc/guc.c:8463
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Cannot enable \"log_statement_stats\" when \"log_parser_stats\", "
 "\"log_planner_stats\", or \"log_executor_stats\" is true."
 msgstr ""
 "当 \"log_parser_stats\", \"log_planner_stats\", 或者 \"log_executor_stats\" "
-"为 true 时, 不能启动 \"log_statement_stats\"."
+"为 true 时, 无法启用 \"log_statement_stats\"."
 
 #: utils/misc/help_config.c:131
 #, c-format
@@ -19681,22 +19664,22 @@ msgid "Key %s is duplicated."
 msgstr "键值%s重复了"
 
 #: utils/time/snapmgr.c:774
-#, fuzzy, c-format
+#, c-format
 msgid "cannot export a snapshot from a subtransaction"
-msgstr "%s 无法在一个子事物中运行"
+msgstr "子事务中无法导出一个快照"
 
 #: utils/time/snapmgr.c:924 utils/time/snapmgr.c:929 utils/time/snapmgr.c:934
 #: utils/time/snapmgr.c:949 utils/time/snapmgr.c:954 utils/time/snapmgr.c:959
 #: utils/time/snapmgr.c:1058 utils/time/snapmgr.c:1074
 #: utils/time/snapmgr.c:1099
-#, fuzzy, c-format
+#, c-format
 msgid "invalid snapshot data in file \"%s\""
-msgstr "文件 \"%s\" 中存在无效数据"
+msgstr "文件 \"%s\" 中存在无效快照数据"
 
 #: utils/time/snapmgr.c:996
-#, fuzzy, c-format
+#, c-format
 msgid "SET TRANSACTION SNAPSHOT must be called before any query"
-msgstr "SET TRANSACTION ISOLATION LEVEL 必须在任何查询之前调用"
+msgstr "SET TRANSACTION SNAPSHOT 必须在任何查询之前调用"
 
 #: utils/time/snapmgr.c:1005
 #, c-format
@@ -19704,30 +19687,31 @@ msgid ""
 "a snapshot-importing transaction must have isolation level SERIALIZABLE or "
 "REPEATABLE READ"
 msgstr ""
+"一个snapshot-importing事务的隔离级只能是SERIALIZABLE或者REPEATABLE READ"
 
 #: utils/time/snapmgr.c:1014 utils/time/snapmgr.c:1023
-#, fuzzy, c-format
+#, c-format
 msgid "invalid snapshot identifier: \"%s\""
-msgstr "文件 \"%s\" 中存在无效数据"
+msgstr "无效快照标识符: \"%s\""
 
 #: utils/time/snapmgr.c:1112
 #, c-format
 msgid ""
 "a serializable transaction cannot import a snapshot from a non-serializable "
 "transaction"
-msgstr ""
+msgstr "一个可串行化事务不能从非可串行化事务中导入一个快照"
 
 #: utils/time/snapmgr.c:1116
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "a non-read-only serializable transaction cannot import a snapshot from a "
 "read-only transaction"
-msgstr "不能在一个只读事物里面设置读写模式"
+msgstr "非只读可串行化事务无法导入来自只读事务的快照"
 
 #: utils/time/snapmgr.c:1131
-#, fuzzy, c-format
+#, c-format
 msgid "cannot import a snapshot from a different database"
-msgstr "无法为不同大小的字符串进行或 (OR) 位运算"
+msgstr "无法导入来自不同数据库的快照"
 
 #~ msgid "invalid argument for power function"
 #~ msgstr "power 函数的无效参数"

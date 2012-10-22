@@ -4,3 +4,6 @@ GiST索引: Generalized Search Trees(通用搜索树), 这里的“可扩展”包
 
 http://site.douban.com/widget/articles/8506170/article/18487141/
 
+A new test.
+
+

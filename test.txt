@@ -10,5 +10,15 @@ ident: identification
 http://site.douban.com/widget/articles/8506170/article/18487141/
 
 1. 用户及安全管理
+create role simon LOGIN
+与
+create user simon 等价
 
+create role simon;
+alter role simon LOGIN;
+
+
+create user tom encrypted password 'tom';
+
+alter user simon password 'simon';
 

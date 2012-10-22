@@ -2,8 +2,13 @@ GIN索引: 通用倒排索引(Generalized Inverted Index)
 GiST索引: Generalized Search Trees(通用搜索树), 这里的“可扩展”包
 含 2 层意思：一是支持数据类型的可扩展性；二是支持查询谓词的可扩展性。
 
+
+HBA: host based authentication
+ident: identification
+
+
 http://site.douban.com/widget/articles/8506170/article/18487141/
 
-A new test.
+1. 用户及安全管理
 
 

@@ -270,3 +270,12 @@ $6. 从电子表格或它方获取数据
 e.g. psql -c '\COPY sample FROM sample.csv CSV HEADER'
 COPY sample FROM '/mydatafiledirectory/sample.csv' CSV HEADER;
 
+COPY文件只能来自于服务器端.
+
+using pgloader:
+http://pgfoundry.org/projects/pgloader
+
+pg_dump --> pg_restore, 是另外一条路子
+
+5. Security
+

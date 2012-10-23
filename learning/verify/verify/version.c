@@ -108,6 +108,17 @@ Datum pgsql_version()
 }
 
 
+/**
+*  get and set the max handlers of opening files
+*/
+
+void testMaxHandlersOfFiles()
+{
+    printf( "maxstdio: %d\n", _getmaxstdio());
+    _setmaxstdio(2048);
+    printf( "maxstdio: %d\n", _getmaxstdio());
+}
+
 
 
 int main()
@@ -130,6 +141,9 @@ int main()
     *(version + vsize) = '\0';
 
     printf("new version result = %s\n", version);
+
+
+    testMaxHandlersOfFiles();
 
     return 0;
 }

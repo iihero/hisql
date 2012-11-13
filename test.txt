@@ -1,3 +1,5 @@
+http://lwn.net/Articles/497069/
+
 GIN索引: 通用倒排索引(Generalized Inverted Index)
 GiST索引: Generalized Search Trees(通用搜索树), 这里的“可扩展”包
 含 2 层意思：一是支持数据类型的可扩展性；二是支持查询谓词的可扩展性。
@@ -8,6 +10,10 @@ ident: identification
 
 
 http://site.douban.com/widget/articles/8506170/article/18487141/
+
+0. template0、template1
+前者用于initdb, 最原模板数据库
+后者用于create database时参照的模板
 
 1. 用户及安全管理
 create role simon LOGIN
@@ -21,4 +27,255 @@ alter role simon LOGIN;
 create user tom encrypted password 'tom';
 
 alter user simon password 'simon';
+
+4. 表 & 数据
+$1. 命名规则：
+1) 用下划线，而不是camel命名
+2) 对索引命名：
+	tablename_colname_suffix
+	后缀：
+		pkey, 主键
+		key, 唯一键
+		excl, exclusion 约束
+		idx, 普通索引
+	序列后缀：seq
+	触发器命名：
+	tablename_actionname_after|before_trig
+
+$2. 对象名带引号括起来	
+如果有空格以及有大小写，可以使用"括起来，这也只是用来解决某些问题。大小写问题
+在数据库迁移时，确实是一个问题。
+
+缺省情况下，不区分大小写, 系统中以小写形式存储对象名。加了quote以后，则区分大
+小写。
+Schema |  Name  | Type  | Owner
+-------+--------+-------+-------
+public | MyCust | table | tom
+public | mycust | table | tom
+使用quote_ident函数可以判断对象名是否要用“括起来，多用于动态创建对象中
+simon=> select quot_ident('myCust');
+ quote_ident
+-------------
+ "myCust"
+(1 row)
+
+$3. 强制同名，同列定义
+simon=> create schema s1;
+CREATE SCHEMA
+simon=> create schema s2;
+CREATE SCHEMA
+simon=> create table s1.x (col1 integer, col2 text);
+CREATE TABLE
+simon=> create table s2.x (col1 integer, col3 numeric);
+CREATE TABLE
+
+
+simon=> alter table s1.x alter column col1 type smallint;
+ALTER TABLE
+
+// 得到同名不同类型的列表：
+SELECT
+table_schema
+,table_name
+,column_name
+,data_type
+||coalesce(' ' || text(character_maximum_length), '')
+||coalesce(' ' || text(numeric_precision), '')
+||coalesce(',' || text(numeric_scale), '')
+as data_type
+FROM information_schema.columns
+WHERE column_name IN
+(SELECT
+column_name
+FROM
+(SELECT
+column_name
+,data_type
+,character_maximum_length
+,numeric_precision
+,numeric_scale
+FROM information_schema.columns
+WHERE table_schema = 'public'
+GROUP BY
+column_name
+,data_type
+,character_maximum_length
+,numeric_precision
+,numeric_scale
+) derived
+GROUP BY column_name
+HAVING count(*) > 1
+)
+AND table_schema NOT IN ('information_schema', 'pg_catalog')
+ORDER BY column_name
+;
+
+SELECT
+table_schema
+,table_name
+,column_name
+,data_type
+FROM information_schema.columns
+WHERE table_name IN
+(SELECT
+table_name
+FROM
+(SELECT
+table_schema
+,table_name
+,string_agg(' '||column_name||' '||data_type, ' ')
+FROM information_schema.columns
+GROUP BY
+table_schema
+,table_name
+) def
+GROUP BY
+table_name
+HAVING
+count(*) > 1
+)
+ORDER BY
+table_name
+,table_schema
+,column_name;
+
+==>
+ table_schema | table_name | column_name | data_type
+--------------+------------+-------------+-----------
+ s1           | x          | col1        | smallint
+ s1           | x          | col2        | text
+ s2           | x          | col1        | integer
+ s2           | x          | col3        | numeric
+ 
+综合成一个函数：
+CREATE OR REPLACE FUNCTION diff_table_definition
+(t1_schemaname text
+,t1_tablename text
+,t2_schemaname text
+,t2_tablename text)
+RETURNS TABLE
+(t1_column_name text
+,t1_data_type text
+,t2_column_name text
+,t2_data_type text
+)
+LANGUAGE SQL
+as
+$$
+SELECT
+t1.column_name
+,t1.data_type
+,t2.column_name
+,t2.data_type
+FROM
+(SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_schema = $1
+AND table_name = $2
+) t1
+FULL OUTER JOIN
+(SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_schema = $3
+AND table_name = $4
+) t2
+ON (t1.column_name = t2.column_name)
+WHERE t1.column_name IS NULL OR t2.column_name IS NULL
+;
+$$; 
+
+执行： simon=> select diff_table_definition('s1', 'x', 's2', 'x');
+
+$4. 消除重复数据
+simon=> create table cust(customerid int, firstname varchar(32), lastname varcha
+r(32), age int);
+CREATE TABLE
+simon=> insert into cust values(1, 'Philip', 'Marlowe', 38);
+INSERT 0 1
+simon=> insert into cust values(2, 'Richard', 'Hannay', 42);
+INSERT 0 1
+simon=> insert into cust values(3, 'Holly', 'Martins', 25);
+INSERT 0 1
+simon=> insert into cust values(4, 'harry', 'Parmer', 36);
+INSERT 0 1
+simon=> insert into cust values(4, 'mark', 'Hal', 47);
+INSERT 0 1
+发现id为4的多余项：
+SELECT *
+FROM cust
+WHERE customerid IN
+(SELECT customerid
+FROM cust
+GROUP BY customerid
+HAVING count(*) > 1);
+
+------------+-----------+----------+-----
+ customerid | firstname | lastname | age
+------------+-----------+----------+-----
+          4 | harry     | Parmer   |  36
+          4 | mark      | Hal      |  47
+(2 rows)
+
+避免重复数据的方法：
+1. pk
+2. unique约束
+3. unique索引 (可以用于条件索引)
+
+postgres=# ALTER TABLE boxes ADD EXCLUDE USING gist
+(position WITH &&);
+ALTER TABLE newcust ADD EXCLUDE (customerid WITH =);
+比unique更通用
+
+找到unique列的方法：
+postgres=# SELECT count as num_of_values, count(*)
+FROM (SELECT customerid, count(*)
+FROM cust
+GROUP BY customerid) s
+GROUP BY count
+ORDER BY count(*);
+
+$5. 生成测试数据
+依照下述顺序：
+	行
+	列
+	顺序
+最简单的，生成1到5:
+SELECT * FROM generate_series(1,5);
+生成一序列的日期：
+SELECT date(generate_series(now(), now() + '1 week', '1 day'));	
+
+列：
+Random integer
+(random()*(2*10^9))::integer
+Random bigint
+(random()*(9*10^18))::bigint
+Random numeric data
+(random()*100.)::numeric(4,2);
+Random length string, up to a maximum length
+repeat('1',(random()*40)::integer)
+Random length substring
+substr('abcdefghijklmnopqrstuvwxyz',1, (random()*26)::integer)
+Random string from a list of strings
+(ARRAY['one','two','three'])[1+random()*3]
+
+顺序：
+SELECT generate_series(1,10) as key
+,(random()*100.)::numeric(4,2)
+,repeat('1',(random()*25)::integer);
+
+加上随机排序：
+order by random();
+
+$6. 从电子表格或它方获取数据
+e.g. psql -c '\COPY sample FROM sample.csv CSV HEADER'
+COPY sample FROM '/mydatafiledirectory/sample.csv' CSV HEADER;
+
+COPY文件只能来自于服务器端.
+
+using pgloader:
+http://pgfoundry.org/projects/pgloader
+
+pg_dump --> pg_restore, 是另外一条路子
+
+5. Security
 
